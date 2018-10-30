@@ -266,9 +266,6 @@
     });
     var infowindow = new google.maps.InfoWindow();
 
-
-
-
     
     var jalan = new google.maps.Data({map: map});
     jalan.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/jalan 2019.geojson');
@@ -432,6 +429,86 @@
       infowindow.open(map);
 
     });
+
+
+
+    var ced = google.maps.event.addListener(air_bersih, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+
+
+    var ced = google.maps.event.addListener(bendung, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+
+
+    var ced = google.maps.event.addListener(jembatan, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+
+    var ced = google.maps.event.addListener(sanitasi, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+    var ced = google.maps.event.addListener(stanplat, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+    var ced = google.maps.event.addListener(sungai, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+    var ced = google.maps.event.addListener(sungaipol, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
+    var ced = google.maps.event.addListener(tol, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+
+    });
+
 
     jalan.data.addListener('mouseover', function (event) {
       jalan.data.revertStyle();
