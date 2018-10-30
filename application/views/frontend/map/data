@@ -1,0 +1,32 @@
+air bersih sumsel
+id,kabkota,kecamatan,kodewilayah,kodekec,text_kec,luas,air_bers_1
+
+bendung disumsel
+id,nama
+
+jalan
+id,status,fungsi,sumber,noruas,no_ruas,nama_ruas,panjang,kodeusr,layer,tahun,kegiatan
+
+Jembatan_PT_250K
+id,field1-field18
+
+Sanitasi_Sumsel
+id,kabkota,kecamatan,kodewilayah,kodekec,text_kec,luas,sanitasi,air_bersih,kk_mbr,kk_nonmbr,perkebunan
+
+
+stanplat
+id,nama_termi,klasifikas
+
+
+sungai
+id,fnode_,tnode_,lpoly_,rpoly_,length,sungai_,sungai_id,saluran,text_sunga
+
+
+sungai_poly
+id,cbase,namasungai,sumber
+
+
+Tol_LN_2017_Sumatera_Selatan_PUBMTR_geo
+id,jalanrenca,ruas,status_tol,pemilik
+
+

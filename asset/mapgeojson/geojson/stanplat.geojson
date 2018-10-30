@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"name": "stanplat",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 0.0, "NAMA_TERMI": "Terminal Alang-Alang Lebar", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.681712448142122, -2.916410508837724 ] } },
+{ "type": "Feature", "properties": { "ID": 1.0, "NAMA_TERMI": "Stasiun Kertapati", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 104.748676263294485, -3.023456175830293 ] } },
+{ "type": "Feature", "properties": { "ID": 2.0, "NAMA_TERMI": "Pelabuhan Boom Baru", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.779371864271326, -2.980238093660346 ] } },
+{ "type": "Feature", "properties": { "ID": 3.0, "NAMA_TERMI": "Bandara SMB II", "KLASIFIKAS": "Bandara" }, "geometry": { "type": "Point", "coordinates": [ 104.703400443440557, -2.89483779939851 ] } },
+{ "type": "Feature", "properties": { "ID": 4.0, "NAMA_TERMI": "Terminal Betung", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.241804648642074, -2.853181171154832 ] } },
+{ "type": "Feature", "properties": { "ID": 5.0, "NAMA_TERMI": "Bandara Silampari", "KLASIFIKAS": "Bandara" }, "geometry": { "type": "Point", "coordinates": [ 102.9158440530273, -3.284619024268764 ] } },
+{ "type": "Feature", "properties": { "ID": 6.0, "NAMA_TERMI": "Terminal Simp Periuk", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 102.939315880850245, -3.269042431811439 ] } },
+{ "type": "Feature", "properties": { "ID": 7.0, "NAMA_TERMI": "Terminal Kayuagung", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.821967746369424, -3.400779809114634 ] } },
+{ "type": "Feature", "properties": { "ID": 8.0, "NAMA_TERMI": "Terminal Muara Enim", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 103.76868070459804, -3.668701698555555 ] } },
+{ "type": "Feature", "properties": { "ID": 9.0, "NAMA_TERMI": "Terminal Lahat", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 103.497924578301848, -3.761943310064504 ] } },
+{ "type": "Feature", "properties": { "ID": 10.0, "NAMA_TERMI": "Terminal Baturaja", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.155828962740429, -4.100842190570035 ] } },
+{ "type": "Feature", "properties": { "ID": 11.0, "NAMA_TERMI": "Stasiun Lubuklinggau", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 102.864185568621664, -3.295676632032274 ] } },
+{ "type": "Feature", "properties": { "ID": 12.0, "NAMA_TERMI": "Stasiun Lahat", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 103.534095806013909, -3.79274069882526 ] } },
+{ "type": "Feature", "properties": { "ID": 13.0, "NAMA_TERMI": "Stasiun Tebingtinggi", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 103.081532081227877, -3.585921491794473 ] } },
+{ "type": "Feature", "properties": { "ID": 14.0, "NAMA_TERMI": "Stasiun Prabumulih", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 104.241223484053918, -3.429911566196627 ] } },
+{ "type": "Feature", "properties": { "ID": 15.0, "NAMA_TERMI": "Stasiun Martapura", "KLASIFIKAS": "Stasiun" }, "geometry": { "type": "Point", "coordinates": [ 104.347125473222263, -4.316542259113865 ] } },
+{ "type": "Feature", "properties": { "ID": 16.0, "NAMA_TERMI": "Pelabuhan Penyeberangan", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.805669337962797, -2.3719351272297 ] } },
+{ "type": "Feature", "properties": { "ID": 17.0, "NAMA_TERMI": "Pelabuhan Laut", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.815772474516805, -2.363965429867612 ] } },
+{ "type": "Feature", "properties": { "ID": 18.0, "NAMA_TERMI": "Pelabuhan S Lumpur", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 105.882617574851551, -3.42088673416018 ] } },
+{ "type": "Feature", "properties": { "ID": 19.0, "NAMA_TERMI": "Pelabuhan Khusus", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.252882573117176, -3.034353796178058 ] } },
+{ "type": "Feature", "properties": { "ID": 20.0, "NAMA_TERMI": "Terminal Sekayu", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 103.855336125897395, -2.873476976654414 ] } },
+{ "type": "Feature", "properties": { "ID": 21.0, "NAMA_TERMI": "Terminal Muaradua", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.070929947984681, -4.539659688676014 ] } },
+{ "type": "Feature", "properties": { "ID": 22.0, "NAMA_TERMI": "Terminal Karyajaya", "KLASIFIKAS": "Terminal" }, "geometry": { "type": "Point", "coordinates": [ 104.739324396696205, -3.063903087353917 ] } }
+]
+}

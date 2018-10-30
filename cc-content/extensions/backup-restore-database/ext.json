@@ -1,0 +1,11 @@
+{
+	"name" : "backup restore database",
+	"description" : "backup restore database",
+    "type" : "page",
+    "version" : "1.0",
+    "author" : "cicool",
+	"regid" : "backup-restore-database",
+	"loader" : [
+		"loader.php"
+	]
+}

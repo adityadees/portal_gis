@@ -1,0 +1,11 @@
+{
+	"name" : "material theme",
+	"description" : "material theme ",
+    "type" : "page",
+    "version" : "1.0",
+    "author" : "Muhamad Ridwan",
+	"regid" : "material-theme",
+	"loader" : [
+		"material-theme.php"
+	]
+}
