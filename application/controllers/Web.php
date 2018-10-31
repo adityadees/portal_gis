@@ -78,6 +78,7 @@ public function peta(){
 
     $x['jalan']=$this->modelgeojson->get_data('jalan');
     $x['air_bersih']=$this->modelgeojson->get_data('air_bersih');
+    $x['map_link']=$this->modelgeojson->get_data('map_link');
     $this->load->view('frontend/map/map',$x);
 
 }

@@ -267,265 +267,79 @@
     var infowindow = new google.maps.InfoWindow();
 
     
-    var jalan = new google.maps.Data({map: map});
-    jalan.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/jalan 2019.geojson');
-
-    var air_bersih = new google.maps.Data({map: map});
-    air_bersih.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/Air_Bersih_Sumsel_2017.geojson');
-
-    var bendung = new google.maps.Data({map: map});
-    bendung.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/Bendung_DI_Sumsel.geojson');
 
 
-    var jembatan = new google.maps.Data({map: map});
-    jembatan.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/Jembatan_PT_250K.geojson');
-
-
-    var sanitasi = new google.maps.Data({map: map});
-    sanitasi.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/Sanitasi_Sumsel.geojson');
-
-
-
-    var stanplat = new google.maps.Data({map: map});
-    stanplat.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/stanplat.geojson');
-
-
-    var sungai = new google.maps.Data({map: map});
-    sungai.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/sungai_l.geojson');
-
-    var sungaipol = new google.maps.Data({map: map});
-    sungaipol.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/sungai_poly.geojson');
-
-    var tol = new google.maps.Data({map: map});
-    tol.loadGeoJson('<?= base_url(); ?>/asset/mapgeojson/geojson/Tol_LN_2017_Sumatera_Selatan_PUBMTR_geo.geojson');
-
+    <?php foreach ($map_link->result_array() as $i) : ?>
+      var <?= $i['maplink_var']; ?> = new google.maps.Data({map: map});
+      <?= $i['maplink_var']; ?>.loadGeoJson('<?= base_url().'/asset/mapgeojson/geojson/'.$i['maplink_url']; ?>');
+    <?php endforeach; ?>
 
     var icons = {
-
-      jembatan: {
-        name: 'Jembatan',
-        icon: "<?= base_url(); ?>/asset/mapgeojson/icons/bridge_modern.png"
-      }, 
-      bendung: {
-        name: 'Bendungan',
-        icon: "<?= base_url(); ?>/asset/mapgeojson/icons/waterdrop.png"
-      }, 
-      stanplat: {
-        name: 'Air Bersih',
-        icon: "<?= base_url(); ?>/asset/mapgeojson/icons/bus.png"
-      },
-
+      <?php foreach ($map_link->result_array() as $i) : ?>
+        <?= $i['maplink_var']; ?>: {
+          name: "<?= $i['maplink_nama']; ?>",
+          icon: "<?= base_url(); ?>asset/mapgeojson/icons/<?= $i['maplink_icon']; ?>"
+        }, 
+      <?php endforeach; ?>
     };
 
+    <?php foreach ($map_link->result_array() as $i) : ?>
+     <?= $i['maplink_var']; ?>.setStyle({
+      fillColor: ' <?= $i['maplink_fcolor']; ?>',
+      strokeColor: ' <?= $i['maplink_scolor']; ?>',
+      strokeWeight:  <?= $i['maplink_sweight']; ?>,
+      <?php if($i['maplink_type']=='Markers'){ ?>icon:icons.<?= $i['maplink_var']; ?>.icon <?php } ?>
+    });
+   <?php endforeach; ?>
 
-    air_bersih.setStyle({
-      fillColor: 'green',
-      strokeColor: 'green',
-      strokeWeight: 1
+   <?php foreach ($map_link->result_array() as $i) : ?>
+     $('#<?= $i['maplink_var'];?>').click(function(){
+      <?= $i['maplink_var'];?>.setMap($(this).is(':checked') ? map : null);
     });
-    jembatan.setStyle({
-      fillColor: 'blue',
-      strokeColor: 'blue',
-      strokeWeight: 1,
-      icon:icons.jembatan.icon
-    });
-    bendung.setStyle({
-      fillColor: 'blue',
-      strokeColor: 'blue',
-      strokeWeight: 1,
-      icon:icons.bendung.icon
-    });
-    stanplat.setStyle({
-      fillColor: 'blue',
-      strokeColor: 'blue',
-      strokeWeight: 1,
-      icon:icons.stanplat.icon
-    });
+   <?php endforeach; ?>
 
+   $('#jalan,#air_bersih,#bendung,#jembatan,#sanitasi,#stanplat,#sungai,#sungaipol,#tol').removeAttr('disabled');
 
-    sanitasi.setStyle({
-      fillColor: 'red',
+   $('#all').click(function(){
+    <?php foreach ($map_link->result_array() as $i) : ?>
+      <?= $i['maplink_var']; ?>.setMap($(this).is(':checked') ? map : null);
+      tol.setMap($(this).is(':checked') ? map : null);
+    <?php endforeach; ?>
+  });
+
+   $(document).ready(function() {
+    $('#all').click(function() {
+      var checked = $(this).prop('checked');
+      $('#checkboxes').find('input:checkbox').prop('checked', checked);
+    });
+  })
+
+   <?php foreach ($map_link->result_array() as $i) : ?>
+     google.maps.event.addListener(<?= $i['maplink_var']; ?>, 'click', function(event) {
+      var aab=event.feature.l.ID;
+      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
+      console.log(event.feature.l)
+      infowindow.setPosition(event.latLng);
+      infowindow.open(map);
+    });
+   <?php endforeach; ?>
+
+   jalan.data.addListener('mouseover', function (event) {
+    jalan.data.revertStyle();
+    jalan.data.overrideStyle(event.feature, {
       strokeColor: 'red',
-      strokeWeight: 1
-    });
-    sungai.setStyle({
-      fillColor: 'purple',
-      strokeColor: 'purple',
-      strokeWeight: 1
-    });
-    sungaipol.setStyle({
-      fillColor: 'brown',
-      strokeColor: 'brown',
-      strokeWeight: 1
-    });
-    tol.setStyle({
-      fillColor: 'cyan',
-      strokeColor: 'cyan',
-      strokeWeight: 4
-    });
+      strokeWeight: 8,
+      visibility: 'off'
+
+    });   
+  });
+
+   jalan.data.addListener('mouseout', function (event) {
+    jalan.data.revertStyle();
+  });
 
 
-    $('#jalan').click(function(){
-      jalan.setMap($(this).is(':checked') ? map : null);
-    });
-
-    $('#air_bersih').click(function(){
-      air_bersih.setMap($(this).is(':checked') ? map : null);
-    });
-    $('#bendung').click(function(){
-      bendung.setMap($(this).is(':checked') ? map : null);
-    });
-
-    $('#jembatan').click(function(){
-      jembatan.setMap($(this).is(':checked') ? map : null);
-    });
-
-    $('#sanitasi').click(function(){
-      sanitasi.setMap($(this).is(':checked') ? map : null);
-    });
-    $('#stanplat').click(function(){
-      stanplat.setMap($(this).is(':checked') ? map : null);
-    });
-    $('#sungai').click(function(){
-      sungai.setMap($(this).is(':checked') ? map : null);
-    });
-    $('#sungaipol').click(function(){
-      sungaipol.setMap($(this).is(':checked') ? map : null);
-    });
-    $('#tol').click(function(){
-      tol.setMap($(this).is(':checked') ? map : null);
-    });
-
-    $('#jalan,#air_bersih,#bendung,#jembatan,#sanitasi,#stanplat,#sungai,#sungaipol,#tol').removeAttr('disabled');
-
-    $('#all').click(function(){
-      jalan.setMap($(this).is(':checked') ? map : null);
-      air_bersih.setMap($(this).is(':checked') ? map : null);
-      bendung.setMap($(this).is(':checked') ? map : null);
-      jembatan.setMap($(this).is(':checked') ? map : null);
-      sanitasi.setMap($(this).is(':checked') ? map : null);
-      stanplat.setMap($(this).is(':checked') ? map : null);
-      sungai.setMap($(this).is(':checked') ? map : null);
-      sungaipol.setMap($(this).is(':checked') ? map : null);
-      tol.setMap($(this).is(':checked') ? map : null);
-    });
-
-
-
-    $(document).ready(function() {
-      $('#all').click(function() {
-        var checked = $(this).prop('checked');
-        $('#checkboxes').find('input:checkbox').prop('checked', checked);
-      });
-    })
-
-
-
-    var ced = google.maps.event.addListener(jalan, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-
-
-    var ced = google.maps.event.addListener(air_bersih, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-
-
-    var ced = google.maps.event.addListener(bendung, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-
-
-    var ced = google.maps.event.addListener(jembatan, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-
-    var ced = google.maps.event.addListener(sanitasi, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-    var ced = google.maps.event.addListener(stanplat, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-    var ced = google.maps.event.addListener(sungai, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-    var ced = google.maps.event.addListener(sungaipol, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-    var ced = google.maps.event.addListener(tol, 'click', function(event) {
-      var aab=event.feature.l.ID;
-      infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+'">Detail</button></div></div></div>');
-      console.log(event.feature.l)
-      infowindow.setPosition(event.latLng);
-      infowindow.open(map);
-
-    });
-
-
-    jalan.data.addListener('mouseover', function (event) {
-      jalan.data.revertStyle();
-      jalan.data.overrideStyle(event.feature, {
-        strokeColor: 'red',
-        strokeWeight: 8,
-        visibility: 'off'
-
-      });   
-    });
-
-    jalan.data.addListener('mouseout', function (event) {
-      jalan.data.revertStyle();
-    });
-
-
-  }
+ }
 </script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84bgLwDPpg&callback=initMap">
