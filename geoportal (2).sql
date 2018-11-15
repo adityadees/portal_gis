@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2018 at 06:54 PM
+-- Generation Time: Nov 13, 2018 at 11:38 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -67,6 +67,13 @@ CREATE TABLE `aauth_login_attempts` (
   `timestamp` datetime DEFAULT NULL,
   `login_attempts` tinyint(2) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `aauth_login_attempts`
+--
+
+INSERT INTO `aauth_login_attempts` (`id`, `ip_address`, `timestamp`, `login_attempts`) VALUES
+(5, '36.84.228.213', '2018-11-06 09:36:39', 1);
 
 -- --------------------------------------------------------
 
@@ -493,7 +500,7 @@ CREATE TABLE `aauth_users` (
 --
 
 INSERT INTO `aauth_users` (`id`, `email`, `oauth_uid`, `oauth_provider`, `pass`, `username`, `full_name`, `avatar`, `banned`, `last_login`, `last_activity`, `date_created`, `forgot_exp`, `remember_time`, `remember_exp`, `verification_code`, `top_secret`, `ip_address`) VALUES
-(1, 'admin@scafol.com', NULL, NULL, '45e39052432cbcce8651186183c76981c1237839dd714e9629d929ab32c39841', 'admin', 'admin', '', 0, '2018-10-31 07:07:11', '2018-10-31 07:07:11', '2018-10-16 18:28:29', NULL, NULL, NULL, NULL, NULL, '158.140.173.36');
+(1, 'admin@scafol.com', NULL, NULL, '45e39052432cbcce8651186183c76981c1237839dd714e9629d929ab32c39841', 'admin', 'admin', '', 0, '2018-11-13 23:24:10', '2018-11-13 23:24:10', '2018-10-16 18:28:29', NULL, NULL, NULL, NULL, NULL, '158.140.173.36');
 
 -- --------------------------------------------------------
 
@@ -550,7 +557,8 @@ CREATE TABLE `air_bersih` (
 --
 
 INSERT INTO `air_bersih` (`kode_air_bersih`, `air_bersih_id`, `kabupaten_kota`, `kecamatan`, `kode_wilayah`, `kode_kecamatan`, `text_kecamatan`, `luas`, `air_bers_1`) VALUES
-(1, 16, '1102', '1101020', '50', '60', 'tes', 50, 0);
+(1, 16, '1102', '1101020', '50', '60', 'tes', 50, 0),
+(2, 17, '1671', '1671040', '2222', '2', '2', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -587,6 +595,16 @@ CREATE TABLE `bendungans` (
   `nama` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `bendungans`
+--
+
+INSERT INTO `bendungans` (`kode_benduangan`, `bendungan_id`, `nama`) VALUES
+(1, 11, 'Bendung 1'),
+(2, 12, 'Bendung 2'),
+(3, 13, 'Bendung 3'),
+(4, 14, 'Bendung 4');
+
 -- --------------------------------------------------------
 
 --
@@ -613,7 +631,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `title`, `slug`, `content`, `image`, `tags`, `category`, `status`, `author`, `viewers`, `created_at`, `updated_at`) VALUES
-(1, 'Hello Wellcome To Cicool Builder', 'Hello-Wellcome-To-Ciool-Builder', 'greetings from our team I hope to be happy! ', 'wellcome.jpg', 'greetings', '1', 'publish', 'admin', 0, '2018-10-16 18:28:29', '0000-00-00 00:00:00');
+(1, 'Hello Wellcome To Cicool Builder', 'Hello-Wellcome-To-Ciool-Builder', 'greetings from our team I hope to be happy! ', 'wellcome.jpg', 'greetings', '1', 'publish', 'admin', 3, '2018-10-16 18:28:29', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -8918,6 +8936,14 @@ CREATE TABLE `historis_bendungans` (
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `historis_bendungans`
+--
+
+INSERT INTO `historis_bendungans` (`kode_historis_bendungan`, `bendungan_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 13, '20', 2013, 'ef', 0, 'bendungan historis 1'),
+(2, 14, '50', 2015, 'fe', 0, 'bendungan historis 2');
+
 -- --------------------------------------------------------
 
 --
@@ -8960,6 +8986,13 @@ CREATE TABLE `historis_jembatan_pt_250k` (
   `historis_ket` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `historis_jembatan_pt_250k`
+--
+
+INSERT INTO `historis_jembatan_pt_250k` (`kode_historis_jembatan_pt_250k`, `jembatan_pt_250k_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 493, '20', 2018, '-', 0, 'jembatan 493');
+
 -- --------------------------------------------------------
 
 --
@@ -8975,6 +9008,13 @@ CREATE TABLE `historis_sanitasi_sumsel` (
   `historis_sdana` int(11) NOT NULL,
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historis_sanitasi_sumsel`
+--
+
+INSERT INTO `historis_sanitasi_sumsel` (`kode_historis_sanitasi_sumsel`, `sanitasi_sumsel_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 15, '15', 222, 'penanganan abc', 22, 'sanitasi 15');
 
 -- --------------------------------------------------------
 
@@ -8992,6 +9032,13 @@ CREATE TABLE `historis_stanplat` (
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `historis_stanplat`
+--
+
+INSERT INTO `historis_stanplat` (`kode_historis_sanitasi_sumsel`, `sanitasi_sumsel_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 11, '20', 2013, 'penanganan abc', 22, '11 stanplat');
+
 -- --------------------------------------------------------
 
 --
@@ -9007,6 +9054,13 @@ CREATE TABLE `historis_sungais` (
   `historis_sdana` int(11) NOT NULL,
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historis_sungais`
+--
+
+INSERT INTO `historis_sungais` (`kode_historis_sungai`, `sungais_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 641, '20', 2013, 'penanganan abc', 22, '641 sungai');
 
 -- --------------------------------------------------------
 
@@ -9024,6 +9078,13 @@ CREATE TABLE `historis_sungai_polys` (
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `historis_sungai_polys`
+--
+
+INSERT INTO `historis_sungai_polys` (`kode_historis_sungai_polys`, `sungai_polys_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 41, '20', 2013, 'penanganan abc11', 22, '41 sungai pol');
+
 -- --------------------------------------------------------
 
 --
@@ -9039,6 +9100,13 @@ CREATE TABLE `historis_tol_ln_2017_sumatera_selatan_pubtr_geo` (
   `historis_sdana` int(11) NOT NULL,
   `historis_ket` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `historis_tol_ln_2017_sumatera_selatan_pubtr_geo`
+--
+
+INSERT INTO `historis_tol_ln_2017_sumatera_selatan_pubtr_geo` (`kode_historis_tol_ln_2017_sumatera_selatan_pubtr_geo`, `tol_ln_2017_sumatera_selatan_pubtr_geos_id`, `historis_vefektif`, `historis_tahun`, `historis_vpenanganan`, `historis_sdana`, `historis_ket`) VALUES
+(1, 0, '20', 2013, 'penanganan abc', 22, 'jalan tol');
 
 -- --------------------------------------------------------
 
@@ -9074,8 +9142,32 @@ INSERT INTO `jalan` (`kode_jalan`, `jalan_id`, `jalan_status`, `jalan_fungsi`, `
 CREATE TABLE `jembatan_pt_250k` (
   `kode_jpt` int(11) NOT NULL,
   `jembatan_id` int(11) NOT NULL,
-  `field1-field18` text COLLATE utf8_unicode_ci NOT NULL
+  `field1-field18` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed2` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed3` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed4` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed5` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed6` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed7` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed8` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed9` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed10` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed11` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed12` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed13` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed14` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed15` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed16` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed17` text COLLATE utf8_unicode_ci NOT NULL,
+  `filed18` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `jembatan_pt_250k`
+--
+
+INSERT INTO `jembatan_pt_250k` (`kode_jpt`, `jembatan_id`, `field1-field18`, `filed2`, `filed3`, `filed4`, `filed5`, `filed6`, `filed7`, `filed8`, `filed9`, `filed10`, `filed11`, `filed12`, `filed13`, `filed14`, `filed15`, `filed16`, `filed17`, `filed18`) VALUES
+(1, 493, 'jembatan 1', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -10003,6 +10095,13 @@ CREATE TABLE `sanitasi_sumsels` (
   `perkebunan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sanitasi_sumsels`
+--
+
+INSERT INTO `sanitasi_sumsels` (`kode_sanitasi_sumsel`, `air_bersih_id`, `kabupaten_kota`, `kecamatan`, `kode_wilayah`, `kode_kecamatan`, `text_kecamatan`, `luas`, `sanitasi`, `air_bersih`, `kk_mbr`, `kk_nonmbr`, `perkebunan`) VALUES
+(15, 15, 'palembang', 'kecamatan', 'wilayah', '', '', 0, '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -10015,6 +10114,14 @@ CREATE TABLE `stanplat` (
   `nama_termi` text NOT NULL,
   `klasifikasi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stanplat`
+--
+
+INSERT INTO `stanplat` (`kode_sanitasi_sumsel`, `stanplat_id`, `nama_termi`, `klasifikasi`) VALUES
+(1, 13, 'terminal 13', ''),
+(2, 11, 'terminal 11', '');
 
 -- --------------------------------------------------------
 
@@ -10035,6 +10142,13 @@ CREATE TABLE `sungais` (
   `klasifikasi` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sungais`
+--
+
+INSERT INTO `sungais` (`kode_sungai`, `sungai_id`, `fnode_`, `tnode`, `lpoly_`, `length`, `sungai_`, `saluran`, `text_sungai`, `klasifikasi`) VALUES
+(1, 641, 'sungai1', '', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -10048,6 +10162,13 @@ CREATE TABLE `sungai_polys` (
   `namasungai` text NOT NULL,
   `sumber` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sungai_polys`
+--
+
+INSERT INTO `sungai_polys` (`kode_sungai_poly`, `sungai_poly_id`, `cbase`, `namasungai`, `sumber`) VALUES
+(1, 41, 'poly', 'sungai hilir', '');
 
 -- --------------------------------------------------------
 
@@ -10083,6 +10204,14 @@ CREATE TABLE `tol_ln_2017_sumatera_selatan_pubtr_geo` (
   `status_tol` text NOT NULL,
   `pemilik` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tol_ln_2017_sumatera_selatan_pubtr_geo`
+--
+
+INSERT INTO `tol_ln_2017_sumatera_selatan_pubtr_geo` (`kode_stln`, `tol_ln_2017_sumatera_selatan_pubtr_geo_id`, `jalanrencana`, `ruas`, `status_tol`, `pemilik`) VALUES
+(1, 0, 'tol 1', '10km', '', ''),
+(2, 4, 'rencana 1', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -85640,7 +85769,7 @@ ALTER TABLE `aauth_groups`
 -- AUTO_INCREMENT for table `aauth_login_attempts`
 --
 ALTER TABLE `aauth_login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `aauth_perms`
@@ -85676,7 +85805,7 @@ ALTER TABLE `aauth_user_variables`
 -- AUTO_INCREMENT for table `air_bersih`
 --
 ALTER TABLE `air_bersih`
-  MODIFY `kode_air_bersih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode_air_bersih` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `assets`
@@ -85688,7 +85817,7 @@ ALTER TABLE `assets`
 -- AUTO_INCREMENT for table `bendungans`
 --
 ALTER TABLE `bendungans`
-  MODIFY `kode_benduangan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_benduangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `blog`
@@ -85874,7 +86003,7 @@ ALTER TABLE `historis_air_bersih`
 -- AUTO_INCREMENT for table `historis_bendungans`
 --
 ALTER TABLE `historis_bendungans`
-  MODIFY `kode_historis_bendungan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_bendungan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `historis_jalan`
@@ -85886,37 +86015,37 @@ ALTER TABLE `historis_jalan`
 -- AUTO_INCREMENT for table `historis_jembatan_pt_250k`
 --
 ALTER TABLE `historis_jembatan_pt_250k`
-  MODIFY `kode_historis_jembatan_pt_250k` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_jembatan_pt_250k` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `historis_sanitasi_sumsel`
 --
 ALTER TABLE `historis_sanitasi_sumsel`
-  MODIFY `kode_historis_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `historis_stanplat`
 --
 ALTER TABLE `historis_stanplat`
-  MODIFY `kode_historis_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `historis_sungais`
 --
 ALTER TABLE `historis_sungais`
-  MODIFY `kode_historis_sungai` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_sungai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `historis_sungai_polys`
 --
 ALTER TABLE `historis_sungai_polys`
-  MODIFY `kode_historis_sungai_polys` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_sungai_polys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `historis_tol_ln_2017_sumatera_selatan_pubtr_geo`
 --
 ALTER TABLE `historis_tol_ln_2017_sumatera_selatan_pubtr_geo`
-  MODIFY `kode_historis_tol_ln_2017_sumatera_selatan_pubtr_geo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_historis_tol_ln_2017_sumatera_selatan_pubtr_geo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jalan`
@@ -85928,7 +86057,7 @@ ALTER TABLE `jalan`
 -- AUTO_INCREMENT for table `jembatan_pt_250k`
 --
 ALTER TABLE `jembatan_pt_250k`
-  MODIFY `kode_jpt` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_jpt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `jenis_plots`
@@ -86006,25 +86135,25 @@ ALTER TABLE `rest_input_type`
 -- AUTO_INCREMENT for table `sanitasi_sumsels`
 --
 ALTER TABLE `sanitasi_sumsels`
-  MODIFY `kode_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `stanplat`
 --
 ALTER TABLE `stanplat`
-  MODIFY `kode_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_sanitasi_sumsel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sungais`
 --
 ALTER TABLE `sungais`
-  MODIFY `kode_sungai` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_sungai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sungai_polys`
 --
 ALTER TABLE `sungai_polys`
-  MODIFY `kode_sungai_poly` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kode_sungai_poly` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tipe_gallerys`

@@ -159,7 +159,7 @@
 
 
 
-  <div class="col-md-12">
+  <div class="col-md-12" style="margin-top: -100px">
     <div class="col-md-2">
       <div class="row">
 
@@ -348,6 +348,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+
 <?php foreach($jalan->result_array() as $i) : ?>
   <div id="myModal<?= $i['jalan_id']; ?>" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -449,3 +450,844 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84
 
 
 <?php endforeach; ?>
+
+
+
+
+<?php foreach($air_bersih->result_array() as $i) : ?>
+  <div id="myModal<?= $i['air_bersih_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Air Bersih</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['air_bersih_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['air_bersih_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['air_bersih_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['air_bersih_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['air_bersih_id']; ?></td>
+              </tr>
+              <tr>
+                <th>kabupaten_kota</th>
+                <td><?= $i['kabupaten_kota'];?></td>
+              </tr>
+              <tr>
+                <th>kecamatan</th>
+                <td><?= $i['kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>kode_wilayah</th>
+                <td><?= $i['kode_wilayah'];?></td>
+              </tr>
+              <tr>
+                <th>kode_kecamatan</th>
+                <td><?= $i['kode_kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>text_kecamatan</th>
+                <td><?= $i['text_kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>luas</th>
+                <td><?= $i['luas'];?></td>
+              </tr>
+              <tr>
+                <th>air_bers_1</th>
+                <td><?= $i['air_bers_1'];?></td>
+              </tr>
+            </table> 
+          </div>
+          <div id="menu1<?= $i['air_bersih_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['air_bersih_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_air_bersih($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['air_bersih_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+
+<?php foreach($tol->result_array() as $i) : ?>
+  <div id="myModal<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Jalan TOL</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?></td>
+              </tr>
+              <tr>
+                <th>jalanrencana</th>
+                <td><?= $i['jalanrencana'];?></td>
+              </tr>
+              <tr>
+                <th>ruas</th>
+                <td><?= $i['ruas'];?></td>
+              </tr>
+              <tr>
+                <th>status_tol</th>
+                <td><?= $i['status_tol'];?></td>
+              </tr>
+              <tr>
+                <th>pemilik</th>
+                <td><?= $i['pemilik'];?></td>
+              </tr>
+
+            </table> 
+          </div>
+          <div id="menu1<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['tol_ln_2017_sumatera_selatan_pubtr_geo_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_tol($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['tol_ln_2017_sumatera_selatan_pubtr_geo_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+<?php foreach($bendung->result_array() as $i) : ?>
+  <div id="myModal<?= $i['bendungan_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Bendungan</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['bendungan_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['bendungan_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['bendungan_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['bendungan_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['bendungan_id']; ?></td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td><?= $i['nama'];?></td>
+              </tr>
+              
+            </table> 
+          </div>
+          <div id="menu1<?= $i['bendungan_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['bendungan_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_bendung($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['bendungan_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+<?php foreach($jembatan->result_array() as $i) : ?>
+  <div id="myModal<?= $i['jembatan_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Jembatan</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['jembatan_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['jembatan_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['jembatan_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['jembatan_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['jembatan_id']; ?></td>
+              </tr>
+              <tr>
+                <th>field1</th>
+                <td><?= $i['field1-field18'];?></td>
+              </tr>
+              <tr>
+                <th>filed2</th>
+                <td><?= $i['filed2'];?></td>
+              </tr>
+              <tr>
+                <th>filed3</th>
+                <td><?= $i['filed3'];?></td>
+              </tr>
+              <tr>
+                <th>filed4</th>
+                <td><?= $i['filed4'];?></td>
+              </tr>
+              <tr>
+                <th>filed5</th>
+                <td><?= $i['filed5'];?></td>
+              </tr>
+              <tr>
+                <th>filed6</th>
+                <td><?= $i['filed6'];?></td>
+              </tr>
+              <tr>
+                <th>filed7</th>
+                <td><?= $i['filed7'];?></td>
+              </tr>
+              <tr>
+                <th>filed8</th>
+                <td><?= $i['filed8'];?></td>
+              </tr>
+              <tr>
+                <th>filed9</th>
+                <td><?= $i['filed9'];?></td>
+              </tr>
+              <tr>
+                <th>filed10</th>
+                <td><?= $i['filed10'];?></td>
+              </tr>
+              <tr>
+                <th>filed11</th>
+                <td><?= $i['filed11'];?></td>
+              </tr>
+              <tr>
+                <th>filed12</th>
+                <td><?= $i['filed12'];?></td>
+              </tr>
+              <tr>
+                <th>filed13</th>
+                <td><?= $i['filed13'];?></td>
+              </tr>
+              <tr>
+                <th>filed14</th>
+                <td><?= $i['filed14'];?></td>
+              </tr>
+              <tr>
+                <th>filed15</th>
+                <td><?= $i['filed15'];?></td>
+              </tr>
+              <tr>
+                <th>filed16</th>
+                <td><?= $i['filed16'];?></td>
+              </tr>
+              <tr>
+                <th>filed17</th>
+                <td><?= $i['filed17'];?></td>
+              </tr>
+              <tr>
+                <th>filed18</th>
+                <td><?= $i['filed18'];?></td>
+              </tr>
+            </table> 
+          </div>
+          <div id="menu1<?= $i['jembatan_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['jembatan_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_jembatan($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['jembatan_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+
+
+<?php foreach($sanitasi->result_array() as $i) : ?>
+  <div id="myModal<?= $i['air_bersih_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sanitasi</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['air_bersih_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['air_bersih_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['air_bersih_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['air_bersih_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['air_bersih_id']; ?></td>
+              </tr>
+              <tr>
+                <th>kabupaten_kota</th>
+                <td><?= $i['kabupaten_kota'];?></td>
+              </tr>
+              <tr>
+                <th>kecamatan</th>
+                <td><?= $i['kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>kode_wilayah</th>
+                <td><?= $i['kode_wilayah'];?></td>
+              </tr>
+              <tr>
+                <th>kode_kecamatan</th>
+                <td><?= $i['kode_kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>text_kecamatan</th>
+                <td><?= $i['text_kecamatan'];?></td>
+              </tr>
+              <tr>
+                <th>luas</th>
+                <td><?= $i['luas'];?></td>
+              </tr>
+              <tr>
+                <th>sanitasi</th>
+                <td><?= $i['sanitasi'];?></td>
+              </tr>
+              <tr>
+                <th>air_bersih</th>
+                <td><?= $i['air_bersih'];?></td>
+              </tr>
+              <tr>
+                <th>kk_mbr</th>
+                <td><?= $i['kk_mbr'];?></td>
+              </tr>
+              <tr>
+                <th>kk_nonmbr</th>
+                <td><?= $i['kk_nonmbr'];?></td>
+              </tr>
+              <tr>
+                <th>perkebunan</th>
+                <td><?= $i['perkebunan'];?></td>
+              </tr>
+            </table> 
+          </div>
+          <div id="menu1<?= $i['air_bersih_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['air_bersih_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_sanitasi($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['air_bersih_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+<?php foreach($stanplat->result_array() as $i) : ?>
+  <div id="myModal<?= $i['stanplat_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Stanplat</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['stanplat_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['stanplat_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['stanplat_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['stanplat_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['stanplat_id']; ?></td>
+              </tr>
+              <tr>
+                <th>nama_terminal</th>
+                <td><?= $i['nama_termi'];?></td>
+              </tr>
+              <tr>
+                <th>klasifikasi</th>
+                <td><?= $i['klasifikasi'];?></td>
+              </tr>
+            </table> 
+          </div>
+          <div id="menu1<?= $i['stanplat_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['stanplat_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_stanplat($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['stanplat_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+<?php foreach($sungai->result_array() as $i) : ?>
+  <div id="myModal<?= $i['sungai_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sungai</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['sungai_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['sungai_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['sungai_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['sungai_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['sungai_id']; ?></td>
+              </tr>
+              <tr>
+                <th>fnode_</th>
+                <td><?= $i['fnode_'];?></td>
+              </tr>
+              <tr>
+                <th>tnode</th>
+                <td><?= $i['tnode'];?></td>
+              </tr>
+              <tr>
+                <th>lpoly_</th>
+                <td><?= $i['lpoly_'];?></td>
+              </tr>
+              <tr>
+                <th>length</th>
+                <td><?= $i['length'];?></td>
+              </tr>
+              <tr>
+                <th>sungai_</th>
+                <td><?= $i['sungai_'];?></td>
+              </tr>
+              <tr>
+                <th>saluran</th>
+                <td><?= $i['saluran'];?></td>
+              </tr>
+              <tr>
+                <th>text_sungai</th>
+                <td><?= $i['text_sungai'];?></td>
+              </tr>
+              <tr>
+                <th>klasifikasi</th>
+                <td><?= $i['klasifikasi'];?></td>
+              </tr>
+            </table> 
+          </div>
+          <div id="menu1<?= $i['sungai_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['sungai_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_sungai($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['sungai_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+
+
+
+
+
+<?php foreach($sungaipol->result_array() as $i) : ?>
+  <div id="myModal<?= $i['sungai_poly_id']; ?>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sungai Pol</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills nav-fill nav-tabs">
+            <li class="active"><a data-toggle="pill" href="#home<?= $i['sungai_poly_id']; ?>">Data Umum</a></li>
+            <li><a data-toggle="pill" href="#menu1<?= $i['sungai_poly_id']; ?>">Historis Penanganan</a></li>
+            <li><a data-toggle="pill" href="#menu2<?= $i['sungai_poly_id']; ?>">Dokumentasi</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="home<?= $i['sungai_poly_id']; ?>" class="tab-pane fade in active">
+             <table class="table table-striped">
+              <tr>
+                <th>ID</th>
+                <td><?= $i['sungai_poly_id']; ?></td>
+              </tr>
+              <tr>
+                <th>cbase</th>
+                <td><?= $i['cbase'];?></td>
+              </tr>
+              <tr>
+                <th>Nama Sungai</th>
+                <td><?= $i['namasungai'];?></td>
+              </tr>
+              <tr>
+                <th>Sumber</th>
+                <td><?= $i['sumber'];?></td>
+              </tr>
+             
+            </table> 
+          </div>
+          <div id="menu1<?= $i['sungai_poly_id']; ?>" class="tab-pane fade">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tahun</th>
+                  <th>Volume Efektif</th>
+                  <th>Volume Penanganan</th>
+                  <th>Sumber Dana</th>
+                  <th>Ket</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kode=$i['sungai_poly_id'];
+                $ghistoris=$this->modelgeojson->get_data_historis_sungaipol($kode);
+                $no=0;
+                foreach ($ghistoris->result_array() as $j) :
+                  $no++;
+                  ?>
+                  <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $j['historis_tahun']; ?></td>
+                    <td><?= $j['historis_vefektif']; ?></td>
+                    <td><?= $j['historis_vpenanganan']; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
+                    <td><?= $j['historis_ket']; ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+
+          </div>
+          <div id="menu2<?= $i['sungai_poly_id']; ?>" class="tab-pane fade">
+            <h5 class="text-center">Belum ada dokumentasi</h5>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<?php endforeach; ?>
+
+

@@ -61,13 +61,13 @@ public function migrate($version = null)
 
     if ($version) {
         if ($this->migration->version($version) === FALSE) {
-         show_error($this->migration->error_string());
-     }   
- } 
- else {
+           show_error($this->migration->error_string());
+       }   
+   } 
+   else {
     if ($this->migration->latest() === FALSE) {
-     show_error($this->migration->error_string());
- }   
+       show_error($this->migration->error_string());
+   }   
 }
 
 }
@@ -78,6 +78,13 @@ public function peta(){
 
     $x['jalan']=$this->modelgeojson->get_data('jalan');
     $x['air_bersih']=$this->modelgeojson->get_data('air_bersih');
+    $x['jembatan']=$this->modelgeojson->get_data('jembatan_pt_250k');
+    $x['bendung']=$this->modelgeojson->get_data('bendungans');
+    $x['sanitasi']=$this->modelgeojson->get_data('sanitasi_sumsels');
+    $x['stanplat']=$this->modelgeojson->get_data('stanplat');
+    $x['sungai']=$this->modelgeojson->get_data('sungais');
+    $x['sungaipol']=$this->modelgeojson->get_data('sungai_polys');
+    $x['tol']=$this->modelgeojson->get_data('tol_ln_2017_sumatera_selatan_pubtr_geo');
     $x['map_link']=$this->modelgeojson->get_data('map_link');
     $this->load->view('frontend/map/map',$x);
 
