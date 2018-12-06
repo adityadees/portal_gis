@@ -1,11 +1,4 @@
 
-<!-- Fine Uploader Gallery CSS file
-    ====================================================================== -->
-<link href="<?= BASE_ASSET; ?>/fine-upload/fine-uploader-gallery.min.css" rel="stylesheet">
-<!-- Fine Uploader jQuery JS file
-    ====================================================================== -->
-<script src="<?= BASE_ASSET; ?>/fine-upload/jquery.fine-uploader.js"></script>
-<?php $this->load->view('core_template/fine_upload'); ?>
 <script src="<?= BASE_ASSET; ?>/js/jquery.hotkeys.js"></script>
 <script type="text/javascript">
     function domo(){
@@ -67,8 +60,17 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
+                            <label for="KODE_LA" class="col-sm-2 control-label">KODE LA 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="KODE_LA" id="KODE_LA" placeholder="KODE LA" value="<?= set_value('KODE_LA', $assets->KODE_LA); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
                             <label for="NAMA_ASSET" class="col-sm-2 control-label">NAMA ASSET 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="NAMA_ASSET" id="NAMA_ASSET" placeholder="NAMA ASSET" value="<?= set_value('NAMA_ASSET', $assets->NAMA_ASSET); ?>">
@@ -79,40 +81,29 @@
                                                  
                                                 <div class="form-group ">
                             <label for="PHOTO_ASSET" class="col-sm-2 control-label">PHOTO ASSET 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <div id="assets_PHOTO_ASSET_galery"></div>
-                                <input class="data_file data_file_uuid" name="assets_PHOTO_ASSET_uuid" id="assets_PHOTO_ASSET_uuid" type="hidden" value="<?= set_value('assets_PHOTO_ASSET_uuid'); ?>">
-                                <input class="data_file" name="assets_PHOTO_ASSET_name" id="assets_PHOTO_ASSET_name" type="hidden" value="<?= set_value('assets_PHOTO_ASSET_name', $assets->PHOTO_ASSET); ?>">
+                                <input type="text" class="form-control" name="PHOTO_ASSET" id="PHOTO_ASSET" placeholder="PHOTO ASSET" value="<?= set_value('PHOTO_ASSET', $assets->PHOTO_ASSET); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
                         </div>
-                                                  
+                                                 
                                                 <div class="form-group ">
                             <label for="KATEGORI" class="col-sm-2 control-label">KATEGORI 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="KATEGORI" id="KATEGORI" data-placeholder="Select KATEGORI" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('kategori_objek_pengamatans') as $row): ?>
-                                    <option <?=  $row->KODE_KOP ==  $assets->KATEGORI ? 'selected' : ''; ?> value="<?= $row->KODE_KOP ?>"><?= $row->NAMA_KOP; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="KATEGORI" id="KATEGORI" placeholder="KATEGORI" value="<?= set_value('KATEGORI', $assets->KATEGORI); ?>">
                                 <small class="info help-block">
-                                <b>Input KATEGORI</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
-
                                                  
                                                 <div class="form-group ">
                             <label for="KETERANGAN" class="col-sm-2 control-label">KETERANGAN 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <textarea id="KETERANGAN" name="KETERANGAN" rows="10" cols="80"> <?= set_value('KETERANGAN', $assets->KETERANGAN); ?></textarea>
+                                <input type="text" class="form-control" name="KETERANGAN" id="KETERANGAN" placeholder="KETERANGAN" value="<?= set_value('KETERANGAN', $assets->KETERANGAN); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -120,27 +111,21 @@
                                                  
                                                 <div class="form-group ">
                             <label for="DATE_CREATED" class="col-sm-2 control-label">DATE CREATED 
-                            <i class="required">*</i>
                             </label>
-                            <div class="col-sm-6">
-                            <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datetimepicker" name="DATE_CREATED"  placeholder="DATE CREATED" id="DATE_CREATED" value="<?= set_value('DATE_CREATED', $assets->DATE_CREATED); ?>">
-                            </div>
-                            <small class="info help-block">
-                            </small>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="DATE_CREATED" id="DATE_CREATED" placeholder="DATE CREATED" value="<?= set_value('DATE_CREATED', $assets->DATE_CREATED); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
                             <label for="DATE_UPDATED" class="col-sm-2 control-label">DATE UPDATED 
-                            <i class="required">*</i>
                             </label>
-                            <div class="col-sm-6">
-                            <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datetimepicker" name="DATE_UPDATED"  placeholder="DATE UPDATED" id="DATE_UPDATED" value="<?= set_value('DATE_UPDATED', $assets->DATE_UPDATED); ?>">
-                            </div>
-                            <small class="info help-block">
-                            </small>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="DATE_UPDATED" id="DATE_UPDATED" placeholder="DATE UPDATED" value="<?= set_value('DATE_UPDATED', $assets->DATE_UPDATED); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                 
@@ -170,14 +155,11 @@
     </div>
 </section>
 <!-- /.content -->
-<script src="<?= BASE_ASSET; ?>ckeditor/ckeditor.js"></script>
 <!-- Page script -->
 <script>
     $(document).ready(function(){
       
-      CKEDITOR.replace('KETERANGAN'); 
-      var KETERANGAN = CKEDITOR.instances.KETERANGAN;
-                   
+             
       $('#btn_cancel').click(function(){
         swal({
             title: "Are you sure?",
@@ -201,8 +183,7 @@
     
       $('.btn_save').click(function(){
         $('.message').fadeOut();
-        $('#KETERANGAN').val(KETERANGAN.getData());
-                    
+            
         var form_assets = $('#form_assets');
         var data_post = form_assets.serializeArray();
         var save_type = $(this).attr('data-stype');
@@ -244,60 +225,7 @@
         return false;
       }); /*end btn save*/
       
-                     var params = {};
-       params[csrf] = token;
-
-       $('#assets_PHOTO_ASSET_galery').fineUploader({
-          template: 'qq-template-gallery',
-          request: {
-              endpoint: BASE_URL + '/administrator/assets/upload_PHOTO_ASSET_file',
-              params : params
-          },
-          deleteFile: {
-              enabled: true, // defaults to false
-              endpoint: BASE_URL + '/administrator/assets/delete_PHOTO_ASSET_file'
-          },
-          thumbnails: {
-              placeholders: {
-                  waitingPath: BASE_URL + '/asset/fine-upload/placeholders/waiting-generic.png',
-                  notAvailablePath: BASE_URL + '/asset/fine-upload/placeholders/not_available-generic.png'
-              }
-          },
-           session : {
-             endpoint: BASE_URL + 'administrator/assets/get_PHOTO_ASSET_file/<?= $assets->KODE_LA; ?>',
-             refreshOnRequest:true
-           },
-          multiple : false,
-          validation: {
-              allowedExtensions: ["*"],
-              sizeLimit : 0,
-                        },
-          showMessage: function(msg) {
-              toastr['error'](msg);
-          },
-          callbacks: {
-              onComplete : function(id, name, xhr) {
-                if (xhr.success) {
-                   var uuid = $('#assets_PHOTO_ASSET_galery').fineUploader('getUuid', id);
-                   $('#assets_PHOTO_ASSET_uuid').val(uuid);
-                   $('#assets_PHOTO_ASSET_name').val(xhr.uploadName);
-                } else {
-                   toastr['error'](xhr.error);
-                }
-              },
-              onSubmit : function(id, name) {
-                  var uuid = $('#assets_PHOTO_ASSET_uuid').val();
-                  $.get(BASE_URL + '/administrator/assets/delete_PHOTO_ASSET_file/' + uuid);
-              },
-              onDeleteComplete : function(id, xhr, isError) {
-                if (isError == false) {
-                  $('#assets_PHOTO_ASSET_uuid').val('');
-                  $('#assets_PHOTO_ASSET_name').val('');
-                }
-              }
-          }
-      }); /*end PHOTO_ASSET galey*/
-              
+       
        
            
     

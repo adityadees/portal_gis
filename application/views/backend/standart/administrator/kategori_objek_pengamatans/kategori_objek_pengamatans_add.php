@@ -1,11 +1,4 @@
 
-<!-- Fine Uploader Gallery CSS file
-    ====================================================================== -->
-<link href="<?= BASE_ASSET; ?>/fine-upload/fine-uploader-gallery.min.css" rel="stylesheet">
-<!-- Fine Uploader jQuery JS file
-    ====================================================================== -->
-<script src="<?= BASE_ASSET; ?>/fine-upload/jquery.fine-uploader.js"></script>
-<?php $this->load->view('core_template/fine_upload'); ?>
 <script src="<?= BASE_ASSET; ?>/js/jquery.hotkeys.js"></script>
 <script type="text/javascript">
     function domo(){
@@ -68,8 +61,17 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
+                            <label for="KODE_KOP" class="col-sm-2 control-label">KODE KOP 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="KODE_KOP" id="KODE_KOP" placeholder="KODE KOP" value="<?= set_value('KODE_KOP'); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
                             <label for="NAMA_KOP" class="col-sm-2 control-label">NAMA KOP 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="NAMA_KOP" id="NAMA_KOP" placeholder="NAMA KOP" value="<?= set_value('NAMA_KOP'); ?>">
@@ -80,12 +82,9 @@
                                                  
                                                 <div class="form-group ">
                             <label for="NAMA_ICON_FILE" class="col-sm-2 control-label">NAMA ICON FILE 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <div id="kategori_objek_pengamatans_NAMA_ICON_FILE_galery"></div>
-                                <input class="data_file" name="kategori_objek_pengamatans_NAMA_ICON_FILE_uuid" id="kategori_objek_pengamatans_NAMA_ICON_FILE_uuid" type="hidden" value="<?= set_value('kategori_objek_pengamatans_NAMA_ICON_FILE_uuid'); ?>">
-                                <input class="data_file" name="kategori_objek_pengamatans_NAMA_ICON_FILE_name" id="kategori_objek_pengamatans_NAMA_ICON_FILE_name" type="hidden" value="<?= set_value('kategori_objek_pengamatans_NAMA_ICON_FILE_name'); ?>">
+                                <input type="text" class="form-control" name="NAMA_ICON_FILE" id="NAMA_ICON_FILE" placeholder="NAMA ICON FILE" value="<?= set_value('NAMA_ICON_FILE'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -161,7 +160,6 @@
         })
         .done(function(res) {
           if(res.success) {
-            var id_NAMA_ICON_FILE = $('#kategori_objek_pengamatans_NAMA_ICON_FILE_galery').find('li').attr('qq-file-id');
             
             if (save_type == 'back') {
               window.location.href = res.redirect;
@@ -171,9 +169,6 @@
             $('.message').printMessage({message : res.message});
             $('.message').fadeIn();
             resetForm();
-            if (typeof id_NAMA_ICON_FILE !== 'undefined') {
-                    $('#kategori_objek_pengamatans_NAMA_ICON_FILE_galery').fineUploader('deleteFile', id_NAMA_ICON_FILE);
-                }
             $('.chosen option').prop('selected', false).trigger('chosen:updated');
                 
           } else {
@@ -192,56 +187,7 @@
         return false;
       }); /*end btn save*/
       
-              var params = {};
-       params[csrf] = token;
-
-       $('#kategori_objek_pengamatans_NAMA_ICON_FILE_galery').fineUploader({
-          template: 'qq-template-gallery',
-          request: {
-              endpoint: BASE_URL + '/administrator/kategori_objek_pengamatans/upload_NAMA_ICON_FILE_file',
-              params : params
-          },
-          deleteFile: {
-              enabled: true, 
-              endpoint: BASE_URL + '/administrator/kategori_objek_pengamatans/delete_NAMA_ICON_FILE_file',
-          },
-          thumbnails: {
-              placeholders: {
-                  waitingPath: BASE_URL + '/asset/fine-upload/placeholders/waiting-generic.png',
-                  notAvailablePath: BASE_URL + '/asset/fine-upload/placeholders/not_available-generic.png'
-              }
-          },
-          multiple : false,
-          validation: {
-              allowedExtensions: ["*"],
-              sizeLimit : 0,
-                        },
-          showMessage: function(msg) {
-              toastr['error'](msg);
-          },
-          callbacks: {
-              onComplete : function(id, name, xhr) {
-                if (xhr.success) {
-                   var uuid = $('#kategori_objek_pengamatans_NAMA_ICON_FILE_galery').fineUploader('getUuid', id);
-                   $('#kategori_objek_pengamatans_NAMA_ICON_FILE_uuid').val(uuid);
-                   $('#kategori_objek_pengamatans_NAMA_ICON_FILE_name').val(xhr.uploadName);
-                } else {
-                   toastr['error'](xhr.error);
-                }
-              },
-              onSubmit : function(id, name) {
-                  var uuid = $('#kategori_objek_pengamatans_NAMA_ICON_FILE_uuid').val();
-                  $.get(BASE_URL + '/administrator/kategori_objek_pengamatans/delete_NAMA_ICON_FILE_file/' + uuid);
-              },
-              onDeleteComplete : function(id, xhr, isError) {
-                if (isError == false) {
-                  $('#kategori_objek_pengamatans_NAMA_ICON_FILE_uuid').val('');
-                  $('#kategori_objek_pengamatans_NAMA_ICON_FILE_name').val('');
-                }
-              }
-          }
-      }); /*end NAMA_ICON_FILE galery*/
-              
+       
  
        
     

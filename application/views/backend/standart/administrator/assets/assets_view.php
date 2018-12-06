@@ -73,28 +73,18 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label"> PHOTO ASSET </label>
+                        <label for="content" class="col-sm-2 control-label">PHOTO ASSET </label>
+
                         <div class="col-sm-8">
-                             <?php if (is_image($assets->PHOTO_ASSET)): ?>
-                              <a class="fancybox" rel="group" href="<?= BASE_URL . 'uploads/assets/' . $assets->PHOTO_ASSET; ?>">
-                                <img src="<?= BASE_URL . 'uploads/assets/' . $assets->PHOTO_ASSET; ?>" class="image-responsive" alt="image assets" title="PHOTO_ASSET assets" width="40px">
-                              </a>
-                              <?php else: ?>
-                              <label>
-                                <a href="<?= BASE_URL . 'administrator/file/download/assets/' . $assets->PHOTO_ASSET; ?>">
-                                 <img src="<?= get_icon_file($assets->PHOTO_ASSET); ?>" class="image-responsive" alt="image assets" title="PHOTO_ASSET <?= $assets->PHOTO_ASSET; ?>" width="40px"> 
-                               <?= $assets->PHOTO_ASSET ?>
-                               </a>
-                               </label>
-                              <?php endif; ?>
+                           <?= _ent($assets->PHOTO_ASSET); ?>
                         </div>
                     </div>
-                                       
+                                         
                     <div class="form-group ">
                         <label for="content" class="col-sm-2 control-label">KATEGORI </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($assets->NAMA_KOP); ?>
+                           <?= _ent($assets->KATEGORI); ?>
                         </div>
                     </div>
                                          

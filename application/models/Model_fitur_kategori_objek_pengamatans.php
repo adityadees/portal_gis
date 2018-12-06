@@ -5,7 +5,7 @@ class Model_fitur_kategori_objek_pengamatans extends MY_Model {
 
 	private $primary_key 	= 'KODE_FKOP';
 	private $table_name 	= 'fitur_kategori_objek_pengamatans';
-	private $field_search 	= ['KATEGORI_OBJEK_PENGAMATAN', 'JENIS_PLOT'];
+	private $field_search 	= ['KODE_FKOP', 'KATEGORI_OBJEK_PENGAMATAN', 'JENIS_PLOT'];
 
 	public function __construct()
 	{
@@ -85,8 +85,6 @@ class Model_fitur_kategori_objek_pengamatans extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('kategori_objek_pengamatans', 'kategori_objek_pengamatans.KODE_KOP = fitur_kategori_objek_pengamatans.KATEGORI_OBJEK_PENGAMATAN', 'LEFT');
-        $this->db->join('jenis_plots', 'jenis_plots.KODE_JP = fitur_kategori_objek_pengamatans.JENIS_PLOT', 'LEFT');
         
         return $this;
     }

@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE TG</th>
                            <th>NAMA TG</th>
                            <th>Action</th>
                         </tr>
@@ -91,6 +92,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $tipe_gallerys->KODE_TG; ?>">
                            </td>
                            
+                           <td><?= _ent($tipe_gallerys->KODE_TG); ?></td> 
                            <td><?= _ent($tipe_gallerys->NAMA_TG); ?></td> 
                            <td width="200">
                               <?php is_allowed('tipe_gallerys_view', function() use ($tipe_gallerys){?>
@@ -135,7 +137,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'NAMA_TG' ? 'selected' :''; ?> value="NAMA_TG">NAMA TG</option>
+                            <option <?= $this->input->get('f') == 'KODE_TG' ? 'selected' :''; ?> value="KODE_TG">KODE TG</option>
+                           <option <?= $this->input->get('f') == 'NAMA_TG' ? 'selected' :''; ?> value="NAMA_TG">NAMA TG</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

@@ -5,7 +5,7 @@ class Model_gallery_assets extends MY_Model {
 
 	private $primary_key 	= 'KODE_GA';
 	private $table_name 	= 'gallery_assets';
-	private $field_search 	= ['TIPE', 'NAMA_FILE', 'DATE_UPLOAD', 'ASSET'];
+	private $field_search 	= ['KODE_GA', 'TIPE', 'NAMA_FILE', 'DATE_UPLOAD', 'ASSET'];
 
 	public function __construct()
 	{
@@ -85,8 +85,6 @@ class Model_gallery_assets extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('tipe_gallerys', 'tipe_gallerys.KODE_TG = gallery_assets.TIPE', 'LEFT');
-        $this->db->join('assets', 'assets.KODE_LA = gallery_assets.ASSET', 'LEFT');
         
         return $this;
     }

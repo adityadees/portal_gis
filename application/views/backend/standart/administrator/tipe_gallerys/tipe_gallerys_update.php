@@ -60,8 +60,17 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
+                            <label for="KODE_TG" class="col-sm-2 control-label">KODE TG 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="KODE_TG" id="KODE_TG" placeholder="KODE TG" value="<?= set_value('KODE_TG', $tipe_gallerys->KODE_TG); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
                             <label for="NAMA_TG" class="col-sm-2 control-label">NAMA TG 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="NAMA_TG" id="NAMA_TG" placeholder="NAMA TG" value="<?= set_value('NAMA_TG', $tipe_gallerys->NAMA_TG); ?>">

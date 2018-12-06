@@ -5,7 +5,7 @@ class Model_assets extends MY_Model {
 
 	private $primary_key 	= 'KODE_LA';
 	private $table_name 	= 'assets';
-	private $field_search 	= ['NAMA_ASSET', 'PHOTO_ASSET', 'KATEGORI', 'KETERANGAN', 'DATE_CREATED', 'DATE_UPDATED'];
+	private $field_search 	= ['KODE_LA', 'NAMA_ASSET', 'PHOTO_ASSET', 'KATEGORI', 'KETERANGAN', 'DATE_CREATED', 'DATE_UPDATED'];
 
 	public function __construct()
 	{
@@ -85,7 +85,6 @@ class Model_assets extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('kategori_objek_pengamatans', 'kategori_objek_pengamatans.KODE_KOP = assets.KATEGORI', 'LEFT');
         
         return $this;
     }

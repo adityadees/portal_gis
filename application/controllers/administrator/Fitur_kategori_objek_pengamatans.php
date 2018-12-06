@@ -74,13 +74,12 @@ class Fitur_kategori_objek_pengamatans extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('KATEGORI_OBJEK_PENGAMATAN', 'KATEGORI OBJEK PENGAMATAN', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('JENIS_PLOT', 'JENIS PLOT', 'trim|required|max_length[11]');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_FKOP' => $this->input->post('KODE_FKOP'),
 				'KATEGORI_OBJEK_PENGAMATAN' => $this->input->post('KATEGORI_OBJEK_PENGAMATAN'),
 				'JENIS_PLOT' => $this->input->post('JENIS_PLOT'),
 			];
@@ -154,12 +153,11 @@ class Fitur_kategori_objek_pengamatans extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('KATEGORI_OBJEK_PENGAMATAN', 'KATEGORI OBJEK PENGAMATAN', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('JENIS_PLOT', 'JENIS PLOT', 'trim|required|max_length[11]');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_FKOP' => $this->input->post('KODE_FKOP'),
 				'KATEGORI_OBJEK_PENGAMATAN' => $this->input->post('KATEGORI_OBJEK_PENGAMATAN'),
 				'JENIS_PLOT' => $this->input->post('JENIS_PLOT'),
 			];

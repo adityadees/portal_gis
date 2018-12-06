@@ -89,7 +89,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Volume Penanganan </label>
+                        <label for="content" class="col-sm-2 control-label">Historis Vpenanganan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_air_bersih->historis_vpenanganan); ?>
@@ -97,7 +97,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Sumber Dana </label>
+                        <label for="content" class="col-sm-2 control-label">Historis Sdana </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_air_bersih->historis_sdana); ?>
@@ -109,6 +109,14 @@ jQuery(document).ready(domo);
 
                         <div class="col-sm-8">
                            <?= _ent($historis_air_bersih->historis_ket); ?>
+                        </div>
+                    </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Historis Namakeg </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($historis_air_bersih->historis_namakeg); ?>
                         </div>
                     </div>
                                         

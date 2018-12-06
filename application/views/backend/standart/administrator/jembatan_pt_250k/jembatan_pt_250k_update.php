@@ -71,183 +71,200 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="field1-field18" class="col-sm-2 control-label">Field1-field18 
+                            <label for="field1" class="col-sm-2 control-label">Field1 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <textarea id="field1-field18" name="field1-field18" rows="10" cols="80"> <?= set_value('field1-field18', $jembatan_pt_250k->field1-field18); ?></textarea>
+                                <input type="text" class="form-control" name="field1" id="field1" placeholder="Field1" value="<?= set_value('field1', $jembatan_pt_250k->field1); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field1</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed2" class="col-sm-2 control-label">Filed2 
+                            <label for="field2" class="col-sm-2 control-label">Field2 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed2" id="filed2" placeholder="Filed2" value="<?= set_value('filed2', $jembatan_pt_250k->filed2); ?>">
+                                <input type="text" class="form-control" name="field2" id="field2" placeholder="Field2" value="<?= set_value('field2', $jembatan_pt_250k->field2); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field2</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed3" class="col-sm-2 control-label">Filed3 
+                            <label for="field3" class="col-sm-2 control-label">Field3 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed3" id="filed3" placeholder="Filed3" value="<?= set_value('filed3', $jembatan_pt_250k->filed3); ?>">
+                                <input type="text" class="form-control" name="field3" id="field3" placeholder="Field3" value="<?= set_value('field3', $jembatan_pt_250k->field3); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field3</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed4" class="col-sm-2 control-label">Filed4 
+                            <label for="field4" class="col-sm-2 control-label">Field4 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed4" id="filed4" placeholder="Filed4" value="<?= set_value('filed4', $jembatan_pt_250k->filed4); ?>">
+                                <input type="text" class="form-control" name="field4" id="field4" placeholder="Field4" value="<?= set_value('field4', $jembatan_pt_250k->field4); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field4</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed5" class="col-sm-2 control-label">Filed5 
+                            <label for="field5" class="col-sm-2 control-label">Field5 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed5" id="filed5" placeholder="Filed5" value="<?= set_value('filed5', $jembatan_pt_250k->filed5); ?>">
+                                <input type="text" class="form-control" name="field5" id="field5" placeholder="Field5" value="<?= set_value('field5', $jembatan_pt_250k->field5); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field5</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed6" class="col-sm-2 control-label">Filed6 
+                            <label for="field6" class="col-sm-2 control-label">Field6 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed6" id="filed6" placeholder="Filed6" value="<?= set_value('filed6', $jembatan_pt_250k->filed6); ?>">
+                                <input type="text" class="form-control" name="field6" id="field6" placeholder="Field6" value="<?= set_value('field6', $jembatan_pt_250k->field6); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field6</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed7" class="col-sm-2 control-label">Filed7 
+                            <label for="field7" class="col-sm-2 control-label">Field7 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed7" id="filed7" placeholder="Filed7" value="<?= set_value('filed7', $jembatan_pt_250k->filed7); ?>">
+                                <input type="text" class="form-control" name="field7" id="field7" placeholder="Field7" value="<?= set_value('field7', $jembatan_pt_250k->field7); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field7</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed8" class="col-sm-2 control-label">Filed8 
+                            <label for="field8" class="col-sm-2 control-label">Field8 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed8" id="filed8" placeholder="Filed8" value="<?= set_value('filed8', $jembatan_pt_250k->filed8); ?>">
+                                <input type="text" class="form-control" name="field8" id="field8" placeholder="Field8" value="<?= set_value('field8', $jembatan_pt_250k->field8); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field8</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed9" class="col-sm-2 control-label">Filed9 
+                            <label for="field9" class="col-sm-2 control-label">Field9 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed9" id="filed9" placeholder="Filed9" value="<?= set_value('filed9', $jembatan_pt_250k->filed9); ?>">
+                                <input type="text" class="form-control" name="field9" id="field9" placeholder="Field9" value="<?= set_value('field9', $jembatan_pt_250k->field9); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field9</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed10" class="col-sm-2 control-label">Filed10 
+                            <label for="field10" class="col-sm-2 control-label">Field10 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed10" id="filed10" placeholder="Filed10" value="<?= set_value('filed10', $jembatan_pt_250k->filed10); ?>">
+                                <input type="text" class="form-control" name="field10" id="field10" placeholder="Field10" value="<?= set_value('field10', $jembatan_pt_250k->field10); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field10</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed11" class="col-sm-2 control-label">Filed11 
+                            <label for="field11" class="col-sm-2 control-label">Field11 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed11" id="filed11" placeholder="Filed11" value="<?= set_value('filed11', $jembatan_pt_250k->filed11); ?>">
+                                <input type="text" class="form-control" name="field11" id="field11" placeholder="Field11" value="<?= set_value('field11', $jembatan_pt_250k->field11); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field11</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed12" class="col-sm-2 control-label">Filed12 
+                            <label for="field12" class="col-sm-2 control-label">Field12 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed12" id="filed12" placeholder="Filed12" value="<?= set_value('filed12', $jembatan_pt_250k->filed12); ?>">
+                                <input type="text" class="form-control" name="field12" id="field12" placeholder="Field12" value="<?= set_value('field12', $jembatan_pt_250k->field12); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field12</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed13" class="col-sm-2 control-label">Filed13 
+                            <label for="field13" class="col-sm-2 control-label">Field13 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed13" id="filed13" placeholder="Filed13" value="<?= set_value('filed13', $jembatan_pt_250k->filed13); ?>">
+                                <input type="text" class="form-control" name="field13" id="field13" placeholder="Field13" value="<?= set_value('field13', $jembatan_pt_250k->field13); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field13</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed14" class="col-sm-2 control-label">Filed14 
+                            <label for="field14" class="col-sm-2 control-label">Field14 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed14" id="filed14" placeholder="Filed14" value="<?= set_value('filed14', $jembatan_pt_250k->filed14); ?>">
+                                <input type="text" class="form-control" name="field14" id="field14" placeholder="Field14" value="<?= set_value('field14', $jembatan_pt_250k->field14); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field14</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed15" class="col-sm-2 control-label">Filed15 
+                            <label for="field15" class="col-sm-2 control-label">Field15 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed15" id="filed15" placeholder="Filed15" value="<?= set_value('filed15', $jembatan_pt_250k->filed15); ?>">
+                                <input type="text" class="form-control" name="field15" id="field15" placeholder="Field15" value="<?= set_value('field15', $jembatan_pt_250k->field15); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field15</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed16" class="col-sm-2 control-label">Filed16 
+                            <label for="field16" class="col-sm-2 control-label">Field16 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed16" id="filed16" placeholder="Filed16" value="<?= set_value('filed16', $jembatan_pt_250k->filed16); ?>">
+                                <input type="text" class="form-control" name="field16" id="field16" placeholder="Field16" value="<?= set_value('field16', $jembatan_pt_250k->field16); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field16</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed17" class="col-sm-2 control-label">Filed17 
+                            <label for="field17" class="col-sm-2 control-label">Field17 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed17" id="filed17" placeholder="Filed17" value="<?= set_value('filed17', $jembatan_pt_250k->filed17); ?>">
+                                <input type="text" class="form-control" name="field17" id="field17" placeholder="Field17" value="<?= set_value('field17', $jembatan_pt_250k->field17); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field17</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="filed18" class="col-sm-2 control-label">Filed18 
+                            <label for="field18" class="col-sm-2 control-label">Field18 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="filed18" id="filed18" placeholder="Filed18" value="<?= set_value('filed18', $jembatan_pt_250k->filed18); ?>">
+                                <input type="text" class="form-control" name="field18" id="field18" placeholder="Field18" value="<?= set_value('field18', $jembatan_pt_250k->field18); ?>">
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Field18</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                 
@@ -277,14 +294,11 @@
     </div>
 </section>
 <!-- /.content -->
-<script src="<?= BASE_ASSET; ?>ckeditor/ckeditor.js"></script>
 <!-- Page script -->
 <script>
     $(document).ready(function(){
       
-      CKEDITOR.replace('field1-field18'); 
-      var field1-field18 = CKEDITOR.instances.field1-field18;
-                   
+             
       $('#btn_cancel').click(function(){
         swal({
             title: "Are you sure?",
@@ -308,8 +322,7 @@
     
       $('.btn_save').click(function(){
         $('.message').fadeOut();
-        $('#field1-field18').val(field1-field18.getData());
-                    
+            
         var form_jembatan_pt_250k = $('#form_jembatan_pt_250k');
         var data_post = form_jembatan_pt_250k.serializeArray();
         var save_type = $(this).attr('data-stype');

@@ -81,24 +81,24 @@ jQuery(document).ready(domo);
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
                            <th>Jembatan Id</th>
-                           <th>Field1-field18</th>
-                           <th>Filed2</th>
-                           <th>Filed3</th>
-                           <th>Filed4</th>
-                           <th>Filed5</th>
-                           <th>Filed6</th>
-                           <th>Filed7</th>
-                           <th>Filed8</th>
-                           <th>Filed9</th>
-                           <th>Filed10</th>
-                           <th>Filed11</th>
-                           <th>Filed12</th>
-                           <th>Filed13</th>
-                           <th>Filed14</th>
-                           <th>Filed15</th>
-                           <th>Filed16</th>
-                           <th>Filed17</th>
-                           <th>Filed18</th>
+                           <th>Field1</th>
+                           <th>Field2</th>
+                           <th>Field3</th>
+                           <th>Field4</th>
+                           <th>Field5</th>
+                           <th>Field6</th>
+                           <th>Field7</th>
+                           <th>Field8</th>
+                           <th>Field9</th>
+                           <th>Field10</th>
+                           <th>Field11</th>
+                           <th>Field12</th>
+                           <th>Field13</th>
+                           <th>Field14</th>
+                           <th>Field15</th>
+                           <th>Field16</th>
+                           <th>Field17</th>
+                           <th>Field18</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -110,24 +110,24 @@ jQuery(document).ready(domo);
                            </td>
                            
                            <td><?= _ent($jembatan_pt_250k->jembatan_id); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->field1-field18); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed2); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed3); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed4); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed5); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed6); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed7); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed8); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed9); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed10); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed11); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed12); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed13); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed14); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed15); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed16); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed17); ?></td> 
-                           <td><?= _ent($jembatan_pt_250k->filed18); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field1); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field2); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field3); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field4); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field5); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field6); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field7); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field8); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field9); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field10); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field11); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field12); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field13); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field14); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field15); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field16); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field17); ?></td> 
+                           <td><?= _ent($jembatan_pt_250k->field18); ?></td> 
                            <td width="200">
                               <?php is_allowed('jembatan_pt_250k_view', function() use ($jembatan_pt_250k){?>
                               <a href="<?= site_url('administrator/jembatan_pt_250k/view/' . $jembatan_pt_250k->kode_jpt); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -172,24 +172,24 @@ jQuery(document).ready(domo);
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
                             <option <?= $this->input->get('f') == 'jembatan_id' ? 'selected' :''; ?> value="jembatan_id">Jembatan Id</option>
-                           <option <?= $this->input->get('f') == 'field1-field18' ? 'selected' :''; ?> value="field1-field18">Field1-field18</option>
-                           <option <?= $this->input->get('f') == 'filed2' ? 'selected' :''; ?> value="filed2">Filed2</option>
-                           <option <?= $this->input->get('f') == 'filed3' ? 'selected' :''; ?> value="filed3">Filed3</option>
-                           <option <?= $this->input->get('f') == 'filed4' ? 'selected' :''; ?> value="filed4">Filed4</option>
-                           <option <?= $this->input->get('f') == 'filed5' ? 'selected' :''; ?> value="filed5">Filed5</option>
-                           <option <?= $this->input->get('f') == 'filed6' ? 'selected' :''; ?> value="filed6">Filed6</option>
-                           <option <?= $this->input->get('f') == 'filed7' ? 'selected' :''; ?> value="filed7">Filed7</option>
-                           <option <?= $this->input->get('f') == 'filed8' ? 'selected' :''; ?> value="filed8">Filed8</option>
-                           <option <?= $this->input->get('f') == 'filed9' ? 'selected' :''; ?> value="filed9">Filed9</option>
-                           <option <?= $this->input->get('f') == 'filed10' ? 'selected' :''; ?> value="filed10">Filed10</option>
-                           <option <?= $this->input->get('f') == 'filed11' ? 'selected' :''; ?> value="filed11">Filed11</option>
-                           <option <?= $this->input->get('f') == 'filed12' ? 'selected' :''; ?> value="filed12">Filed12</option>
-                           <option <?= $this->input->get('f') == 'filed13' ? 'selected' :''; ?> value="filed13">Filed13</option>
-                           <option <?= $this->input->get('f') == 'filed14' ? 'selected' :''; ?> value="filed14">Filed14</option>
-                           <option <?= $this->input->get('f') == 'filed15' ? 'selected' :''; ?> value="filed15">Filed15</option>
-                           <option <?= $this->input->get('f') == 'filed16' ? 'selected' :''; ?> value="filed16">Filed16</option>
-                           <option <?= $this->input->get('f') == 'filed17' ? 'selected' :''; ?> value="filed17">Filed17</option>
-                           <option <?= $this->input->get('f') == 'filed18' ? 'selected' :''; ?> value="filed18">Filed18</option>
+                           <option <?= $this->input->get('f') == 'field1' ? 'selected' :''; ?> value="field1">Field1</option>
+                           <option <?= $this->input->get('f') == 'field2' ? 'selected' :''; ?> value="field2">Field2</option>
+                           <option <?= $this->input->get('f') == 'field3' ? 'selected' :''; ?> value="field3">Field3</option>
+                           <option <?= $this->input->get('f') == 'field4' ? 'selected' :''; ?> value="field4">Field4</option>
+                           <option <?= $this->input->get('f') == 'field5' ? 'selected' :''; ?> value="field5">Field5</option>
+                           <option <?= $this->input->get('f') == 'field6' ? 'selected' :''; ?> value="field6">Field6</option>
+                           <option <?= $this->input->get('f') == 'field7' ? 'selected' :''; ?> value="field7">Field7</option>
+                           <option <?= $this->input->get('f') == 'field8' ? 'selected' :''; ?> value="field8">Field8</option>
+                           <option <?= $this->input->get('f') == 'field9' ? 'selected' :''; ?> value="field9">Field9</option>
+                           <option <?= $this->input->get('f') == 'field10' ? 'selected' :''; ?> value="field10">Field10</option>
+                           <option <?= $this->input->get('f') == 'field11' ? 'selected' :''; ?> value="field11">Field11</option>
+                           <option <?= $this->input->get('f') == 'field12' ? 'selected' :''; ?> value="field12">Field12</option>
+                           <option <?= $this->input->get('f') == 'field13' ? 'selected' :''; ?> value="field13">Field13</option>
+                           <option <?= $this->input->get('f') == 'field14' ? 'selected' :''; ?> value="field14">Field14</option>
+                           <option <?= $this->input->get('f') == 'field15' ? 'selected' :''; ?> value="field15">Field15</option>
+                           <option <?= $this->input->get('f') == 'field16' ? 'selected' :''; ?> value="field16">Field16</option>
+                           <option <?= $this->input->get('f') == 'field17' ? 'selected' :''; ?> value="field17">Field17</option>
+                           <option <?= $this->input->get('f') == 'field18' ? 'selected' :''; ?> value="field18">Field18</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

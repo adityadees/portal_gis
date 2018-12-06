@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE KOP</th>
                            <th>NAMA KOP</th>
                            <th>NAMA ICON FILE</th>
                            <th>Action</th>
@@ -92,21 +93,9 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $kategori_objek_pengamatans->KODE_KOP; ?>">
                            </td>
                            
+                           <td><?= _ent($kategori_objek_pengamatans->KODE_KOP); ?></td> 
                            <td><?= _ent($kategori_objek_pengamatans->NAMA_KOP); ?></td> 
-                           <td>
-                              <?php if (!empty($kategori_objek_pengamatans->NAMA_ICON_FILE)): ?>
-                                <?php if (is_image($kategori_objek_pengamatans->NAMA_ICON_FILE)): ?>
-                                <a class="fancybox" rel="group" href="<?= BASE_URL . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>">
-                                  <img src="<?= BASE_URL . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>" class="image-responsive" alt="image kategori_objek_pengamatans" title="NAMA_ICON_FILE kategori_objek_pengamatans" width="40px">
-                                </a>
-                                <?php else: ?>
-                                  <a href="<?= BASE_URL . 'administrator/file/download/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>">
-                                   <img src="<?= get_icon_file($kategori_objek_pengamatans->NAMA_ICON_FILE); ?>" class="image-responsive image-icon" alt="image kategori_objek_pengamatans" title="NAMA_ICON_FILE <?= $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>" width="40px"> 
-                                 </a>
-                                <?php endif; ?>
-                              <?php endif; ?>
-                           </td>
-                            
+                           <td><?= _ent($kategori_objek_pengamatans->NAMA_ICON_FILE); ?></td> 
                            <td width="200">
                               <?php is_allowed('kategori_objek_pengamatans_view', function() use ($kategori_objek_pengamatans){?>
                               <a href="<?= site_url('administrator/kategori_objek_pengamatans/view/' . $kategori_objek_pengamatans->KODE_KOP); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -150,7 +139,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'NAMA_KOP' ? 'selected' :''; ?> value="NAMA_KOP">NAMA KOP</option>
+                            <option <?= $this->input->get('f') == 'KODE_KOP' ? 'selected' :''; ?> value="KODE_KOP">KODE KOP</option>
+                           <option <?= $this->input->get('f') == 'NAMA_KOP' ? 'selected' :''; ?> value="NAMA_KOP">NAMA KOP</option>
                            <option <?= $this->input->get('f') == 'NAMA_ICON_FILE' ? 'selected' :''; ?> value="NAMA_ICON_FILE">NAMA ICON FILE</option>
                           </select>
                      </div>

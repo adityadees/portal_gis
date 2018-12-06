@@ -68,7 +68,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">KATEGORI OBJEK PENGAMATAN </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($fitur_kategori_objek_pengamatans->NAMA_KOP); ?>
+                           <?= _ent($fitur_kategori_objek_pengamatans->KATEGORI_OBJEK_PENGAMATAN); ?>
                         </div>
                     </div>
                                          
@@ -76,7 +76,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">JENIS PLOT </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($fitur_kategori_objek_pengamatans->NAMA_JP); ?>
+                           <?= _ent($fitur_kategori_objek_pengamatans->JENIS_PLOT); ?>
                         </div>
                     </div>
                                         

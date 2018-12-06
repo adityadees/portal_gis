@@ -85,8 +85,6 @@ class Model_air_bersih extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('regencies', 'regencies.id = air_bersih.kabupaten_kota', 'LEFT');
-        $this->db->join('districts', 'districts.id = air_bersih.kecamatan', 'LEFT');
         
         return $this;
     }

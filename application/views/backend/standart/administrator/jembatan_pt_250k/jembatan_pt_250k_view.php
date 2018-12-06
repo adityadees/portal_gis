@@ -73,146 +73,146 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Field1-field18 </label>
+                        <label for="content" class="col-sm-2 control-label">Field1 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->field1-field18); ?>
+                           <?= _ent($jembatan_pt_250k->field1); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed2 </label>
+                        <label for="content" class="col-sm-2 control-label">Field2 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed2); ?>
+                           <?= _ent($jembatan_pt_250k->field2); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed3 </label>
+                        <label for="content" class="col-sm-2 control-label">Field3 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed3); ?>
+                           <?= _ent($jembatan_pt_250k->field3); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed4 </label>
+                        <label for="content" class="col-sm-2 control-label">Field4 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed4); ?>
+                           <?= _ent($jembatan_pt_250k->field4); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed5 </label>
+                        <label for="content" class="col-sm-2 control-label">Field5 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed5); ?>
+                           <?= _ent($jembatan_pt_250k->field5); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed6 </label>
+                        <label for="content" class="col-sm-2 control-label">Field6 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed6); ?>
+                           <?= _ent($jembatan_pt_250k->field6); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed7 </label>
+                        <label for="content" class="col-sm-2 control-label">Field7 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed7); ?>
+                           <?= _ent($jembatan_pt_250k->field7); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed8 </label>
+                        <label for="content" class="col-sm-2 control-label">Field8 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed8); ?>
+                           <?= _ent($jembatan_pt_250k->field8); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed9 </label>
+                        <label for="content" class="col-sm-2 control-label">Field9 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed9); ?>
+                           <?= _ent($jembatan_pt_250k->field9); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed10 </label>
+                        <label for="content" class="col-sm-2 control-label">Field10 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed10); ?>
+                           <?= _ent($jembatan_pt_250k->field10); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed11 </label>
+                        <label for="content" class="col-sm-2 control-label">Field11 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed11); ?>
+                           <?= _ent($jembatan_pt_250k->field11); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed12 </label>
+                        <label for="content" class="col-sm-2 control-label">Field12 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed12); ?>
+                           <?= _ent($jembatan_pt_250k->field12); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed13 </label>
+                        <label for="content" class="col-sm-2 control-label">Field13 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed13); ?>
+                           <?= _ent($jembatan_pt_250k->field13); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed14 </label>
+                        <label for="content" class="col-sm-2 control-label">Field14 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed14); ?>
+                           <?= _ent($jembatan_pt_250k->field14); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed15 </label>
+                        <label for="content" class="col-sm-2 control-label">Field15 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed15); ?>
+                           <?= _ent($jembatan_pt_250k->field15); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed16 </label>
+                        <label for="content" class="col-sm-2 control-label">Field16 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed16); ?>
+                           <?= _ent($jembatan_pt_250k->field16); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed17 </label>
+                        <label for="content" class="col-sm-2 control-label">Field17 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed17); ?>
+                           <?= _ent($jembatan_pt_250k->field17); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Filed18 </label>
+                        <label for="content" class="col-sm-2 control-label">Field18 </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($jembatan_pt_250k->filed18); ?>
+                           <?= _ent($jembatan_pt_250k->field18); ?>
                         </div>
                     </div>
                                         

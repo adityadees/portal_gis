@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE GA</th>
                            <th>TIPE</th>
                            <th>NAMA FILE</th>
                            <th>DATE UPLOAD</th>
@@ -94,12 +95,11 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $gallery_assets->KODE_GA; ?>">
                            </td>
                            
-                           <td><?= _ent($gallery_assets->NAMA_TG); ?></td>
-                             
+                           <td><?= _ent($gallery_assets->KODE_GA); ?></td> 
+                           <td><?= _ent($gallery_assets->TIPE); ?></td> 
                            <td><?= _ent($gallery_assets->NAMA_FILE); ?></td> 
                            <td><?= _ent($gallery_assets->DATE_UPLOAD); ?></td> 
-                           <td><?= _ent($gallery_assets->NAMA_ASSET); ?></td>
-                             
+                           <td><?= _ent($gallery_assets->ASSET); ?></td> 
                            <td width="200">
                               <?php is_allowed('gallery_assets_view', function() use ($gallery_assets){?>
                               <a href="<?= site_url('administrator/gallery_assets/view/' . $gallery_assets->KODE_GA); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -143,7 +143,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'TIPE' ? 'selected' :''; ?> value="TIPE">TIPE</option>
+                            <option <?= $this->input->get('f') == 'KODE_GA' ? 'selected' :''; ?> value="KODE_GA">KODE GA</option>
+                           <option <?= $this->input->get('f') == 'TIPE' ? 'selected' :''; ?> value="TIPE">TIPE</option>
                            <option <?= $this->input->get('f') == 'NAMA_FILE' ? 'selected' :''; ?> value="NAMA_FILE">NAMA FILE</option>
                            <option <?= $this->input->get('f') == 'DATE_UPLOAD' ? 'selected' :''; ?> value="DATE_UPLOAD">DATE UPLOAD</option>
                            <option <?= $this->input->get('f') == 'ASSET' ? 'selected' :''; ?> value="ASSET">ASSET</option>

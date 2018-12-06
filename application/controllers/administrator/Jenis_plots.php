@@ -74,12 +74,12 @@ class Jenis_plots extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('NAMA_JP', 'NAMA JP', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_JP' => $this->input->post('KODE_JP'),
 				'NAMA_JP' => $this->input->post('NAMA_JP'),
 			];
 
@@ -152,11 +152,11 @@ class Jenis_plots extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('NAMA_JP', 'NAMA JP', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_JP' => $this->input->post('KODE_JP'),
 				'NAMA_JP' => $this->input->post('NAMA_JP'),
 			];
 

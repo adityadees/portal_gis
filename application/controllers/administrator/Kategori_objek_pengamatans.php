@@ -74,39 +74,16 @@ class Kategori_objek_pengamatans extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('NAMA_KOP', 'NAMA KOP', 'trim|required');
-		$this->form_validation->set_rules('kategori_objek_pengamatans_NAMA_ICON_FILE_name', 'NAMA ICON FILE', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
-			$kategori_objek_pengamatans_NAMA_ICON_FILE_uuid = $this->input->post('kategori_objek_pengamatans_NAMA_ICON_FILE_uuid');
-			$kategori_objek_pengamatans_NAMA_ICON_FILE_name = $this->input->post('kategori_objek_pengamatans_NAMA_ICON_FILE_name');
 		
 			$save_data = [
+				'KODE_KOP' => $this->input->post('KODE_KOP'),
 				'NAMA_KOP' => $this->input->post('NAMA_KOP'),
+				'NAMA_ICON_FILE' => $this->input->post('NAMA_ICON_FILE'),
 			];
 
-			if (!is_dir(FCPATH . '/uploads/kategori_objek_pengamatans/')) {
-				mkdir(FCPATH . '/uploads/kategori_objek_pengamatans/');
-			}
-
-			if (!empty($kategori_objek_pengamatans_NAMA_ICON_FILE_name)) {
-				$kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy = date('YmdHis') . '-' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name;
-
-				rename(FCPATH . 'uploads/tmp/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_uuid . '/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name, 
-						FCPATH . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy);
-
-				if (!is_file(FCPATH . '/uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy)) {
-					echo json_encode([
-						'success' => false,
-						'message' => 'Error uploading file'
-						]);
-					exit;
-				}
-
-				$save_data['NAMA_ICON_FILE'] = $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy;
-			}
-		
 			
 			$save_kategori_objek_pengamatans = $this->model_kategori_objek_pengamatans->store($save_data);
 
@@ -176,38 +153,15 @@ class Kategori_objek_pengamatans extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('NAMA_KOP', 'NAMA KOP', 'trim|required');
-		$this->form_validation->set_rules('kategori_objek_pengamatans_NAMA_ICON_FILE_name', 'NAMA ICON FILE', 'trim|required');
 		
 		if ($this->form_validation->run()) {
-			$kategori_objek_pengamatans_NAMA_ICON_FILE_uuid = $this->input->post('kategori_objek_pengamatans_NAMA_ICON_FILE_uuid');
-			$kategori_objek_pengamatans_NAMA_ICON_FILE_name = $this->input->post('kategori_objek_pengamatans_NAMA_ICON_FILE_name');
 		
 			$save_data = [
+				'KODE_KOP' => $this->input->post('KODE_KOP'),
 				'NAMA_KOP' => $this->input->post('NAMA_KOP'),
+				'NAMA_ICON_FILE' => $this->input->post('NAMA_ICON_FILE'),
 			];
 
-			if (!is_dir(FCPATH . '/uploads/kategori_objek_pengamatans/')) {
-				mkdir(FCPATH . '/uploads/kategori_objek_pengamatans/');
-			}
-
-			if (!empty($kategori_objek_pengamatans_NAMA_ICON_FILE_uuid)) {
-				$kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy = date('YmdHis') . '-' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name;
-
-				rename(FCPATH . 'uploads/tmp/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_uuid . '/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name, 
-						FCPATH . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy);
-
-				if (!is_file(FCPATH . '/uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy)) {
-					echo json_encode([
-						'success' => false,
-						'message' => 'Error uploading file'
-						]);
-					exit;
-				}
-
-				$save_data['NAMA_ICON_FILE'] = $kategori_objek_pengamatans_NAMA_ICON_FILE_name_copy;
-			}
-		
 			
 			$save_kategori_objek_pengamatans = $this->model_kategori_objek_pengamatans->change($id, $save_data);
 
@@ -299,90 +253,9 @@ class Kategori_objek_pengamatans extends Admin
 	{
 		$kategori_objek_pengamatans = $this->model_kategori_objek_pengamatans->find($id);
 
-		if (!empty($kategori_objek_pengamatans->NAMA_ICON_FILE)) {
-			$path = FCPATH . '/uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE;
-
-			if (is_file($path)) {
-				$delete_file = unlink($path);
-			}
-		}
 		
 		
 		return $this->model_kategori_objek_pengamatans->remove($id);
-	}
-	
-	/**
-	* Upload Image Kategori Objek Pengamatans	* 
-	* @return JSON
-	*/
-	public function upload_NAMA_ICON_FILE_file()
-	{
-		if (!$this->is_allowed('kategori_objek_pengamatans_add', false)) {
-			echo json_encode([
-				'success' => false,
-				'message' => cclang('sorry_you_do_not_have_permission_to_access')
-				]);
-			exit;
-		}
-
-		$uuid = $this->input->post('qquuid');
-
-		echo $this->upload_file([
-			'uuid' 		 	=> $uuid,
-			'table_name' 	=> 'kategori_objek_pengamatans',
-		]);
-	}
-
-	/**
-	* Delete Image Kategori Objek Pengamatans	* 
-	* @return JSON
-	*/
-	public function delete_NAMA_ICON_FILE_file($uuid)
-	{
-		if (!$this->is_allowed('kategori_objek_pengamatans_delete', false)) {
-			echo json_encode([
-				'success' => false,
-				'error' => cclang('sorry_you_do_not_have_permission_to_access')
-				]);
-			exit;
-		}
-
-		echo $this->delete_file([
-            'uuid'              => $uuid, 
-            'delete_by'         => $this->input->get('by'), 
-            'field_name'        => 'NAMA_ICON_FILE', 
-            'upload_path_tmp'   => './uploads/tmp/',
-            'table_name'        => 'kategori_objek_pengamatans',
-            'primary_key'       => 'KODE_KOP',
-            'upload_path'       => 'uploads/kategori_objek_pengamatans/'
-        ]);
-	}
-
-	/**
-	* Get Image Kategori Objek Pengamatans	* 
-	* @return JSON
-	*/
-	public function get_NAMA_ICON_FILE_file($id)
-	{
-		if (!$this->is_allowed('kategori_objek_pengamatans_update', false)) {
-			echo json_encode([
-				'success' => false,
-				'message' => 'Image not loaded, you do not have permission to access'
-				]);
-			exit;
-		}
-
-		$kategori_objek_pengamatans = $this->model_kategori_objek_pengamatans->find($id);
-
-		echo $this->get_file([
-            'uuid'              => $id, 
-            'delete_by'         => 'id', 
-            'field_name'        => 'NAMA_ICON_FILE', 
-            'table_name'        => 'kategori_objek_pengamatans',
-            'primary_key'       => 'KODE_KOP',
-            'upload_path'       => 'uploads/kategori_objek_pengamatans/',
-            'delete_endpoint'   => 'administrator/kategori_objek_pengamatans/delete_NAMA_ICON_FILE_file'
-        ]);
 	}
 	
 	

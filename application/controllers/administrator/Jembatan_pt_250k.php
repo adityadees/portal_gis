@@ -75,31 +75,48 @@ class Jembatan_pt_250k extends Admin
 		}
 
 		$this->form_validation->set_rules('jembatan_id', 'Jembatan Id', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('field1-field18', 'Field1-field18', 'trim|required');
+		$this->form_validation->set_rules('field1', 'Field1', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field2', 'Field2', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field3', 'Field3', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field4', 'Field4', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field5', 'Field5', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field6', 'Field6', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field7', 'Field7', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field8', 'Field8', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field9', 'Field9', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field10', 'Field10', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field11', 'Field11', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field12', 'Field12', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field13', 'Field13', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field14', 'Field14', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field15', 'Field15', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field16', 'Field16', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field17', 'Field17', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field18', 'Field18', 'trim|required|max_length[100]');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
 				'jembatan_id' => $this->input->post('jembatan_id'),
-				'field1-field18' => $this->input->post('field1-field18'),
-				'filed2' => $this->input->post('filed2'),
-				'filed3' => $this->input->post('filed3'),
-				'filed4' => $this->input->post('filed4'),
-				'filed5' => $this->input->post('filed5'),
-				'filed6' => $this->input->post('filed6'),
-				'filed7' => $this->input->post('filed7'),
-				'filed8' => $this->input->post('filed8'),
-				'filed9' => $this->input->post('filed9'),
-				'filed10' => $this->input->post('filed10'),
-				'filed11' => $this->input->post('filed11'),
-				'filed12' => $this->input->post('filed12'),
-				'filed13' => $this->input->post('filed13'),
-				'filed14' => $this->input->post('filed14'),
-				'filed15' => $this->input->post('filed15'),
-				'filed16' => $this->input->post('filed16'),
-				'filed17' => $this->input->post('filed17'),
-				'filed18' => $this->input->post('filed18'),
+				'field1' => $this->input->post('field1'),
+				'field2' => $this->input->post('field2'),
+				'field3' => $this->input->post('field3'),
+				'field4' => $this->input->post('field4'),
+				'field5' => $this->input->post('field5'),
+				'field6' => $this->input->post('field6'),
+				'field7' => $this->input->post('field7'),
+				'field8' => $this->input->post('field8'),
+				'field9' => $this->input->post('field9'),
+				'field10' => $this->input->post('field10'),
+				'field11' => $this->input->post('field11'),
+				'field12' => $this->input->post('field12'),
+				'field13' => $this->input->post('field13'),
+				'field14' => $this->input->post('field14'),
+				'field15' => $this->input->post('field15'),
+				'field16' => $this->input->post('field16'),
+				'field17' => $this->input->post('field17'),
+				'field18' => $this->input->post('field18'),
 			];
 
 			
@@ -172,30 +189,47 @@ class Jembatan_pt_250k extends Admin
 		}
 		
 		$this->form_validation->set_rules('jembatan_id', 'Jembatan Id', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('field1-field18', 'Field1-field18', 'trim|required');
+		$this->form_validation->set_rules('field1', 'Field1', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field2', 'Field2', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field3', 'Field3', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field4', 'Field4', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field5', 'Field5', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field6', 'Field6', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field7', 'Field7', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field8', 'Field8', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field9', 'Field9', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field10', 'Field10', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field11', 'Field11', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field12', 'Field12', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field13', 'Field13', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field14', 'Field14', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field15', 'Field15', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field16', 'Field16', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field17', 'Field17', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('field18', 'Field18', 'trim|required|max_length[100]');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
 				'jembatan_id' => $this->input->post('jembatan_id'),
-				'field1-field18' => $this->input->post('field1-field18'),
-				'filed2' => $this->input->post('filed2'),
-				'filed3' => $this->input->post('filed3'),
-				'filed4' => $this->input->post('filed4'),
-				'filed5' => $this->input->post('filed5'),
-				'filed6' => $this->input->post('filed6'),
-				'filed7' => $this->input->post('filed7'),
-				'filed8' => $this->input->post('filed8'),
-				'filed9' => $this->input->post('filed9'),
-				'filed10' => $this->input->post('filed10'),
-				'filed11' => $this->input->post('filed11'),
-				'filed12' => $this->input->post('filed12'),
-				'filed13' => $this->input->post('filed13'),
-				'filed14' => $this->input->post('filed14'),
-				'filed15' => $this->input->post('filed15'),
-				'filed16' => $this->input->post('filed16'),
-				'filed17' => $this->input->post('filed17'),
-				'filed18' => $this->input->post('filed18'),
+				'field1' => $this->input->post('field1'),
+				'field2' => $this->input->post('field2'),
+				'field3' => $this->input->post('field3'),
+				'field4' => $this->input->post('field4'),
+				'field5' => $this->input->post('field5'),
+				'field6' => $this->input->post('field6'),
+				'field7' => $this->input->post('field7'),
+				'field8' => $this->input->post('field8'),
+				'field9' => $this->input->post('field9'),
+				'field10' => $this->input->post('field10'),
+				'field11' => $this->input->post('field11'),
+				'field12' => $this->input->post('field12'),
+				'field13' => $this->input->post('field13'),
+				'field14' => $this->input->post('field14'),
+				'field15' => $this->input->post('field15'),
+				'field16' => $this->input->post('field16'),
+				'field17' => $this->input->post('field17'),
+				'field18' => $this->input->post('field18'),
 			];
 
 			

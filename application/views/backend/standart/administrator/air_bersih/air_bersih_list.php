@@ -99,10 +99,8 @@ jQuery(document).ready(domo);
                            </td>
                            
                            <td><?= _ent($air_bersih->air_bersih_id); ?></td> 
-                           <td><?= _ent($air_bersih->name); ?></td>
-                             
-                           <td><?= _ent($air_bersih->name); ?></td>
-                             
+                           <td><?= _ent($air_bersih->kabupaten_kota); ?></td> 
+                           <td><?= _ent($air_bersih->kecamatan); ?></td> 
                            <td><?= _ent($air_bersih->kode_wilayah); ?></td> 
                            <td><?= _ent($air_bersih->kode_kecamatan); ?></td> 
                            <td><?= _ent($air_bersih->text_kecamatan); ?></td> 

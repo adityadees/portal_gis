@@ -74,15 +74,12 @@ class Gallery_assets extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('TIPE', 'TIPE', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('NAMA_FILE', 'NAMA FILE', 'trim|required');
-		$this->form_validation->set_rules('DATE_UPLOAD', 'DATE UPLOAD', 'trim|required');
-		$this->form_validation->set_rules('ASSET', 'ASSET', 'trim|required|max_length[11]');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_GA' => $this->input->post('KODE_GA'),
 				'TIPE' => $this->input->post('TIPE'),
 				'NAMA_FILE' => $this->input->post('NAMA_FILE'),
 				'DATE_UPLOAD' => $this->input->post('DATE_UPLOAD'),
@@ -158,14 +155,11 @@ class Gallery_assets extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('TIPE', 'TIPE', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('NAMA_FILE', 'NAMA FILE', 'trim|required');
-		$this->form_validation->set_rules('DATE_UPLOAD', 'DATE UPLOAD', 'trim|required');
-		$this->form_validation->set_rules('ASSET', 'ASSET', 'trim|required|max_length[11]');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_GA' => $this->input->post('KODE_GA'),
 				'TIPE' => $this->input->post('TIPE'),
 				'NAMA_FILE' => $this->input->post('NAMA_FILE'),
 				'DATE_UPLOAD' => $this->input->post('DATE_UPLOAD'),

@@ -60,11 +60,20 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="NAMA_JP" class="col-sm-2 control-label">NAMA JP 
-                            <i class="required">*</i>
+                            <label for="KODE_JP" class="col-sm-2 control-label">KODE JP 
                             </label>
                             <div class="col-sm-8">
-                                <textarea id="NAMA_JP" name="NAMA_JP" rows="10" cols="80"> <?= set_value('NAMA_JP', $jenis_plots->NAMA_JP); ?></textarea>
+                                <input type="text" class="form-control" name="KODE_JP" id="KODE_JP" placeholder="KODE JP" value="<?= set_value('KODE_JP', $jenis_plots->KODE_JP); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="NAMA_JP" class="col-sm-2 control-label">NAMA JP 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="NAMA_JP" id="NAMA_JP" placeholder="NAMA JP" value="<?= set_value('NAMA_JP', $jenis_plots->NAMA_JP); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -96,14 +105,11 @@
     </div>
 </section>
 <!-- /.content -->
-<script src="<?= BASE_ASSET; ?>ckeditor/ckeditor.js"></script>
 <!-- Page script -->
 <script>
     $(document).ready(function(){
       
-      CKEDITOR.replace('NAMA_JP'); 
-      var NAMA_JP = CKEDITOR.instances.NAMA_JP;
-                   
+             
       $('#btn_cancel').click(function(){
         swal({
             title: "Are you sure?",
@@ -127,8 +133,7 @@
     
       $('.btn_save').click(function(){
         $('.message').fadeOut();
-        $('#NAMA_JP').val(NAMA_JP.getData());
-                    
+            
         var form_jenis_plots = $('#form_jenis_plots');
         var data_post = form_jenis_plots.serializeArray();
         var save_type = $(this).attr('data-stype');

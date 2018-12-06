@@ -5,7 +5,7 @@ class Model_tipe_gallerys extends MY_Model {
 
 	private $primary_key 	= 'KODE_TG';
 	private $table_name 	= 'tipe_gallerys';
-	private $field_search 	= ['NAMA_TG'];
+	private $field_search 	= ['KODE_TG', 'NAMA_TG'];
 
 	public function __construct()
 	{

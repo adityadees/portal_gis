@@ -73,15 +73,25 @@ public function migrate($version = null)
 }
 
 
+
 public function peta(){
+
+    		if (!$this->aauth->is_loggedin()) {
+			redirect('administrator/login','refresh');
+		}
+
     $this->load->model('modelgeojson');
 
-    $x['jalan']=$this->modelgeojson->get_data('jalan');
+    $x['jalan_nasional']=$this->modelgeojson->get_data('jalan_nasional');
+    $x['jalan_provinsi']=$this->modelgeojson->get_data('jalan_provinsi');
     $x['air_bersih']=$this->modelgeojson->get_data('air_bersih');
     $x['jembatan']=$this->modelgeojson->get_data('jembatan_pt_250k');
     $x['bendung']=$this->modelgeojson->get_data('bendungans');
+    $x['pelabuhan']=$this->modelgeojson->get_data('pelabuhan');
+    $x['terminal']=$this->modelgeojson->get_data('terminal');
+    $x['stasiun']=$this->modelgeojson->get_data('stasiun');
     $x['sanitasi']=$this->modelgeojson->get_data('sanitasi_sumsels');
-    $x['stanplat']=$this->modelgeojson->get_data('stanplat');
+    $x['bandara']=$this->modelgeojson->get_data('bandara');
     $x['sungai']=$this->modelgeojson->get_data('sungais');
     $x['sungaipol']=$this->modelgeojson->get_data('sungai_polys');
     $x['tol']=$this->modelgeojson->get_data('tol_ln_2017_sumatera_selatan_pubtr_geo');
@@ -89,7 +99,10 @@ public function peta(){
     $this->load->view('frontend/map/map',$x);
 
 }
+
+
 }
+
 
 
 /* End of file Web.php */

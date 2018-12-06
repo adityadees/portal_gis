@@ -61,38 +61,34 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="KATEGORI_OBJEK_PENGAMATAN" class="col-sm-2 control-label">KATEGORI OBJEK PENGAMATAN 
-                            <i class="required">*</i>
+                            <label for="KODE_FKOP" class="col-sm-2 control-label">KODE FKOP 
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="KATEGORI_OBJEK_PENGAMATAN" id="KATEGORI_OBJEK_PENGAMATAN" data-placeholder="Select KATEGORI OBJEK PENGAMATAN" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('kategori_objek_pengamatans') as $row): ?>
-                                    <option value="<?= $row->KODE_KOP ?>"><?= $row->NAMA_KOP; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="KODE_FKOP" id="KODE_FKOP" placeholder="KODE FKOP" value="<?= set_value('KODE_FKOP'); ?>">
                                 <small class="info help-block">
-                                <b>Input KATEGORI OBJEK PENGAMATAN</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
-
+                                                 
+                                                <div class="form-group ">
+                            <label for="KATEGORI_OBJEK_PENGAMATAN" class="col-sm-2 control-label">KATEGORI OBJEK PENGAMATAN 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="KATEGORI_OBJEK_PENGAMATAN" id="KATEGORI_OBJEK_PENGAMATAN" placeholder="KATEGORI OBJEK PENGAMATAN" value="<?= set_value('KATEGORI_OBJEK_PENGAMATAN'); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
                                                  
                                                 <div class="form-group ">
                             <label for="JENIS_PLOT" class="col-sm-2 control-label">JENIS PLOT 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="JENIS_PLOT" id="JENIS_PLOT" data-placeholder="Select JENIS PLOT" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('jenis_plots') as $row): ?>
-                                    <option value="<?= $row->KODE_JP ?>"><?= $row->NAMA_JP; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="JENIS_PLOT" id="JENIS_PLOT" placeholder="JENIS PLOT" value="<?= set_value('JENIS_PLOT'); ?>">
                                 <small class="info help-block">
-                                <b>Input JENIS PLOT</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
-
                                                 
                         <div class="message"></div>
                         <div class="row-fluid col-md-7">

@@ -5,7 +5,7 @@ class Model_kategori_objek_pengamatans extends MY_Model {
 
 	private $primary_key 	= 'KODE_KOP';
 	private $table_name 	= 'kategori_objek_pengamatans';
-	private $field_search 	= ['NAMA_KOP', 'NAMA_ICON_FILE'];
+	private $field_search 	= ['KODE_KOP', 'NAMA_KOP', 'NAMA_ICON_FILE'];
 
 	public function __construct()
 	{

@@ -73,23 +73,13 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label"> NAMA ICON FILE </label>
+                        <label for="content" class="col-sm-2 control-label">NAMA ICON FILE </label>
+
                         <div class="col-sm-8">
-                             <?php if (is_image($kategori_objek_pengamatans->NAMA_ICON_FILE)): ?>
-                              <a class="fancybox" rel="group" href="<?= BASE_URL . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>">
-                                <img src="<?= BASE_URL . 'uploads/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>" class="image-responsive" alt="image kategori_objek_pengamatans" title="NAMA_ICON_FILE kategori_objek_pengamatans" width="40px">
-                              </a>
-                              <?php else: ?>
-                              <label>
-                                <a href="<?= BASE_URL . 'administrator/file/download/kategori_objek_pengamatans/' . $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>">
-                                 <img src="<?= get_icon_file($kategori_objek_pengamatans->NAMA_ICON_FILE); ?>" class="image-responsive" alt="image kategori_objek_pengamatans" title="NAMA_ICON_FILE <?= $kategori_objek_pengamatans->NAMA_ICON_FILE; ?>" width="40px"> 
-                               <?= $kategori_objek_pengamatans->NAMA_ICON_FILE ?>
-                               </a>
-                               </label>
-                              <?php endif; ?>
+                           <?= _ent($kategori_objek_pengamatans->NAMA_ICON_FILE); ?>
                         </div>
                     </div>
-                                      
+                                        
                     <br>
                     <br>
 

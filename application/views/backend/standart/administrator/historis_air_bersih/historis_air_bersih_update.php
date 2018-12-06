@@ -60,8 +60,17 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
+                            <label for="kode_historis_ab" class="col-sm-2 control-label">Kode Historis Ab 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="kode_historis_ab" id="kode_historis_ab" placeholder="Kode Historis Ab" value="<?= set_value('kode_historis_ab', $historis_air_bersih->kode_historis_ab); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
                             <label for="air_bersih_id" class="col-sm-2 control-label">Air Bersih Id 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <select  class="form-control chosen chosen-select-deselect" name="air_bersih_id" id="air_bersih_id" data-placeholder="Select Air Bersih Id" >
@@ -71,61 +80,67 @@
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
-                                <b>Input Air Bersih Id</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
 
                                                  
                                                 <div class="form-group ">
                             <label for="historis_vefektif" class="col-sm-2 control-label">Historis Vefektif 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="historis_vefektif" id="historis_vefektif" placeholder="Historis Vefektif" value="<?= set_value('historis_vefektif', $historis_air_bersih->historis_vefektif); ?>">
                                 <small class="info help-block">
-                                <b>Input Historis Vefektif</b> Max Length : 50.</small>
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
                             <label for="historis_tahun" class="col-sm-2 control-label">Historis Tahun 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="historis_tahun" id="historis_tahun" placeholder="Historis Tahun" value="<?= set_value('historis_tahun', $historis_air_bersih->historis_tahun); ?>">
+                                <input type="text" class="form-control" name="historis_tahun" id="historis_tahun" placeholder="Historis Tahun" value="<?= set_value('historis_tahun', $historis_air_bersih->historis_tahun); ?>">
                                 <small class="info help-block">
-                                <b>Input Historis Tahun</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Historis Volume Penanganan 
-                            <i class="required">*</i>
+                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Historis Vpenanganan 
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Historis Volume Penanganan" value="<?= set_value('historis_vpenanganan', $historis_air_bersih->historis_vpenanganan); ?>">
+                                <input type="text" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Historis Vpenanganan" value="<?= set_value('historis_vpenanganan', $historis_air_bersih->historis_vpenanganan); ?>">
                                 <small class="info help-block">
-                                <b>Input Historis Vpenanganan</b> Max Length : 50.</small>
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_sdana" class="col-sm-2 control-label">Historis Sumber Dana 
-                            <i class="required">*</i>
+                            <label for="historis_sdana" class="col-sm-2 control-label">Historis Sdana 
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sumber Dana" value="<?= set_value('historis_sdana', $historis_air_bersih->historis_sdana); ?>">
+                                <input type="text" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sdana" value="<?= set_value('historis_sdana', $historis_air_bersih->historis_sdana); ?>">
                                 <small class="info help-block">
-                                <b>Input Historis Sdana</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
                             <label for="historis_ket" class="col-sm-2 control-label">Historis Ket 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="historis_ket" id="historis_ket" placeholder="Historis Ket" value="<?= set_value('historis_ket', $historis_air_bersih->historis_ket); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="historis_namakeg" class="col-sm-2 control-label">Historis Namakeg 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <textarea id="historis_ket" name="historis_ket" rows="10" cols="80"> <?= set_value('historis_ket', $historis_air_bersih->historis_ket); ?></textarea>
+                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Historis Namakeg" value="<?= set_value('historis_namakeg', $historis_air_bersih->historis_namakeg); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -157,14 +172,11 @@
     </div>
 </section>
 <!-- /.content -->
-<script src="<?= BASE_ASSET; ?>ckeditor/ckeditor.js"></script>
 <!-- Page script -->
 <script>
     $(document).ready(function(){
       
-      CKEDITOR.replace('historis_ket'); 
-      var historis_ket = CKEDITOR.instances.historis_ket;
-                   
+             
       $('#btn_cancel').click(function(){
         swal({
             title: "Are you sure?",
@@ -188,8 +200,7 @@
     
       $('.btn_save').click(function(){
         $('.message').fadeOut();
-        $('#historis_ket').val(historis_ket.getData());
-                    
+            
         var form_historis_air_bersih = $('#form_historis_air_bersih');
         var data_post = form_historis_air_bersih.serializeArray();
         var save_type = $(this).attr('data-stype');

@@ -61,28 +61,30 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="TIPE" class="col-sm-2 control-label">TIPE 
-                            <i class="required">*</i>
+                            <label for="KODE_GA" class="col-sm-2 control-label">KODE GA 
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="TIPE" id="TIPE" data-placeholder="Select TIPE" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('tipe_gallerys') as $row): ?>
-                                    <option value="<?= $row->KODE_TG ?>"><?= $row->NAMA_TG; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="KODE_GA" id="KODE_GA" placeholder="KODE GA" value="<?= set_value('KODE_GA'); ?>">
                                 <small class="info help-block">
-                                <b>Input TIPE</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
-
+                                                 
+                                                <div class="form-group ">
+                            <label for="TIPE" class="col-sm-2 control-label">TIPE 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="TIPE" id="TIPE" placeholder="TIPE" value="<?= set_value('TIPE'); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
                                                  
                                                 <div class="form-group ">
                             <label for="NAMA_FILE" class="col-sm-2 control-label">NAMA FILE 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <textarea id="NAMA_FILE" name="NAMA_FILE" rows="5" class="textarea"><?= set_value('NAMA_FILE'); ?></textarea>
+                                <input type="text" class="form-control" name="NAMA_FILE" id="NAMA_FILE" placeholder="NAMA FILE" value="<?= set_value('NAMA_FILE'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -90,33 +92,23 @@
                                                  
                                                 <div class="form-group ">
                             <label for="DATE_UPLOAD" class="col-sm-2 control-label">DATE UPLOAD 
-                            <i class="required">*</i>
                             </label>
-                            <div class="col-sm-6">
-                            <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datetimepicker" name="DATE_UPLOAD"  id="DATE_UPLOAD">
-                            </div>
-                            <small class="info help-block">
-                            </small>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="DATE_UPLOAD" id="DATE_UPLOAD" placeholder="DATE UPLOAD" value="<?= set_value('DATE_UPLOAD'); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
                             <label for="ASSET" class="col-sm-2 control-label">ASSET 
-                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="ASSET" id="ASSET" data-placeholder="Select ASSET" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('assets') as $row): ?>
-                                    <option value="<?= $row->KODE_LA ?>"><?= $row->NAMA_ASSET; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="ASSET" id="ASSET" placeholder="ASSET" value="<?= set_value('ASSET'); ?>">
                                 <small class="info help-block">
-                                <b>Input ASSET</b> Max Length : 11.</small>
+                                </small>
                             </div>
                         </div>
-
                                                 
                         <div class="message"></div>
                         <div class="row-fluid col-md-7">

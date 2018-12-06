@@ -1,0 +1,193 @@
+[22-Nov-2018 00:58:44 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_bendung_disumsel::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_bendung_disumsel.php:341
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_bendung_disumsel->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[22-Nov-2018 01:00:26 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo.php:338
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[22-Nov-2018 01:00:55 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_sungai_poly::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_sungai_poly.php:338
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_sungai_poly->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[22-Nov-2018 01:01:47 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_sungai_poly::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_sungai_poly.php:337
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_sungai_poly->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[22-Nov-2018 01:03:52 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_sungai_poly::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_sungai_poly.php:341
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_sungai_poly->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:52:09 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:52:20 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:52:29 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:53:55 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:54:04 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:54:18 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[27-Nov-2018 08:54:29 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan.php:339
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 11:12:59 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan_provinsi::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan_provinsi.php:341
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan_provinsi->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 11:14:03 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Dokumentasi_jalan_nasional::delete_file_file(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and exactly 1 expected in /home/scag9676/public_html/gis/application/controllers/administrator/Dokumentasi_jalan_nasional.php:341
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Dokumentasi_jalan_nasional->delete_file_file()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 11:50:35 asia/jakarta] PHP Notice:  Undefined variable: whoops in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 56
+[29-Nov-2018 11:50:35 asia/jakarta] PHP Fatal error:  Uncaught Exception: Error: Call to a member function pushHandler() on null in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:56
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(623): My_Exceptions->show_php_error(8, 'Trying to get p...', '/home/scag9676/...', 167)
+#1 /home/scag9676/public_html/gis/application/controllers/administrator/Page.php(167): _error_handler(8, 'Trying to get p...', '/home/scag9676/...', 167, Array)
+#2 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Page->edit('%3C')
+#3 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#4 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 22:52:53 asia/jakarta] PHP Fatal error:  Uncaught Exception: Error: Call to undefined method Web::is_allowed() in /home/scag9676/public_html/gis/application/controllers/Web.php:78
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->peta()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 22:53:12 asia/jakarta] PHP Fatal error:  Uncaught Exception: Error: Call to undefined method Web::is_allowed() in /home/scag9676/public_html/gis/application/controllers/Web.php:78
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->peta()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 22:56:24 asia/jakarta] PHP Fatal error:  Uncaught Exception: ArgumentCountError: Too few arguments to function Web::peta(), 0 passed in /home/scag9676/public_html/gis/system/core/CodeIgniter.php on line 532 and at least 1 expected in /home/scag9676/public_html/gis/application/controllers/Web.php:76
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->peta()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ArgumentCountError))
+#1 [internal function]: _exception_handler(Object(ArgumentCountError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[29-Nov-2018 22:56:35 asia/jakarta] PHP Fatal error:  Uncaught Exception: Error: Call to undefined method Web::getUser() in /home/scag9676/public_html/gis/application/controllers/Web.php:79
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->peta()
+#1 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#2 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18

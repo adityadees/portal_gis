@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE FKOP</th>
                            <th>KATEGORI OBJEK PENGAMATAN</th>
                            <th>JENIS PLOT</th>
                            <th>Action</th>
@@ -92,10 +93,9 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $fitur_kategori_objek_pengamatans->KODE_FKOP; ?>">
                            </td>
                            
-                           <td><?= _ent($fitur_kategori_objek_pengamatans->NAMA_KOP); ?></td>
-                             
-                           <td><?= _ent($fitur_kategori_objek_pengamatans->NAMA_JP); ?></td>
-                             
+                           <td><?= _ent($fitur_kategori_objek_pengamatans->KODE_FKOP); ?></td> 
+                           <td><?= _ent($fitur_kategori_objek_pengamatans->KATEGORI_OBJEK_PENGAMATAN); ?></td> 
+                           <td><?= _ent($fitur_kategori_objek_pengamatans->JENIS_PLOT); ?></td> 
                            <td width="200">
                               <?php is_allowed('fitur_kategori_objek_pengamatans_view', function() use ($fitur_kategori_objek_pengamatans){?>
                               <a href="<?= site_url('administrator/fitur_kategori_objek_pengamatans/view/' . $fitur_kategori_objek_pengamatans->KODE_FKOP); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -139,7 +139,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'KATEGORI_OBJEK_PENGAMATAN' ? 'selected' :''; ?> value="KATEGORI_OBJEK_PENGAMATAN">KATEGORI OBJEK PENGAMATAN</option>
+                            <option <?= $this->input->get('f') == 'KODE_FKOP' ? 'selected' :''; ?> value="KODE_FKOP">KODE FKOP</option>
+                           <option <?= $this->input->get('f') == 'KATEGORI_OBJEK_PENGAMATAN' ? 'selected' :''; ?> value="KATEGORI_OBJEK_PENGAMATAN">KATEGORI OBJEK PENGAMATAN</option>
                            <option <?= $this->input->get('f') == 'JENIS_PLOT' ? 'selected' :''; ?> value="JENIS_PLOT">JENIS PLOT</option>
                           </select>
                      </div>

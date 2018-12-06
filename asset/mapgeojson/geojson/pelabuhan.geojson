@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "stanplat",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "ID": 2.0, "NAMA_TERMI": "Pelabuhan Boom Baru", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.779371864271326, -2.980238093660346 ] } },
+{ "type": "Feature", "properties": { "ID": 16.0, "NAMA_TERMI": "Pelabuhan Penyeberangan", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.805669337962797, -2.3719351272297 ] } },
+{ "type": "Feature", "properties": { "ID": 17.0, "NAMA_TERMI": "Pelabuhan Laut", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.815772474516805, -2.363965429867612 ] } },
+{ "type": "Feature", "properties": { "ID": 18.0, "NAMA_TERMI": "Pelabuhan S Lumpur", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 105.882617574851551, -3.42088673416018 ] } },
+{ "type": "Feature", "properties": { "ID": 19.0, "NAMA_TERMI": "Pelabuhan Khusus", "KLASIFIKAS": "Pelabuhan" }, "geometry": { "type": "Point", "coordinates": [ 104.252882573117176, -3.034353796178058 ] } }
+]
+}

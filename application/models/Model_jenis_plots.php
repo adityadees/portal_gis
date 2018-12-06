@@ -5,7 +5,7 @@ class Model_jenis_plots extends MY_Model {
 
 	private $primary_key 	= 'KODE_JP';
 	private $table_name 	= 'jenis_plots';
-	private $field_search 	= ['NAMA_JP'];
+	private $field_search 	= ['KODE_JP', 'NAMA_JP'];
 
 	public function __construct()
 	{

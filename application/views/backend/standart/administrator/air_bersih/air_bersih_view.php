@@ -76,7 +76,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">Kabupaten Kota </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($air_bersih->name); ?>
+                           <?= _ent($air_bersih->kabupaten_kota); ?>
                         </div>
                     </div>
                                          
@@ -84,7 +84,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">Kecamatan </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($air_bersih->name); ?>
+                           <?= _ent($air_bersih->kecamatan); ?>
                         </div>
                     </div>
                                          

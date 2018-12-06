@@ -74,12 +74,12 @@ class Tipe_gallerys extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('NAMA_TG', 'NAMA TG', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_TG' => $this->input->post('KODE_TG'),
 				'NAMA_TG' => $this->input->post('NAMA_TG'),
 			];
 
@@ -152,11 +152,11 @@ class Tipe_gallerys extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('NAMA_TG', 'NAMA TG', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
+				'KODE_TG' => $this->input->post('KODE_TG'),
 				'NAMA_TG' => $this->input->post('NAMA_TG'),
 			];
 

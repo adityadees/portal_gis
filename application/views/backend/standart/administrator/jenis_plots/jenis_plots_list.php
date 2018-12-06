@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE JP</th>
                            <th>NAMA JP</th>
                            <th>Action</th>
                         </tr>
@@ -91,6 +92,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $jenis_plots->KODE_JP; ?>">
                            </td>
                            
+                           <td><?= _ent($jenis_plots->KODE_JP); ?></td> 
                            <td><?= _ent($jenis_plots->NAMA_JP); ?></td> 
                            <td width="200">
                               <?php is_allowed('jenis_plots_view', function() use ($jenis_plots){?>
@@ -135,7 +137,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'NAMA_JP' ? 'selected' :''; ?> value="NAMA_JP">NAMA JP</option>
+                            <option <?= $this->input->get('f') == 'KODE_JP' ? 'selected' :''; ?> value="KODE_JP">KODE JP</option>
+                           <option <?= $this->input->get('f') == 'NAMA_JP' ? 'selected' :''; ?> value="NAMA_JP">NAMA JP</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

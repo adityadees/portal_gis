@@ -76,34 +76,22 @@
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="kabupaten_kota" id="kabupaten_kota" data-placeholder="Select Kabupaten Kota" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('regencies') as $row): ?>
-                                    <option value="<?= $row->id ?>"><?= $row->name; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="kabupaten_kota" id="kabupaten_kota" placeholder="Kabupaten Kota" value="<?= set_value('kabupaten_kota'); ?>">
                                 <small class="info help-block">
                                 <b>Input Kabupaten Kota</b> Max Length : 30.</small>
                             </div>
                         </div>
-
                                                  
                                                 <div class="form-group ">
                             <label for="kecamatan" class="col-sm-2 control-label">Kecamatan 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <select  class="form-control chosen chosen-select-deselect" name="kecamatan" id="kecamatan" data-placeholder="Select Kecamatan" >
-                                    <option value=""></option>
-                                    <?php foreach (db_get_all_data('districts') as $row): ?>
-                                    <option value="<?= $row->id ?>"><?= $row->name; ?></option>
-                                    <?php endforeach; ?>  
-                                </select>
+                                <input type="text" class="form-control" name="kecamatan" id="kecamatan" placeholder="Kecamatan" value="<?= set_value('kecamatan'); ?>">
                                 <small class="info help-block">
                                 <b>Input Kecamatan</b> Max Length : 30.</small>
                             </div>
                         </div>
-
                                                  
                                                 <div class="form-group ">
                             <label for="kode_wilayah" class="col-sm-2 control-label">Kode Wilayah 

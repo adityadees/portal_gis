@@ -68,7 +68,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">TIPE </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($gallery_assets->NAMA_TG); ?>
+                           <?= _ent($gallery_assets->TIPE); ?>
                         </div>
                     </div>
                                          
@@ -92,7 +92,7 @@ jQuery(document).ready(domo);
                         <label for="content" class="col-sm-2 control-label">ASSET </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($gallery_assets->NAMA_ASSET); ?>
+                           <?= _ent($gallery_assets->ASSET); ?>
                         </div>
                     </div>
                                         

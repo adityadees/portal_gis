@@ -74,47 +74,20 @@ class Assets extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('NAMA_ASSET', 'NAMA ASSET', 'trim|required');
-		$this->form_validation->set_rules('assets_PHOTO_ASSET_name', 'PHOTO ASSET', 'trim|required');
-		$this->form_validation->set_rules('KATEGORI', 'KATEGORI', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('KETERANGAN', 'KETERANGAN', 'trim|required');
-		$this->form_validation->set_rules('DATE_CREATED', 'DATE CREATED', 'trim|required');
-		$this->form_validation->set_rules('DATE_UPDATED', 'DATE UPDATED', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
-			$assets_PHOTO_ASSET_uuid = $this->input->post('assets_PHOTO_ASSET_uuid');
-			$assets_PHOTO_ASSET_name = $this->input->post('assets_PHOTO_ASSET_name');
 		
 			$save_data = [
+				'KODE_LA' => $this->input->post('KODE_LA'),
 				'NAMA_ASSET' => $this->input->post('NAMA_ASSET'),
+				'PHOTO_ASSET' => $this->input->post('PHOTO_ASSET'),
 				'KATEGORI' => $this->input->post('KATEGORI'),
 				'KETERANGAN' => $this->input->post('KETERANGAN'),
 				'DATE_CREATED' => $this->input->post('DATE_CREATED'),
 				'DATE_UPDATED' => $this->input->post('DATE_UPDATED'),
 			];
 
-			if (!is_dir(FCPATH . '/uploads/assets/')) {
-				mkdir(FCPATH . '/uploads/assets/');
-			}
-
-			if (!empty($assets_PHOTO_ASSET_name)) {
-				$assets_PHOTO_ASSET_name_copy = date('YmdHis') . '-' . $assets_PHOTO_ASSET_name;
-
-				rename(FCPATH . 'uploads/tmp/' . $assets_PHOTO_ASSET_uuid . '/' . $assets_PHOTO_ASSET_name, 
-						FCPATH . 'uploads/assets/' . $assets_PHOTO_ASSET_name_copy);
-
-				if (!is_file(FCPATH . '/uploads/assets/' . $assets_PHOTO_ASSET_name_copy)) {
-					echo json_encode([
-						'success' => false,
-						'message' => 'Error uploading file'
-						]);
-					exit;
-				}
-
-				$save_data['PHOTO_ASSET'] = $assets_PHOTO_ASSET_name_copy;
-			}
-		
 			
 			$save_assets = $this->model_assets->store($save_data);
 
@@ -184,46 +157,19 @@ class Assets extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('NAMA_ASSET', 'NAMA ASSET', 'trim|required');
-		$this->form_validation->set_rules('assets_PHOTO_ASSET_name', 'PHOTO ASSET', 'trim|required');
-		$this->form_validation->set_rules('KATEGORI', 'KATEGORI', 'trim|required|max_length[11]');
-		$this->form_validation->set_rules('KETERANGAN', 'KETERANGAN', 'trim|required');
-		$this->form_validation->set_rules('DATE_CREATED', 'DATE CREATED', 'trim|required');
-		$this->form_validation->set_rules('DATE_UPDATED', 'DATE UPDATED', 'trim|required');
 		
 		if ($this->form_validation->run()) {
-			$assets_PHOTO_ASSET_uuid = $this->input->post('assets_PHOTO_ASSET_uuid');
-			$assets_PHOTO_ASSET_name = $this->input->post('assets_PHOTO_ASSET_name');
 		
 			$save_data = [
+				'KODE_LA' => $this->input->post('KODE_LA'),
 				'NAMA_ASSET' => $this->input->post('NAMA_ASSET'),
+				'PHOTO_ASSET' => $this->input->post('PHOTO_ASSET'),
 				'KATEGORI' => $this->input->post('KATEGORI'),
 				'KETERANGAN' => $this->input->post('KETERANGAN'),
 				'DATE_CREATED' => $this->input->post('DATE_CREATED'),
 				'DATE_UPDATED' => $this->input->post('DATE_UPDATED'),
 			];
 
-			if (!is_dir(FCPATH . '/uploads/assets/')) {
-				mkdir(FCPATH . '/uploads/assets/');
-			}
-
-			if (!empty($assets_PHOTO_ASSET_uuid)) {
-				$assets_PHOTO_ASSET_name_copy = date('YmdHis') . '-' . $assets_PHOTO_ASSET_name;
-
-				rename(FCPATH . 'uploads/tmp/' . $assets_PHOTO_ASSET_uuid . '/' . $assets_PHOTO_ASSET_name, 
-						FCPATH . 'uploads/assets/' . $assets_PHOTO_ASSET_name_copy);
-
-				if (!is_file(FCPATH . '/uploads/assets/' . $assets_PHOTO_ASSET_name_copy)) {
-					echo json_encode([
-						'success' => false,
-						'message' => 'Error uploading file'
-						]);
-					exit;
-				}
-
-				$save_data['PHOTO_ASSET'] = $assets_PHOTO_ASSET_name_copy;
-			}
-		
 			
 			$save_assets = $this->model_assets->change($id, $save_data);
 
@@ -315,90 +261,9 @@ class Assets extends Admin
 	{
 		$assets = $this->model_assets->find($id);
 
-		if (!empty($assets->PHOTO_ASSET)) {
-			$path = FCPATH . '/uploads/assets/' . $assets->PHOTO_ASSET;
-
-			if (is_file($path)) {
-				$delete_file = unlink($path);
-			}
-		}
 		
 		
 		return $this->model_assets->remove($id);
-	}
-	
-	/**
-	* Upload Image Assets	* 
-	* @return JSON
-	*/
-	public function upload_PHOTO_ASSET_file()
-	{
-		if (!$this->is_allowed('assets_add', false)) {
-			echo json_encode([
-				'success' => false,
-				'message' => cclang('sorry_you_do_not_have_permission_to_access')
-				]);
-			exit;
-		}
-
-		$uuid = $this->input->post('qquuid');
-
-		echo $this->upload_file([
-			'uuid' 		 	=> $uuid,
-			'table_name' 	=> 'assets',
-		]);
-	}
-
-	/**
-	* Delete Image Assets	* 
-	* @return JSON
-	*/
-	public function delete_PHOTO_ASSET_file($uuid)
-	{
-		if (!$this->is_allowed('assets_delete', false)) {
-			echo json_encode([
-				'success' => false,
-				'error' => cclang('sorry_you_do_not_have_permission_to_access')
-				]);
-			exit;
-		}
-
-		echo $this->delete_file([
-            'uuid'              => $uuid, 
-            'delete_by'         => $this->input->get('by'), 
-            'field_name'        => 'PHOTO_ASSET', 
-            'upload_path_tmp'   => './uploads/tmp/',
-            'table_name'        => 'assets',
-            'primary_key'       => 'KODE_LA',
-            'upload_path'       => 'uploads/assets/'
-        ]);
-	}
-
-	/**
-	* Get Image Assets	* 
-	* @return JSON
-	*/
-	public function get_PHOTO_ASSET_file($id)
-	{
-		if (!$this->is_allowed('assets_update', false)) {
-			echo json_encode([
-				'success' => false,
-				'message' => 'Image not loaded, you do not have permission to access'
-				]);
-			exit;
-		}
-
-		$assets = $this->model_assets->find($id);
-
-		echo $this->get_file([
-            'uuid'              => $id, 
-            'delete_by'         => 'id', 
-            'field_name'        => 'PHOTO_ASSET', 
-            'table_name'        => 'assets',
-            'primary_key'       => 'KODE_LA',
-            'upload_path'       => 'uploads/assets/',
-            'delete_endpoint'   => 'administrator/assets/delete_PHOTO_ASSET_file'
-        ]);
 	}
 	
 	

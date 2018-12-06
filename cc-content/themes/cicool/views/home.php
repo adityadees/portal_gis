@@ -1,29 +1,68 @@
 <?= get_header(); ?>
-<body id="page-top">
+<body id="page-top"">
    <?= get_navigation(); ?>
+<style>
+.bg { 
+    /* The image used */
+    background-image: url("<?= base_url();?>asset/mapgeojson/cover.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media only screen and (max-width: 768px) {
+.bg { 
+    /* The image used */
+    background-image: url("<?= base_url();?>asset/mapgeojson/cover.jpg");
+
+    /* Full height */
+    height: 100%; 
+    margin-top:20px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.tex{
+margin-top:10px;
+}
+}
+
+@media only screen and (min-width: 768px) {
+.tex{
+margin-top:100px;
+}
 
 
-   <section id="services" style="">       
-      <div class="container ui-sortable" style=""> 
-         <div class="row ui-sortable" style="">     
-            <div class="col-lg-12 text-center ui-sortable" style="">       
-              <h2 class="section-heading" style="">PORTAL GIS</h2>       
-              <h3 class="section-subheading text-muted" style="">Provinsi Sumatera Selatan</h3>    
-           </div>     
-        </div>       
+@media only screen and (min-width: 992px) {
+.tex{
+margin-top:200px;
+}
 
-        <div class="row text-center ui-sortable" style="margin-top:50px">        
-           <div class="col-md-8 col-md-offset-2 ui-sortable" style="">         
-              <span class="fa-stack fa-4x">         
-                 <img src="<?= base_url(); ?>asset/mapgeojson/sumsel.png ?>" class="img-responsive">
-              </span>         
-              <br>
-              <p class="text-muted bg-success" style="margin-top:100px">
-               Penggunaan Aplikasi GIS berbasis Web dalam Pemetaan Jalan dan Jembatan di Provinsi Sumatera Selatan
-              </p>
-              <a href="<?= base_url()?>peta" class="btn btn-primary">LIHAT DEMO</a>  
-           </div>           
-        </div>       
-     </div>     
-  </section>
+
+@media only screen and (min-width: 1200px) {
+.tex{
+margin-top:300px;
+}
+}
+
+
+</style>
+
+<section id="services" class="bg">   
+	   <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+               <a href="<?= base_url()?>peta" class="btn btn-primary tex">LIHAT DEMO</a>  
+            </div>
+        </div>
+</section>
+
+
+ 
+
   <?= get_footer(); ?>

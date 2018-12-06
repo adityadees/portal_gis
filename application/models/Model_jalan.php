@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_jalan extends MY_Model {
 
 	private $primary_key 	= 'kode_jalan';
-	private $table_name 	= 'jalan';
+	private $table_name 	= 'jalan_nasional';
 	private $field_search 	= ['jalan_id', 'jalan_status', 'jalan_fungsi', 'jalan_sumber', 'jalan_no_ruas', 'jalan_nama_ruas', 'jalan_panjang', 'jalan_layer'];
 
 	public function __construct()

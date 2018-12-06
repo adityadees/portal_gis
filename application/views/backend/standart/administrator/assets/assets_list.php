@@ -80,6 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>KODE LA</th>
                            <th>NAMA ASSET</th>
                            <th>PHOTO ASSET</th>
                            <th>KATEGORI</th>
@@ -96,23 +97,10 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $assets->KODE_LA; ?>">
                            </td>
                            
+                           <td><?= _ent($assets->KODE_LA); ?></td> 
                            <td><?= _ent($assets->NAMA_ASSET); ?></td> 
-                           <td>
-                              <?php if (!empty($assets->PHOTO_ASSET)): ?>
-                                <?php if (is_image($assets->PHOTO_ASSET)): ?>
-                                <a class="fancybox" rel="group" href="<?= BASE_URL . 'uploads/assets/' . $assets->PHOTO_ASSET; ?>">
-                                  <img src="<?= BASE_URL . 'uploads/assets/' . $assets->PHOTO_ASSET; ?>" class="image-responsive" alt="image assets" title="PHOTO_ASSET assets" width="40px">
-                                </a>
-                                <?php else: ?>
-                                  <a href="<?= BASE_URL . 'administrator/file/download/assets/' . $assets->PHOTO_ASSET; ?>">
-                                   <img src="<?= get_icon_file($assets->PHOTO_ASSET); ?>" class="image-responsive image-icon" alt="image assets" title="PHOTO_ASSET <?= $assets->PHOTO_ASSET; ?>" width="40px"> 
-                                 </a>
-                                <?php endif; ?>
-                              <?php endif; ?>
-                           </td>
-                            
-                           <td><?= _ent($assets->NAMA_KOP); ?></td>
-                             
+                           <td><?= _ent($assets->PHOTO_ASSET); ?></td> 
+                           <td><?= _ent($assets->KATEGORI); ?></td> 
                            <td><?= _ent($assets->KETERANGAN); ?></td> 
                            <td><?= _ent($assets->DATE_CREATED); ?></td> 
                            <td><?= _ent($assets->DATE_UPDATED); ?></td> 
@@ -159,7 +147,8 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'NAMA_ASSET' ? 'selected' :''; ?> value="NAMA_ASSET">NAMA ASSET</option>
+                            <option <?= $this->input->get('f') == 'KODE_LA' ? 'selected' :''; ?> value="KODE_LA">KODE LA</option>
+                           <option <?= $this->input->get('f') == 'NAMA_ASSET' ? 'selected' :''; ?> value="NAMA_ASSET">NAMA ASSET</option>
                            <option <?= $this->input->get('f') == 'PHOTO_ASSET' ? 'selected' :''; ?> value="PHOTO_ASSET">PHOTO ASSET</option>
                            <option <?= $this->input->get('f') == 'KATEGORI' ? 'selected' :''; ?> value="KATEGORI">KATEGORI</option>
                            <option <?= $this->input->get('f') == 'KETERANGAN' ? 'selected' :''; ?> value="KETERANGAN">KETERANGAN</option>

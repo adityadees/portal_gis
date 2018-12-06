@@ -80,12 +80,14 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
+                           <th>Kode Historis Ab</th>
                            <th>Air Bersih Id</th>
                            <th>Historis Vefektif</th>
                            <th>Historis Tahun</th>
-                           <th>Historis Volume Penanganan</th>
-                           <th>Historis Sumber Dana</th>
+                           <th>Historis Vpenanganan</th>
+                           <th>Historis Sdana</th>
                            <th>Historis Ket</th>
+                           <th>Historis Namakeg</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -96,6 +98,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $historis_air_bersih->kode_historis_ab; ?>">
                            </td>
                            
+                           <td><?= _ent($historis_air_bersih->kode_historis_ab); ?></td> 
                            <td><?= _ent($historis_air_bersih->air_bersih_id); ?></td>
                              
                            <td><?= _ent($historis_air_bersih->historis_vefektif); ?></td> 
@@ -103,6 +106,7 @@ jQuery(document).ready(domo);
                            <td><?= _ent($historis_air_bersih->historis_vpenanganan); ?></td> 
                            <td><?= _ent($historis_air_bersih->historis_sdana); ?></td> 
                            <td><?= _ent($historis_air_bersih->historis_ket); ?></td> 
+                           <td><?= _ent($historis_air_bersih->historis_namakeg); ?></td> 
                            <td width="200">
                               <?php is_allowed('historis_air_bersih_view', function() use ($historis_air_bersih){?>
                               <a href="<?= site_url('administrator/historis_air_bersih/view/' . $historis_air_bersih->kode_historis_ab); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -146,12 +150,14 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'air_bersih_id' ? 'selected' :''; ?> value="air_bersih_id">Air Bersih Id</option>
+                            <option <?= $this->input->get('f') == 'kode_historis_ab' ? 'selected' :''; ?> value="kode_historis_ab">Kode Historis Ab</option>
+                           <option <?= $this->input->get('f') == 'air_bersih_id' ? 'selected' :''; ?> value="air_bersih_id">Air Bersih Id</option>
                            <option <?= $this->input->get('f') == 'historis_vefektif' ? 'selected' :''; ?> value="historis_vefektif">Historis Vefektif</option>
                            <option <?= $this->input->get('f') == 'historis_tahun' ? 'selected' :''; ?> value="historis_tahun">Historis Tahun</option>
                            <option <?= $this->input->get('f') == 'historis_vpenanganan' ? 'selected' :''; ?> value="historis_vpenanganan">Historis Vpenanganan</option>
                            <option <?= $this->input->get('f') == 'historis_sdana' ? 'selected' :''; ?> value="historis_sdana">Historis Sdana</option>
                            <option <?= $this->input->get('f') == 'historis_ket' ? 'selected' :''; ?> value="historis_ket">Historis Ket</option>
+                           <option <?= $this->input->get('f') == 'historis_namakeg' ? 'selected' :''; ?> value="historis_namakeg">Historis Namakeg</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

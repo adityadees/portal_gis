@@ -5,7 +5,7 @@ class Model_jembatan_pt_250k extends MY_Model {
 
 	private $primary_key 	= 'kode_jpt';
 	private $table_name 	= 'jembatan_pt_250k';
-	private $field_search 	= ['jembatan_id', 'field1-field18', 'filed2', 'filed3', 'filed4', 'filed5', 'filed6', 'filed7', 'filed8', 'filed9', 'filed10', 'filed11', 'filed12', 'filed13', 'filed14', 'filed15', 'filed16', 'filed17', 'filed18'];
+	private $field_search 	= ['jembatan_id', 'field1', 'field2', 'field3', 'field4', 'field5', 'field6', 'field7', 'field8', 'field9', 'field10', 'field11', 'field12', 'field13', 'field14', 'field15', 'field16', 'field17', 'field18'];
 
 	public function __construct()
 	{
