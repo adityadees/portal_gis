@@ -98,8 +98,13 @@
                                                 <div class="form-group ">
                             <label for="historis_tahun" class="col-sm-2 control-label">Historis Tahun 
                             </label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_tahun" id="historis_tahun" placeholder="Historis Tahun" value="<?= set_value('historis_tahun', $historis_air_bersih->historis_tahun); ?>">
+                            <div class="col-sm-2">
+                                <select  class="form-control chosen chosen-select-deselect" name="historis_tahun" id="historis_tahun" data-placeholder="Select Historis Tahun" >
+                                    <option value=""></option>
+                                    <?php for ($i = 1970; $i < date('Y')+100; $i++){ ?>
+                                    <option <?=  $i ==  $historis_air_bersih->historis_tahun ? 'selected' : ''; ?> value="<?= $i; ?>"><?= $i; ?></option>
+                                    <?php }; ?>  
+                                </select>
                                 <small class="info help-block">
                                 </small>
                             </div>

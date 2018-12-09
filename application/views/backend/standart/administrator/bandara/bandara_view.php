@@ -87,6 +87,14 @@ jQuery(document).ready(domo);
                            <?= _ent($bandara->klasifikasi); ?>
                         </div>
                     </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Bandara Dtampung </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($bandara->bandara_dtampung); ?>
+                        </div>
+                    </div>
                                         
                     <br>
                     <br>

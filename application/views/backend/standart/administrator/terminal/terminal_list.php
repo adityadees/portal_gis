@@ -83,6 +83,7 @@ jQuery(document).ready(domo);
                            <th>Terminal Id</th>
                            <th>Nama Termi</th>
                            <th>Klasifikasi</th>
+                           <th>Terminal Dtampung</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -96,6 +97,7 @@ jQuery(document).ready(domo);
                            <td><?= _ent($terminal->terminal_id); ?></td> 
                            <td><?= _ent($terminal->nama_termi); ?></td> 
                            <td><?= _ent($terminal->klasifikasi); ?></td> 
+                           <td><?= _ent($terminal->terminal_dtampung); ?></td> 
                            <td width="200">
                               <?php is_allowed('terminal_view', function() use ($terminal){?>
                               <a href="<?= site_url('administrator/terminal/view/' . $terminal->kode_sanitasi_sumsel); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -142,6 +144,7 @@ jQuery(document).ready(domo);
                             <option <?= $this->input->get('f') == 'terminal_id' ? 'selected' :''; ?> value="terminal_id">Terminal Id</option>
                            <option <?= $this->input->get('f') == 'nama_termi' ? 'selected' :''; ?> value="nama_termi">Nama Termi</option>
                            <option <?= $this->input->get('f') == 'klasifikasi' ? 'selected' :''; ?> value="klasifikasi">Klasifikasi</option>
+                           <option <?= $this->input->get('f') == 'terminal_dtampung' ? 'selected' :''; ?> value="terminal_dtampung">Terminal Dtampung</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

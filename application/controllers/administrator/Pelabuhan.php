@@ -85,6 +85,7 @@ class Pelabuhan extends Admin
 				'pelabuhan_id' => $this->input->post('pelabuhan_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'pelabuhan_dtampung' => $this->input->post('pelabuhan_dtampung'),
 			];
 
 			
@@ -166,6 +167,7 @@ class Pelabuhan extends Admin
 				'pelabuhan_id' => $this->input->post('pelabuhan_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'pelabuhan_dtampung' => $this->input->post('pelabuhan_dtampung'),
 			];
 
 			

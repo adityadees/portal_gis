@@ -85,6 +85,7 @@ class Stasiun extends Admin
 				'stasiun_id' => $this->input->post('stasiun_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'stasiun_dtampung' => $this->input->post('stasiun_dtampung'),
 			];
 
 			
@@ -166,6 +167,7 @@ class Stasiun extends Admin
 				'stasiun_id' => $this->input->post('stasiun_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'stasiun_dtampung' => $this->input->post('stasiun_dtampung'),
 			];
 
 			

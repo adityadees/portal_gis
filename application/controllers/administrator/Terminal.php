@@ -85,6 +85,7 @@ class Terminal extends Admin
 				'terminal_id' => $this->input->post('terminal_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'terminal_dtampung' => $this->input->post('terminal_dtampung'),
 			];
 
 			
@@ -166,6 +167,7 @@ class Terminal extends Admin
 				'terminal_id' => $this->input->post('terminal_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'terminal_dtampung' => $this->input->post('terminal_dtampung'),
 			];
 
 			

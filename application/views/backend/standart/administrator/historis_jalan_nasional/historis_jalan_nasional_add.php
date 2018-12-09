@@ -141,12 +141,10 @@
                             <label for="historis_namakeg" class="col-sm-2 control-label">Historis Namakeg 
                             <i class="required">*</i>
                             </label>
-                            <div class="col-sm-6">
-                            <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datepicker" name="historis_namakeg"  placeholder="Historis Namakeg" id="historis_namakeg">
-                            </div>
-                            <small class="info help-block">
-                            </small>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Historis Namakeg" value="<?= set_value('historis_namakeg'); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                 

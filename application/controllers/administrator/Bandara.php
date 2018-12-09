@@ -85,6 +85,7 @@ class Bandara extends Admin
 				'bandara_id' => $this->input->post('bandara_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'bandara_dtampung' => $this->input->post('bandara_dtampung'),
 			];
 
 			
@@ -166,6 +167,7 @@ class Bandara extends Admin
 				'bandara_id' => $this->input->post('bandara_id'),
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
+				'bandara_dtampung' => $this->input->post('bandara_dtampung'),
 			];
 
 			

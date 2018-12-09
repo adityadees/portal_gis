@@ -130,7 +130,7 @@
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sdana" value="<?= set_value('historis_sdana', $historis_pelabuhan->historis_sdana); ?>">
+                                <input type="text" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sdana" value="<?= set_value('historis_sdana', $historis_pelabuhan->historis_sdana); ?>">
                                 <small class="info help-block">
                                 <b>Input Historis Sdana</b> Max Length : 11.</small>
                             </div>

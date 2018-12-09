@@ -62,5 +62,6 @@ $route['administrator/forgot-password'] = 'administrator/auth/forgot_password';
 $route['page/(:any)'] = 'page/detail/$1';
 $route['blog/index'] = 'blog/index';
 $route['peta'] = 'web/peta';
+$route['grafik'] = 'web/grafik';
 $route['blog/(:any)'] = 'blog/detail/$1';
 $route['administrator/web-page'] = 'administrator/page/admin';

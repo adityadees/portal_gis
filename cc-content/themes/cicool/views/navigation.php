@@ -18,39 +18,42 @@
                     </li>
                 <?php endforeach; ?>
                 <li>
-                    <a class="page-scroll" href="<?= site_url('peta'); ?>">Map</a>
-                </li>
-                <?php if (!app()->aauth->is_loggedin()): ?>
+                  <a class="page-scroll" href="<?= site_url('grafik'); ?>">Grafik</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="<?= site_url('peta'); ?>">Map</a>
+            </li>
+            <?php if (!app()->aauth->is_loggedin()): ?>
+            <li>
+                <a class="page-scroll" href="<?= site_url('administrator/login'); ?>"><i class="fa fa-sign-in"></i> <?= cclang('login'); ?></a>
+            </li>
+            <?php else: ?>
                 <li>
-                    <a class="page-scroll" href="<?= site_url('administrator/login'); ?>"><i class="fa fa-sign-in"></i> <?= cclang('login'); ?></a>
+                    <a class="page-scroll dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <img src="<?= BASE_URL.'uploads/user/'.(!empty(get_user_data('avatar')) ? get_user_data('avatar') :'default.png'); ?>" class="img-circle img-user" alt="User Image"> 
+                        <?= get_user_data('full_name'); ?>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="<?= site_url('administrator/user/profile'); ?>">My Profile</a>
+                        <a class="dropdown-item" href="<?= site_url('administrator/dashboard'); ?>">Dashboard</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?= site_url('administrator/auth/logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
                 </li>
-                <?php else: ?>
-                    <li>
-                        <a class="page-scroll dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
-                            <img src="<?= BASE_URL.'uploads/user/'.(!empty(get_user_data('avatar')) ? get_user_data('avatar') :'default.png'); ?>" class="img-circle img-user" alt="User Image"> 
-                            <?= get_user_data('full_name'); ?>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="<?= site_url('administrator/user/profile'); ?>">My Profile</a>
-                            <a class="dropdown-item" href="<?= site_url('administrator/dashboard'); ?>">Dashboard</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?= site_url('administrator/auth/logout'); ?>"><i class="fa fa-sign-out"></i> Logout</a>
-                        </div>
-                    </li>
-                <?php endif; ?>
-                <li class="dropdown ">
-                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                       <span class="flag-icon <?=get_current_initial_lang(); ?>"></span> <?= get_current_lang(); ?> </a>
-                       <ul class="dropdown-menu" role="menu">
-                           <?php foreach (get_langs() as $lang): ?>
-                            <li><a href="<?= site_url('web/switch_lang/'.$lang['folder_name']); ?>"><span class="flag-icon <?= $lang['icon_name']; ?>"></span> <?= $lang['name']; ?></a></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+            <?php endif; ?>
+            <li class="dropdown ">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                 <span class="flag-icon <?=get_current_initial_lang(); ?>"></span> <?= get_current_lang(); ?> </a>
+                 <ul class="dropdown-menu" role="menu">
+                     <?php foreach (get_langs() as $lang): ?>
+                        <li><a href="<?= site_url('web/switch_lang/'.$lang['folder_name']); ?>"><span class="flag-icon <?= $lang['icon_name']; ?>"></span> <?= $lang['name']; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <!-- /.container-fluid -->
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
 </nav>

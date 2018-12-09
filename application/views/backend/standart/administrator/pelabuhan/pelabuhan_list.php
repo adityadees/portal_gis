@@ -83,6 +83,7 @@ jQuery(document).ready(domo);
                            <th>Pelabuhan Id</th>
                            <th>Nama Termi</th>
                            <th>Klasifikasi</th>
+                           <th>Pelabuhan Dtampung</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -96,6 +97,7 @@ jQuery(document).ready(domo);
                            <td><?= _ent($pelabuhan->pelabuhan_id); ?></td> 
                            <td><?= _ent($pelabuhan->nama_termi); ?></td> 
                            <td><?= _ent($pelabuhan->klasifikasi); ?></td> 
+                           <td><?= _ent($pelabuhan->pelabuhan_dtampung); ?></td> 
                            <td width="200">
                               <?php is_allowed('pelabuhan_view', function() use ($pelabuhan){?>
                               <a href="<?= site_url('administrator/pelabuhan/view/' . $pelabuhan->kode_sanitasi_sumsel); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -142,6 +144,7 @@ jQuery(document).ready(domo);
                             <option <?= $this->input->get('f') == 'pelabuhan_id' ? 'selected' :''; ?> value="pelabuhan_id">Pelabuhan Id</option>
                            <option <?= $this->input->get('f') == 'nama_termi' ? 'selected' :''; ?> value="nama_termi">Nama Termi</option>
                            <option <?= $this->input->get('f') == 'klasifikasi' ? 'selected' :''; ?> value="klasifikasi">Klasifikasi</option>
+                           <option <?= $this->input->get('f') == 'pelabuhan_dtampung' ? 'selected' :''; ?> value="pelabuhan_dtampung">Pelabuhan Dtampung</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

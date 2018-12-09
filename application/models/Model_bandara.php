@@ -5,7 +5,7 @@ class Model_bandara extends MY_Model {
 
 	private $primary_key 	= 'kode_sanitasi_sumsel';
 	private $table_name 	= 'bandara';
-	private $field_search 	= ['bandara_id', 'nama_termi', 'klasifikasi'];
+	private $field_search 	= ['bandara_id', 'nama_termi', 'klasifikasi', 'bandara_dtampung'];
 
 	public function __construct()
 	{

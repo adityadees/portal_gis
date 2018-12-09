@@ -5,7 +5,7 @@ class Model_stasiun extends MY_Model {
 
 	private $primary_key 	= 'kode_sanitasi_sumsel';
 	private $table_name 	= 'stasiun';
-	private $field_search 	= ['stasiun_id', 'nama_termi', 'klasifikasi'];
+	private $field_search 	= ['stasiun_id', 'nama_termi', 'klasifikasi', 'stasiun_dtampung'];
 
 	public function __construct()
 	{

@@ -91,6 +91,16 @@
                                 </small>
                             </div>
                         </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="bandara_dtampung" class="col-sm-2 control-label">Bandara Dtampung 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="bandara_dtampung" id="bandara_dtampung" placeholder="Bandara Dtampung" value="<?= set_value('bandara_dtampung', $bandara->bandara_dtampung); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
                                                 
                         <div class="message"></div>
                         <div class="row-fluid col-md-7">

@@ -87,6 +87,14 @@ jQuery(document).ready(domo);
                            <?= _ent($terminal->klasifikasi); ?>
                         </div>
                     </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Terminal Dtampung </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($terminal->terminal_dtampung); ?>
+                        </div>
+                    </div>
                                         
                     <br>
                     <br>

@@ -5,7 +5,7 @@ class Model_pelabuhan extends MY_Model {
 
 	private $primary_key 	= 'kode_sanitasi_sumsel';
 	private $table_name 	= 'pelabuhan';
-	private $field_search 	= ['pelabuhan_id', 'nama_termi', 'klasifikasi'];
+	private $field_search 	= ['pelabuhan_id', 'nama_termi', 'klasifikasi', 'pelabuhan_dtampung'];
 
 	public function __construct()
 	{

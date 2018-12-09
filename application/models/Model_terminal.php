@@ -5,7 +5,7 @@ class Model_terminal extends MY_Model {
 
 	private $primary_key 	= 'kode_sanitasi_sumsel';
 	private $table_name 	= 'terminal';
-	private $field_search 	= ['terminal_id', 'nama_termi', 'klasifikasi'];
+	private $field_search 	= ['terminal_id', 'nama_termi', 'klasifikasi', 'terminal_dtampung'];
 
 	public function __construct()
 	{
