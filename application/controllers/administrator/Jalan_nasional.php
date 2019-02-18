@@ -80,7 +80,7 @@ class Jalan_nasional extends Admin
 		$this->form_validation->set_rules('jalan_sumber', 'Jalan Sumber', 'trim|required');
 		$this->form_validation->set_rules('jalan_no_ruas', 'Jalan No Ruas', 'trim|required|max_length[20]');
 		$this->form_validation->set_rules('jalan_nama_ruas', 'Jalan Nama Ruas', 'trim|required');
-		$this->form_validation->set_rules('jalan_panjang', 'Jalan Panjang', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('jalan_panjang', 'Jalan Panjang (KM)', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('jalan_layer', 'Jalan Layer', 'trim|required|max_length[20]');
 		
 
@@ -173,7 +173,7 @@ class Jalan_nasional extends Admin
 		$this->form_validation->set_rules('jalan_sumber', 'Jalan Sumber', 'trim|required');
 		$this->form_validation->set_rules('jalan_no_ruas', 'Jalan No Ruas', 'trim|required|max_length[20]');
 		$this->form_validation->set_rules('jalan_nama_ruas', 'Jalan Nama Ruas', 'trim|required');
-		$this->form_validation->set_rules('jalan_panjang', 'Jalan Panjang', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('jalan_panjang', 'Jalan Panjang (KM)', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('jalan_layer', 'Jalan Layer', 'trim|required|max_length[20]');
 		
 		if ($this->form_validation->run()) {

@@ -5,7 +5,7 @@ class Model_target extends MY_Model {
 
 	private $primary_key 	= 'target_id';
 	private $table_name 	= 'target';
-	private $field_search 	= ['maplink_id', 'target_data_id', 'target_tahun', 'target_volume'];
+	private $field_search 	= ['maplink_id', 'target_data_id', 'target_tahun', 'target_volume', 'target_satuan'];
 
 	public function __construct()
 	{

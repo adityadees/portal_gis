@@ -77,6 +77,7 @@ class Terminal extends Admin
 		$this->form_validation->set_rules('terminal_id', 'Terminal Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('terminal_dtampung', 'Terminal Dtampung', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -86,6 +87,7 @@ class Terminal extends Admin
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
 				'terminal_dtampung' => $this->input->post('terminal_dtampung'),
+				'tipe' => $this->input->post('tipe'),
 			];
 
 			
@@ -160,6 +162,7 @@ class Terminal extends Admin
 		$this->form_validation->set_rules('terminal_id', 'Terminal Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('terminal_dtampung', 'Terminal Dtampung', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
@@ -168,6 +171,7 @@ class Terminal extends Admin
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
 				'terminal_dtampung' => $this->input->post('terminal_dtampung'),
+				'tipe' => $this->input->post('tipe'),
 			];
 
 			

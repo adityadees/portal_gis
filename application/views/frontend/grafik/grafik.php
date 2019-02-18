@@ -12,7 +12,6 @@
   <title> <?= isset($title) ? $title : site_name() ?></title>
 
   <link href="<?= theme_asset(); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <link href="<?= theme_asset(); ?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -24,6 +23,10 @@
   <link rel="stylesheet" href="<?= BASE_ASSET; ?>admin-lte/plugins/morris/morris.css">
   <link rel="stylesheet" href="<?= BASE_ASSET; ?>flag-icon/css/flag-icon.css" rel="stylesheet" media="all" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,6 +93,12 @@
       background: inherit;
       left: 20px;
     }
+    
+    .tab-content > .tab-pane:not(.active) {
+      display: block;
+      height: 0;
+      overflow-y: hidden;
+    }
   </style>
 </head>
 
@@ -112,12 +121,6 @@
             <a class="page-scroll" href="<?= site_url($menu->link); ?>"><?= $menu->label; ?></a>
           </li>
         <?php endforeach; ?>
-        <li>
-          <a class="page-scroll" href="<?= site_url('grafik'); ?>">Grafik</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="<?= site_url('peta'); ?>">Map</a>
-        </li>
         <?php if (!app()->aauth->is_loggedin()): ?>
         <li>
           <a class="page-scroll" href="<?= site_url('administrator/login'); ?>"><i class="fa fa-sign-in"></i> <?= cclang('login'); ?></a>
@@ -153,153 +156,584 @@
 
  <body>
   <div class="content-wrapper">
-   <section class="content-header">
+   <section class="content-header" style="margin-top:-50px;">
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url()?>"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Map</li>
+      <li class="active">Grafik</li>
     </ol>
   </section>
 
 
 
-  <div class="col-md-12" style="margin-top: -100px">
-    <div class="col-md-2">
-      <div class="row">
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            All
-            <div class="material-switch pull-right">
-              <input id="all" name="someSwitchOption001" type="checkbox" checked="checked"/>
-              <label for="all" class="label-success"></label>
+  <div class="col-md-12" style="margin-top:-100px;">
+    <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a data-toggle="pill" href="#jalan_nasionaln">Jalan Nasional</a></li>
+        <li><a data-toggle="pill" href="#jalan_provinsin">Jalan Provinsi</a></li>
+        <li><a data-toggle="pill" href="#jalan_permukimann">Jalan Permukiman</a></li>
+        <li><a data-toggle="pill" href="#air_bersihn">Air</a></li>
+        <li><a data-toggle="pill" href="#irigasin">Irigasi</a></li>
+        <li><a data-toggle="pill" href="#jembatann">Jembatan</a></li>
+        <li><a data-toggle="pill" href="#sanitasin">Sanitasi</a></li>
+        <li><a data-toggle="pill" href="#pelabuhann">Pelabuhan</a></li>
+        <li><a data-toggle="pill" href="#terminaln">Terminal</a></li>
+        <li><a data-toggle="pill" href="#stasiunn">Stasiun</a></li>
+        <li><a data-toggle="pill" href="#bandaran">Bandara</a></li>
+        <li><a data-toggle="pill" href="#sungain">Sungai</a></li>
+        <li><a data-toggle="pill" href="#sungaipoln">Sungai Pol</a></li>
+        <li><a data-toggle="pill" href="#toln">TOL</a></li>
+        <li><a data-toggle="pill" href="#kebencanaann">Kebencanaan</a></li>
+        <li><a data-toggle="pill" href="#penataan_ruangn">Penataan Ruang</a></li>
+        <li><a data-toggle="pill" href="#greenhousen">Penurunan Greenhouse</a></li>
+        <li><a data-toggle="pill" href="#kawasan_kumuhn">Kawasan Kumuh</a></li>
+
+      </ul>
+    </div>
+    
+    <div class="col-md-10">
+      <div class="tab-content">
+        <div id="jalan_nasionaln" class="tab-pane fade in active">
+          <h3>Jalan Nasional</h3>
+          <div class="row">
+            <div class="col-md-12 ">
+              <div id="jalan_nasional" style="width: 800px; height: 500px;"></div>
             </div>
           </div>
-          <div id="checkboxes">
-
-            <ul class="list-group">
-
-              <li class="list-group-item">
-                Jalan Nasional
-                <div class="material-switch pull-right">
-                  <input id="jalan_nasional" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="jalan_nasional" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Jalan Provinsi
-                <div class="material-switch pull-right">
-                  <input id="jalan_provinsi" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="jalan_provinsi" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Air
-                <div class="material-switch pull-right">
-                  <input id="air_bersih" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="air_bersih" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Bendung
-                <div class="material-switch pull-right">
-                  <input id="bendung" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="bendung" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Jembatan
-                <div class="material-switch pull-right">
-                  <input id="jembatan" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="jembatan" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Sanitasi
-                <div class="material-switch pull-right">
-                  <input id="sanitasi" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="sanitasi" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Pelabuhan
-                <div class="material-switch pull-right">
-                  <input id="pelabuhan" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="pelabuhan" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Terminal
-                <div class="material-switch pull-right">
-                  <input id="terminal" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="terminal" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Statsiun
-                <div class="material-switch pull-right">
-                  <input id="stasiun" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="stasiun" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Bandara
-                <div class="material-switch pull-right">
-                  <input id="bandara" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="bandara" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Sungai
-                <div class="material-switch pull-right">
-                  <input id="sungai" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="sungai" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Sungai Pol
-                <div class="material-switch pull-right">
-                  <input id="sungaipol" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="sungaipol" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                TOL
-                <div class="material-switch pull-right">
-                  <input id="tol" name="someSwitchOption001" type="checkbox" checked="checked" />
-                  <label for="tol" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Kebencanaan
-                <div class="material-switch pull-right">
-                  <input id="kebencanaan" name="someSwitchOption001" type="checkbox" checked="checked" />
-                  <label for="kebencanaan" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Penataan Ruang
-                <div class="material-switch pull-right">
-                  <input id="penataanruang" name="someSwitchOption001" type="checkbox" checked="checked" />
-                  <label for="penataanruang" class="label-success"></label>
-                </div>
-              </li>
-              <li class="list-group-item">
-                Penurunan Greenhouse
-                <div class="material-switch pull-right">
-                  <input id="greenhouse" name="someSwitchOption001" type="checkbox" checked="checked" />
-                  <label for="greenhouse" class="label-success"></label>
-                </div>
-              </li>
-
-            </ul>
+          
+                    <div class="row">
+              <div class="col-md-12">
+                        <table id="jalan_nasional_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Jalan</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($jalan_nasional_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['jalan_nama_ruas']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="jalan_provinsin" class="tab-pane fade">
+          <h3>Jalan Provinsi</h3>
+          <div class="row">
+            <div class="col-md-12 ">
+              <div id="jalan_provinsi" style="width: 800px; height: 500px;"></div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                        <table id="jalan_provinsi_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Jalan</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($jalan_provinsi_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['jalan_nama_ruas']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
           </div>
           
-        </div>   
+        </div>
+        <div id="jalan_permukimann" class="tab-pane fade">
+          <h3>Jalan Permukiman</h3>
+          <div class="row">
+            <div class="col-md-12 ">
+              <div id="jalan_permukiman" style="width: 800px; height: 500px;"></div>
+            </div>
+          </div>
+                    <div class="row">
+              <div class="col-md-12">
+                        <table id="jalan_permukiman_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Jalan</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($jalan_permukiman_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['jalan_nama_ruas']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="air_bersihn" class="tab-pane fade">
+          <h3>Air Bersih</h3>
+            <div class="row">
+            <div class="col-md-12 ">
+              <div id="air_bersih" style="width: 800px; height: 500px;"></div>
+            </div>
+          </div>
+              <div class="row">
+              <div class="col-md-12">
+                        <table id="air_bersih_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Daerah</th>
+                   <th>Tahun</th>
+                   <th>Volume Penangan (km)</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($air_bersih_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['text_kecamatan']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vpenanganan']." km"; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>  
+        
+          
+              <div id="irigasin" class="tab-pane fade">
+          <h3>Irigasi</h3>
+            <div class="row">
+            <div class="col-md-12 ">
+              <div id="irigasi" style="width: 800px; height: 500px;"></div>
+            </div>
+          </div>
+              <div class="row">
+              <div class="col-md-12">
+                        <table id="irigasi_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Irigasi</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan (ha)</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($irigasi_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']." ha"; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        
+                <div id="jembatann" class="tab-pane fade">
+          <h3>Jembatan</h3>
+            <div class="row">
+            <div class="col-md-12 ">
+              <div id="jembatan" style="width: 800px; height: 500px;"></div>
+            </div>
+          </div>
+              <div class="row">
+              <div class="col-md-12">
+                        <table id="jembatan_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Jembatan</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan (km)</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($jembatan_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['field5']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        
+        <div id="sanitasin" class="tab-pane fade">
+          <h3>Sanitasi</h3>
+            <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="sanitasi" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="sanitasi_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Sanitasi</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($sanitasi_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['text_kecamatan']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        
+        
 
+        <div id="pelabuhann" class="tab-pane fade">
+          <h3>Pelabuhan</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="pelabuhan" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="pelabuhan_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Pelabuhan</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($pelabuhan_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama_termi']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="terminaln" class="tab-pane fade">
+          <h3>Terminal</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="terminal" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="terminal_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Terminal</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($terminal_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama_termi']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="stasiunn" class="tab-pane fade">
+          <h3>Stasiun</h3>
+            <div class="row">            
+            <div class="col-md-12 ">               
+            <div id="stasiun" style="width: 800px; height: 500px;"></div>             </div>          
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="stasiun_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Stasiun</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($stasiun_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama_termi']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="bandaran" class="tab-pane fade">
+          <h3>Bandara</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="bandara" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="bandara_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Bandara</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($bandara_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama_termi']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="sungain" class="tab-pane fade">
+          <h3>Sungai</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="sungai" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="sungai_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Sungai</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($sungai_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['text_sungai']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        <div id="sungaipoln" class="tab-pane fade">
+          <h3>Sungai Pol</h3>
+            <div class="row">            
+            <div class="col-md-12 ">              
+            <div id="sungaipol" style="width: 800px; height: 500px;"></div>             </div>       
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="sungaipol_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Sungai Poly</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($sungaipol_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['namasungai']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        
+        
+        <div id="toln" class="tab-pane fade">
+          <h3>Tol</h3>
+           <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="tol" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="tol_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Tol</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($tol_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['ruas']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div> 
+        <div id="kebencanaann" class="tab-pane fade">
+          <h3>Kebencanaan</h3>
+            <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="kebencanaan" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+        </div>
+        <div id="penataan_ruangn" class="tab-pane fade">
+          <h3>Penataan Ruang</h3>
+            <div class="row">             <div class="col-md-12 ">               <div id="penataan_ruang" style="width: 800px; height: 500px;"></div>             </div>           </div>
+        </div>
+        <div id="greenhouse" class="tab-pane fade">
+          <h3>Green House</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="greenhouse" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+        </div> 
+        
+              
+        <div id="kawasan_kumuhn" class="tab-pane fade">
+          <h3>Kawasan Kumuh</h3>
+             <div class="row">             
+            <div class="col-md-12 ">               
+            <div id="kawasan_kumuh" style="width: 800px; height: 500px;"></div>
+            </div>           
+            </div>
+                <div class="row">
+              <div class="col-md-12">
+                        <table id="kawasan_kumuh_t" class="table table-striped table-bordered">
+               <thead>
+               <tr>
+                   <th>Nama Kawasan Kumuh</th>
+                   <th>Tahun</th>
+                   <th>Volume Efektif</th>
+                   <th>Volume Penangan</th>
+                   <th>Target</th>
+               </tr>
+               </thead>
+               <tbody>
+               <?php foreach($kawasan_kumuh_table->result_array() as $i ) : ?>
+                  <tr>
+                   <th><?= $i['nama_kaw']; ?></th>
+                   <th><?= $i['historis_tahun']; ?></th>
+                   <th><?= $i['historis_vefektif']; ?></th>
+                   <th><?= $i['historis_vpenanganan']; ?></th>
+                   <th><?= $i['target_volume']; ?></th>
+               </tr>
+               <?php endforeach; ?>
+               </tbody>
+           </table>
+              </div>
+          </div>
+        </div>
+        
       </div>
-    </div>
-    <div class="col-md-10">
-      <div id="map"></div>
     </div>
   </div>
 </div>
@@ -307,111 +741,130 @@
 </body>
 </html>
 
-<script>
-  var map;
-
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
-      center: {lat: -2.9365327, lng: 104.4950964}
-    });
-    var infowindow = new google.maps.InfoWindow();
-
-    
 
 
-    <?php foreach ($map_link->result_array() as $i) : ?>
-      var <?= $i['maplink_var']; ?> = new google.maps.Data({map: map});
-      <?= $i['maplink_var']; ?>.loadGeoJson('<?= base_url().'/asset/mapgeojson/geojson/'.$i['maplink_url']; ?>');
-    <?php endforeach; ?>
-
-    var icons = {
-      <?php foreach ($map_link->result_array() as $i) : ?>
-        <?= $i['maplink_var']; ?>: {
-          name: "<?= $i['maplink_nama']; ?>",
-          icon: "<?= base_url(); ?>asset/mapgeojson/icons/<?= $i['maplink_icon']; ?>"
-        }, 
-      <?php endforeach; ?>
-    };
-
-    <?php foreach ($map_link->result_array() as $i) : ?>
-      <?= $i['maplink_var']; ?>.setStyle({
-        fillColor: ' <?= $i['maplink_fcolor']; ?>',
-        strokeColor: ' <?= $i['maplink_scolor']; ?>',
-        strokeWeight:  <?= $i['maplink_sweight']; ?>,
-        <?php if($i['maplink_type']=='Markers'){ ?>icon:icons.<?= $i['maplink_var']; ?>.icon <?php } ?>
-      });
-    <?php endforeach; ?>
-
-    <?php foreach ($map_link->result_array() as $i) : ?>
-      $('#<?= $i['maplink_var'];?>').click(function(){
-        <?= $i['maplink_var'];?>.setMap($(this).is(':checked') ? map : null);
-      });
-    <?php endforeach; ?>
-
-    $('#jalan_nasional,#jalan_provinsi,#air_bersih,#bendung,#jembatan,#sanitasi,#pelabuhan,#terminal,#stasiun,#bandara,#sungai,#sungaipol,#tol').removeAttr('disabled');
-
-    $('#all').click(function(){
-      <?php foreach ($map_link->result_array() as $i) : ?>
-        <?= $i['maplink_var']; ?>.setMap($(this).is(':checked') ? map : null);
-        tol.setMap($(this).is(':checked') ? map : null);
-      <?php endforeach; ?>
-    });
-
-    $(document).ready(function() {
-      $('#all').click(function() {
-        var checked = $(this).prop('checked');
-        $('#checkboxes').find('input:checkbox').prop('checked', checked);
-      });
-    })
-
-    <?php foreach ($map_link->result_array() as $i) : ?>
-      google.maps.event.addListener(<?= $i['maplink_var']; ?>, 'click', function(event) {
-        var aab=event.feature.l.ID;
-        var idlink="<?php echo $i['maplink_var']; ?>";
-
-        infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Nama</th><td><?php if($i['maplink_var']=='jalan_nasional'){ ?>' +event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='jalan_provinsi') {?>'+event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='bendung') {?>'+event.feature.l.nama+'<?php } else if($i['maplink_var']=='jembatan') {?>'+event.feature.l.Field5+'<?php } else if($i['maplink_var']=='sanitasi') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='pelabuhan') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='terminal') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='stasiun') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='bandara') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='sungai') {?>'+event.feature.l.TEXT_SUNGA+'<?php } else if($i['maplink_var']=='sungaipol') {?>'+event.feature.l.NAMASUNGAI+'<?php } else if($i['maplink_var']=='tol') {?>'+event.feature.l.Ruas+'<?php } else if($i['maplink_var']=='air_bersih') {?>'+event.feature.l.TEXT_KEC+'<?php } else {}?></td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+idlink+'">Detail</button></div></div></div>');
-        console.log(event.feature.l)
-        infowindow.setPosition(event.latLng);
-        infowindow.open(map);
-      });
-    <?php endforeach; ?>
-
-    <?php foreach ($map_link->result_array() as $i) : ?>
-      <?php echo $i['maplink_var']; ?>.addListener('mouseover', function (event) {
-        <?php echo $i['maplink_var']; ?>.revertStyle();
-        <?php echo $i['maplink_var']; ?>.overrideStyle(event.feature, {
-          <?php if($i['maplink_type']=='Polylines'){ echo "strokeColor: 'red',strokeWeight: 8,";} else if($i['maplink_type']=='Polygons'){ echo "fillColor: 'yellow',";} else {} ?>
-          visibility: 'off'
-
-        });   
-      });
-
-      <?php echo $i['maplink_var']; ?>.addListener('mouseout', function (event) {
-        <?php echo $i['maplink_var']; ?>.revertStyle();
-      });
-    <?php endforeach; ?>
-
-  }
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84bgLwDPpg&callback=initMap">
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<?php
-$this->load->view('frontend/map/modals/jalan_nasional');
-$this->load->view('frontend/map/modals/jalan_provinsi');
-$this->load->view('frontend/map/modals/air_bersih');
-$this->load->view('frontend/map/modals/bendung');
-$this->load->view('frontend/map/modals/jembatan');
-$this->load->view('frontend/map/modals/sanitasi');
-$this->load->view('frontend/map/modals/pelabuhan');
-$this->load->view('frontend/map/modals/terminal');
-$this->load->view('frontend/map/modals/stasiun');
-$this->load->view('frontend/map/modals/bandara');
-$this->load->view('frontend/map/modals/sungai');
-$this->load->view('frontend/map/modals/sungaipol');
-$this->load->view('frontend/map/modals/tol');
-?>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function() {
+    $('#jalan_nasional_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#jalan_provinsi_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#jalan_permukiman_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    
+    $('#air_bersih_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#irigasi_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#jembatan_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    
+    $('#pelabuhan_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#terminal_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#bandara_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    
+    $('#stasiun_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#sungai_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#sungaipol_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+    $('#kawasan_kumuh_t').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
+
+
+<?php $this->load->view('frontend/grafik/modals/jalan_provinsi'); ?>
+<?php $this->load->view('frontend/grafik/modals/jalan_nasional'); ?>
+<?php $this->load->view('frontend/grafik/modals/jalan_permukiman'); ?>
+<?php $this->load->view('frontend/grafik/modals/air_bersih'); ?>
+<?php $this->load->view('frontend/grafik/modals/irigasi'); ?>
+<?php $this->load->view('frontend/grafik/modals/jembatan'); ?>
+<?php $this->load->view('frontend/grafik/modals/sanitasi'); ?>
+<?php $this->load->view('frontend/grafik/modals/sungai'); ?>
+<?php $this->load->view('frontend/grafik/modals/sungaipol'); ?>
+<?php $this->load->view('frontend/grafik/modals/tol'); ?>
+<?php $this->load->view('frontend/grafik/modals/pelabuhan'); ?>
+<?php $this->load->view('frontend/grafik/modals/terminal'); ?>
+<?php $this->load->view('frontend/grafik/modals/stasiun'); ?>
+<?php $this->load->view('frontend/grafik/modals/bandara'); ?>
+<?php $this->load->view('frontend/grafik/modals/kawasan_kumuh'); ?>
+
+

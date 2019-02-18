@@ -74,9 +74,9 @@ class Dokumentasi_pelabuhan extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('pelabuhan_id', 'Pelabuhan Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('pelabuhan_id', 'Nama Pelabuhan', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('dokumentasi_pelabuhan_file_name', 'File', 'trim|required');
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumentasi', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -86,6 +86,7 @@ class Dokumentasi_pelabuhan extends Admin
 			$save_data = [
 				'pelabuhan_id' => $this->input->post('pelabuhan_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_pelabuhan/')) {
@@ -178,9 +179,9 @@ class Dokumentasi_pelabuhan extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('pelabuhan_id', 'Pelabuhan Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('pelabuhan_id', 'Nama Pelabuhan', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('dokumentasi_pelabuhan_file_name', 'File', 'trim|required');
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumentasi', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 			$dokumentasi_pelabuhan_file_uuid = $this->input->post('dokumentasi_pelabuhan_file_uuid');
@@ -189,6 +190,7 @@ class Dokumentasi_pelabuhan extends Admin
 			$save_data = [
 				'pelabuhan_id' => $this->input->post('pelabuhan_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_pelabuhan/')) {

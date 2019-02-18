@@ -4,7 +4,7 @@
 <style>
 .bg { 
     /* The image used */
-    background-image: url("<?= base_url();?>asset/mapgeojson/cover.jpg");
+    background-image: url("<?= base_url();?>asset/mapgeojson/cover-2.jpg");
 
     /* Full height */
     height: 100%; 
@@ -18,7 +18,7 @@
 @media only screen and (max-width: 768px) {
 .bg { 
     /* The image used */
-    background-image: url("<?= base_url();?>asset/mapgeojson/cover.jpg");
+    background-image: url("<?= base_url();?>asset/mapgeojson/cover-2.jpg");
 
     /* Full height */
     height: 100%; 
@@ -57,7 +57,7 @@ margin-top:300px;
 <section id="services" class="bg">   
 	   <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-               <a href="<?= base_url()?>peta" class="btn btn-primary tex">LIHAT DEMO</a>  
+               <a href="<?= base_url()?>peta" class="btn btn-primary tex">LIHAT PETA</a>  
             </div>
         </div>
 </section>

@@ -23,11 +23,11 @@ jQuery(document).ready(domo);
 <!-- Content Header (Page header) -->
 <section class="content-header">
    <h1>
-      Tol Ln 2017 Sumatera Selatan Pubtr Geo      <small><?= cclang('detail', ['Tol Ln 2017 Sumatera Selatan Pubtr Geo']); ?> </small>
+      Tol      <small><?= cclang('detail', ['Tol']); ?> </small>
    </h1>
    <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class=""><a  href="<?= site_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo'); ?>">Tol Ln 2017 Sumatera Selatan Pubtr Geo</a></li>
+      <li class=""><a  href="<?= site_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo'); ?>">Tol</a></li>
       <li class="active"><?= cclang('detail'); ?></li>
    </ol>
 </section>
@@ -48,8 +48,8 @@ jQuery(document).ready(domo);
                         <img class="img-circle" src="<?= BASE_ASSET; ?>/img/view.png" alt="User Avatar">
                      </div>
                      <!-- /.widget-user-image -->
-                     <h3 class="widget-user-username">Tol Ln 2017 Sumatera Selatan Pubtr Geo</h3>
-                     <h5 class="widget-user-desc">Detail Tol Ln 2017 Sumatera Selatan Pubtr Geo</h5>
+                     <h3 class="widget-user-username">Tol</h3>
+                     <h5 class="widget-user-desc">Detail Tol</h5>
                      <hr>
                   </div>
 
@@ -65,7 +65,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Tol Ln 2017 Sumatera Selatan Pubtr Geo Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Tol </label>
 
                         <div class="col-sm-8">
                            <?= _ent($tol_ln_2017_sumatera_selatan_pubtr_geo->tol_ln_2017_sumatera_selatan_pubtr_geo_id); ?>

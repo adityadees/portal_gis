@@ -95,6 +95,7 @@
                                                  
                                                 <div class="form-group ">
                             <label for="stasiun_dtampung" class="col-sm-2 control-label">Stasiun Dtampung 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="stasiun_dtampung" id="stasiun_dtampung" placeholder="Stasiun Dtampung" value="<?= set_value('stasiun_dtampung'); ?>">

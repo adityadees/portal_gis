@@ -5,7 +5,7 @@ class Model_historis_jalan_nasional extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_jl';
 	private $table_name 	= 'historis_jalan_nasional';
-	private $field_search 	= ['jalan_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['jalan_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg', 'historis_sta'];
 
 	public function __construct()
 	{

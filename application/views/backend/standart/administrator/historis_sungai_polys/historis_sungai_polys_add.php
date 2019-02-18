@@ -61,23 +61,13 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="kode_historis_sungai_polys" class="col-sm-2 control-label">Kode Historis Sungai Polys 
-                            </label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="kode_historis_sungai_polys" id="kode_historis_sungai_polys" placeholder="Kode Historis Sungai Polys" value="<?= set_value('kode_historis_sungai_polys'); ?>">
-                                <small class="info help-block">
-                                </small>
-                            </div>
-                        </div>
-                                                 
-                                                <div class="form-group ">
-                            <label for="sungai_polys_id" class="col-sm-2 control-label">Sungai Polys Id 
+                            <label for="sungai_polys_id" class="col-sm-2 control-label">Nama Sungai Poly 
                             </label>
                             <div class="col-sm-8">
                                 <select  class="form-control chosen chosen-select-deselect" name="sungai_polys_id" id="sungai_polys_id" data-placeholder="Select Sungai Polys Id" >
                                     <option value=""></option>
                                     <?php foreach (db_get_all_data('sungai_polys') as $row): ?>
-                                    <option value="<?= $row->sungai_poly_id ?>"><?= $row->sungai_poly_id; ?></option>
+                                    <option value="<?= $row->sungai_poly_id ?>"><?= $row->namasungai; ?></option>
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
@@ -87,10 +77,10 @@
 
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_vefektif" class="col-sm-2 control-label">Historis Vefektif 
+                            <label for="historis_vefektif" class="col-sm-2 control-label">Volume Efektif 
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_vefektif" id="historis_vefektif" placeholder="Historis Vefektif" value="<?= set_value('historis_vefektif'); ?>">
+                                <input type="number" class="form-control" name="historis_vefektif" id="historis_vefektif" placeholder="Volume Efektif" value="<?= set_value('historis_vefektif'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -112,20 +102,20 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Historis Vpenanganan 
+                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Volume Penanganan 
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Historis Vpenanganan" value="<?= set_value('historis_vpenanganan'); ?>">
+                                <input type="number" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Volume Penanganan" value="<?= set_value('historis_vpenanganan'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_sdana" class="col-sm-2 control-label">Historis Sdana 
+                            <label for="historis_sdana" class="col-sm-2 control-label">Sumber Dana 
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sdana" value="<?= set_value('historis_sdana'); ?>">
+                                <input type="text" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Sumber Dana" value="<?= set_value('historis_sdana'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>
@@ -142,11 +132,11 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_namakeg" class="col-sm-2 control-label">Historis Namakeg 
+                            <label for="historis_namakeg" class="col-sm-2 control-label">Nama Kegiatan 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Historis Namakeg" value="<?= set_value('historis_namakeg'); ?>">
+                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Nama Kegiatan" value="<?= set_value('historis_namakeg'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>

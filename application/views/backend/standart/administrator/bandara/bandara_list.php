@@ -84,6 +84,8 @@ jQuery(document).ready(domo);
                            <th>Nama Termi</th>
                            <th>Klasifikasi</th>
                            <th>Bandara Dtampung</th>
+                           <th>Status</th>
+                           <th>Runway</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -98,6 +100,8 @@ jQuery(document).ready(domo);
                            <td><?= _ent($bandara->nama_termi); ?></td> 
                            <td><?= _ent($bandara->klasifikasi); ?></td> 
                            <td><?= _ent($bandara->bandara_dtampung); ?></td> 
+                           <td><?= _ent($bandara->status); ?></td> 
+                           <td><?= _ent($bandara->runway); ?></td> 
                            <td width="200">
                               <?php is_allowed('bandara_view', function() use ($bandara){?>
                               <a href="<?= site_url('administrator/bandara/view/' . $bandara->kode_sanitasi_sumsel); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -145,6 +149,8 @@ jQuery(document).ready(domo);
                            <option <?= $this->input->get('f') == 'nama_termi' ? 'selected' :''; ?> value="nama_termi">Nama Termi</option>
                            <option <?= $this->input->get('f') == 'klasifikasi' ? 'selected' :''; ?> value="klasifikasi">Klasifikasi</option>
                            <option <?= $this->input->get('f') == 'bandara_dtampung' ? 'selected' :''; ?> value="bandara_dtampung">Bandara Dtampung</option>
+                           <option <?= $this->input->get('f') == 'status' ? 'selected' :''; ?> value="status">Status</option>
+                           <option <?= $this->input->get('f') == 'runway' ? 'selected' :''; ?> value="runway">Runway</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

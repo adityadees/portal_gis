@@ -74,9 +74,9 @@ class Dokumentasi_sungai_poly extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('sungai_poly_id', 'Sungai Poly Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('sungai_poly_id', 'Nama Sungai Poly', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('dokumentasi_sungai_poly_file_name', 'File', 'trim|required');
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumen', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -86,6 +86,7 @@ class Dokumentasi_sungai_poly extends Admin
 			$save_data = [
 				'sungai_poly_id' => $this->input->post('sungai_poly_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_sungai_poly/')) {
@@ -178,9 +179,9 @@ class Dokumentasi_sungai_poly extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('sungai_poly_id', 'Sungai Poly Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('sungai_poly_id', 'Nama Sungai Poly', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('dokumentasi_sungai_poly_file_name', 'File', 'trim|required');
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumen', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 			$dokumentasi_sungai_poly_file_uuid = $this->input->post('dokumentasi_sungai_poly_file_uuid');
@@ -189,6 +190,7 @@ class Dokumentasi_sungai_poly extends Admin
 			$save_data = [
 				'sungai_poly_id' => $this->input->post('sungai_poly_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_sungai_poly/')) {

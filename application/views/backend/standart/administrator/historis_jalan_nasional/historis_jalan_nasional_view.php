@@ -65,15 +65,15 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Jalan Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Jalan </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($historis_jalan_nasional->jalan_id); ?>
+                           <?= _ent($historis_jalan_nasional->jalan_nama_ruas); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vefektif </label>
+                        <label for="content" class="col-sm-2 control-label">Volume Efektif </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_jalan_nasional->historis_vefektif); ?>
@@ -89,7 +89,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vpenanganan </label>
+                        <label for="content" class="col-sm-2 control-label">Historis Penanganan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_jalan_nasional->historis_vpenanganan); ?>
@@ -97,7 +97,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Sdana </label>
+                        <label for="content" class="col-sm-2 control-label">Sumber Dana </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_jalan_nasional->historis_sdana); ?>
@@ -113,10 +113,18 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Namakeg </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Kegiatan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_jalan_nasional->historis_namakeg); ?>
+                        </div>
+                    </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Historis Sta </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($historis_jalan_nasional->historis_sta); ?>
                         </div>
                     </div>
                                         

@@ -63,5 +63,6 @@ $route['page/(:any)'] = 'page/detail/$1';
 $route['blog/index'] = 'blog/index';
 $route['peta'] = 'web/peta';
 $route['grafik'] = 'web/grafik';
+$route['visimisi'] = 'web/visimisi';
 $route['blog/(:any)'] = 'blog/detail/$1';
 $route['administrator/web-page'] = 'administrator/page/admin';

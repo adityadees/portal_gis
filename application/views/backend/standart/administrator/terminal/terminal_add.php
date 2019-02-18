@@ -95,9 +95,20 @@
                                                  
                                                 <div class="form-group ">
                             <label for="terminal_dtampung" class="col-sm-2 control-label">Terminal Dtampung 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="terminal_dtampung" id="terminal_dtampung" placeholder="Terminal Dtampung" value="<?= set_value('terminal_dtampung'); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="tipe" class="col-sm-2 control-label">Tipe 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="tipe" id="tipe" placeholder="Tipe" value="<?= set_value('tipe'); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>

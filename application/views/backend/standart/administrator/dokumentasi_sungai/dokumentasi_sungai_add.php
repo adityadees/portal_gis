@@ -68,33 +68,25 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="kode_ds" class="col-sm-2 control-label">Kode Ds 
-                            </label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="kode_ds" id="kode_ds" placeholder="Kode Ds" value="<?= set_value('kode_ds'); ?>">
-                                <small class="info help-block">
-                                </small>
-                            </div>
-                        </div>
-                                                 
-                                                <div class="form-group ">
-                            <label for="dokumentasi_sungai_id" class="col-sm-2 control-label">Dokumentasi Sungai Id 
+                            <label for="dokumentasi_sungai_id" class="col-sm-2 control-label">Nama Sungai 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <select  class="form-control chosen chosen-select-deselect" name="dokumentasi_sungai_id" id="dokumentasi_sungai_id" data-placeholder="Select Dokumentasi Sungai Id" >
                                     <option value=""></option>
-                                    <?php foreach (db_get_all_data('sungais') as $row): ?>
-                                    <option value="<?= $row->sungai_id ?>"><?= $row->sungai_id; ?></option>
+                                    <?php foreach (db_get_all_data('sungai') as $row): ?>
+                                    <option value="<?= $row->sungai_id ?>"><?= $row->text_sungai; ?></option>
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
-                                </small>
+                                <b>Input Dokumentasi Sungai Id</b> Max Length : 11.</small>
                             </div>
                         </div>
 
                                                  
                                                 <div class="form-group ">
                             <label for="file" class="col-sm-2 control-label">File 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <div id="dokumentasi_sungai_file_galery"></div>
@@ -106,15 +98,25 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Dokumen Tanggal 
+                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Tanggal Dokumentasi 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-6">
                             <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Dokumen Tanggal" id="dokumen_tanggal">
+                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Tanggal Dokumentasi" id="dokumen_tanggal">
                             </div>
                             <small class="info help-block">
                             </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="dokumentasi_nama" class="col-sm-2 control-label">Keterangan 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="dokumentasi_nama" id="dokumentasi_nama" placeholder="Keterangan" value="<?= set_value('dokumentasi_nama'); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                 

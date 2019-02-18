@@ -5,7 +5,7 @@ class Model_dokumentasi_bandara extends MY_Model {
 
 	private $primary_key 	= 'dokumentasi_bandara_id';
 	private $table_name 	= 'dokumentasi_bandara';
-	private $field_search 	= ['bandara_id', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['bandara_id', 'file', 'dokumen_tanggal', 'dokumentasi_nama'];
 
 	public function __construct()
 	{
@@ -85,6 +85,7 @@ class Model_dokumentasi_bandara extends MY_Model {
 	}
 
     public function join_avaiable() {
+        $this->db->join('bandara', 'bandara.bandara_id = dokumentasi_bandara.bandara_id', 'LEFT');
         
         return $this;
     }

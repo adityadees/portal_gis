@@ -26,11 +26,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Tol Ln 2017 Sumatera Selatan Pubtr Geo        <small>Edit Tol Ln 2017 Sumatera Selatan Pubtr Geo</small>
+        Tol        <small>Edit Tol</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class=""><a  href="<?= site_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo'); ?>">Tol Ln 2017 Sumatera Selatan Pubtr Geo</a></li>
+        <li class=""><a  href="<?= site_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo'); ?>">Tol</a></li>
         <li class="active">Edit</li>
     </ol>
 </section>
@@ -48,8 +48,8 @@
                                 <img class="img-circle" src="<?= BASE_ASSET; ?>/img/add2.png" alt="User Avatar">
                             </div>
                             <!-- /.widget-user-image -->
-                            <h3 class="widget-user-username">Tol Ln 2017 Sumatera Selatan Pubtr Geo</h3>
-                            <h5 class="widget-user-desc">Edit Tol Ln 2017 Sumatera Selatan Pubtr Geo</h5>
+                            <h3 class="widget-user-username">Tol</h3>
+                            <h5 class="widget-user-desc">Edit Tol</h5>
                             <hr>
                         </div>
                         <?= form_open(base_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/edit_save/'.$this->uri->segment(4)), [
@@ -60,11 +60,11 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="tol_ln_2017_sumatera_selatan_pubtr_geo_id" class="col-sm-2 control-label">Tol Ln 2017 Sumatera Selatan Pubtr Geo Id 
+                            <label for="tol_ln_2017_sumatera_selatan_pubtr_geo_id" class="col-sm-2 control-label">Nama Tol 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="tol_ln_2017_sumatera_selatan_pubtr_geo_id" id="tol_ln_2017_sumatera_selatan_pubtr_geo_id" placeholder="Tol Ln 2017 Sumatera Selatan Pubtr Geo Id" value="<?= set_value('tol_ln_2017_sumatera_selatan_pubtr_geo_id', $tol_ln_2017_sumatera_selatan_pubtr_geo->tol_ln_2017_sumatera_selatan_pubtr_geo_id); ?>">
+                                <input type="number" class="form-control" name="tol_ln_2017_sumatera_selatan_pubtr_geo_id" id="tol_ln_2017_sumatera_selatan_pubtr_geo_id" placeholder="Nama Tol" value="<?= set_value('tol_ln_2017_sumatera_selatan_pubtr_geo_id', $tol_ln_2017_sumatera_selatan_pubtr_geo->tol_ln_2017_sumatera_selatan_pubtr_geo_id); ?>">
                                 <small class="info help-block">
                                 <b>Input Tol Ln 2017 Sumatera Selatan Pubtr Geo Id</b> Max Length : 11.</small>
                             </div>

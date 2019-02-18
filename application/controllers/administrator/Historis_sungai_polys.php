@@ -74,13 +74,12 @@ class Historis_sungai_polys extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
-				'kode_historis_sungai_polys' => $this->input->post('kode_historis_sungai_polys'),
 				'sungai_polys_id' => $this->input->post('sungai_polys_id'),
 				'historis_vefektif' => $this->input->post('historis_vefektif'),
 				'historis_tahun' => $this->input->post('historis_tahun'),
@@ -159,12 +158,11 @@ class Historis_sungai_polys extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
-				'kode_historis_sungai_polys' => $this->input->post('kode_historis_sungai_polys'),
 				'sungai_polys_id' => $this->input->post('sungai_polys_id'),
 				'historis_vefektif' => $this->input->post('historis_vefektif'),
 				'historis_tahun' => $this->input->post('historis_tahun'),

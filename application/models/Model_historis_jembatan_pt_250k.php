@@ -5,7 +5,7 @@ class Model_historis_jembatan_pt_250k extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_jembatan_pt_250k';
 	private $table_name 	= 'historis_jembatan_pt_250k';
-	private $field_search 	= ['kode_historis_jembatan_pt_250k', 'jembatan_pt_250k_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['jembatan_pt_250k_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
 
 	public function __construct()
 	{

@@ -65,10 +65,10 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Pelabuhan Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Pelabuhan </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($dokumentasi_pelabuhan->pelabuhan_id); ?>
+                           <?= _ent($dokumentasi_pelabuhan->nama_termi); ?>
                         </div>
                     </div>
                                          
@@ -91,10 +91,18 @@ jQuery(document).ready(domo);
                     </div>
                                        
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Dokumen Tanggal </label>
+                        <label for="content" class="col-sm-2 control-label">Tanggal Dokumentasi </label>
 
                         <div class="col-sm-8">
                            <?= _ent($dokumentasi_pelabuhan->dokumen_tanggal); ?>
+                        </div>
+                    </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Keterangan </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($dokumentasi_pelabuhan->dokumentasi_nama); ?>
                         </div>
                     </div>
                                         

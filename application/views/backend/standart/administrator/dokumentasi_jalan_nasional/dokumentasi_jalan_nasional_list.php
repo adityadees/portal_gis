@@ -80,9 +80,10 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Dokumentasi Jalan Id</th>
+                           <th>Nama Jalan</th>
                            <th>File</th>
-                           <th>Dokumen Tanggal</th>
+                           <th>Tanggal Dokumen</th>
+                           <th>Keterangan</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -93,7 +94,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $dokumentasi_jalan_nasional->kode_dj; ?>">
                            </td>
                            
-                           <td><?= _ent($dokumentasi_jalan_nasional->jalan_id); ?></td>
+                           <td><?= _ent($dokumentasi_jalan_nasional->jalan_nama_ruas); ?></td>
                              
                            <td>
                               <?php if (!empty($dokumentasi_jalan_nasional->file)): ?>
@@ -110,6 +111,7 @@ jQuery(document).ready(domo);
                            </td>
                             
                            <td><?= _ent($dokumentasi_jalan_nasional->dokumen_tanggal); ?></td> 
+                           <td><?= _ent($dokumentasi_jalan_nasional->dokumentasi_nama); ?></td> 
                            <td width="200">
                               <?php is_allowed('dokumentasi_jalan_nasional_view', function() use ($dokumentasi_jalan_nasional){?>
                               <a href="<?= site_url('administrator/dokumentasi_jalan_nasional/view/' . $dokumentasi_jalan_nasional->kode_dj); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -156,6 +158,7 @@ jQuery(document).ready(domo);
                             <option <?= $this->input->get('f') == 'dokumentasi_jalan_id' ? 'selected' :''; ?> value="dokumentasi_jalan_id">Dokumentasi Jalan Id</option>
                            <option <?= $this->input->get('f') == 'file' ? 'selected' :''; ?> value="file">File</option>
                            <option <?= $this->input->get('f') == 'dokumen_tanggal' ? 'selected' :''; ?> value="dokumen_tanggal">Dokumen Tanggal</option>
+                           <option <?= $this->input->get('f') == 'dokumentasi_nama' ? 'selected' :''; ?> value="dokumentasi_nama">Dokumentasi Nama</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

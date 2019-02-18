@@ -77,6 +77,7 @@ class Bandara extends Admin
 		$this->form_validation->set_rules('bandara_id', 'Bandara Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('bandara_dtampung', 'Bandara Dtampung', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -86,6 +87,8 @@ class Bandara extends Admin
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
 				'bandara_dtampung' => $this->input->post('bandara_dtampung'),
+				'status' => $this->input->post('status'),
+				'runway' => $this->input->post('runway'),
 			];
 
 			
@@ -160,6 +163,7 @@ class Bandara extends Admin
 		$this->form_validation->set_rules('bandara_id', 'Bandara Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('bandara_dtampung', 'Bandara Dtampung', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
@@ -168,6 +172,8 @@ class Bandara extends Admin
 				'nama_termi' => $this->input->post('nama_termi'),
 				'klasifikasi' => $this->input->post('klasifikasi'),
 				'bandara_dtampung' => $this->input->post('bandara_dtampung'),
+				'status' => $this->input->post('status'),
+				'runway' => $this->input->post('runway'),
 			];
 
 			

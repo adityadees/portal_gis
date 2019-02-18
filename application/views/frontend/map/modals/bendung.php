@@ -58,7 +58,7 @@
                     <td><?= $j['historis_namakeg']; ?></td>
                     <td><?= $j['historis_vefektif']; ?></td>
                     <td><?= $j['historis_vpenanganan']; ?></td>
-                    <td><?= number_format($j['historis_sdana']); ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
                     <td><?= $j['historis_ket']; ?></td>
                   </tr>
                 <?php endforeach; ?>
@@ -73,15 +73,15 @@
            <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Tahun</th>
-                <th>Volume</th>
+                 <th class="col-md-1">No.</th>
+                <th class="col-md-5">Tahun</th>
+                <th  class="col-md-6">Volume</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $kode=$i['bendungan_id'];
-              $gtarget=$this->modelgeojson->get_target($kode,'3');
+              $gtarget=$this->modelgeojson->get_target('target_bendungan',$kode);
               $no=0;
               foreach ($gtarget->result_array() as $j) :
                 $no++;
@@ -89,7 +89,7 @@
                 <tr>
                   <td><?= $no; ?></td>
                   <td><?= $j['target_tahun'];?></td>
-                  <td><?= number_format($j['target_volume']); ?></td>
+                  <td><?= $j['target_volume']; ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
@@ -101,9 +101,10 @@
          <table class="table table-striped">
           <thead>
             <tr>
-              <th>No.</th>
-              <th>Dokumen</th>
-                <th>Tanggal Dokumentasi</th>
+                  <th class="col-md-1">No.</th>
+                <th class="col-md-4">Nama</th>
+                <th class="col-md-4">Dokumentasi</th>
+                <th class="col-md-3">Tanggal</th>
             </tr>
           </thead>
           <tbody>
@@ -116,8 +117,9 @@
               ?>
               <tr>
                 <td><?= $no; ?></td>
-                <td><a href="<?= base_url();?>uploads/dokumentasi_bendung_disumsel/<?= $j['file']; ?>" target="blank">
-                  <img border="0"  src="<?= base_url();?>uploads/dokumentasi_bendung_disumsel/<?= $j['file']; ?>" width="200px" height="150px">
+                  <td><?= $j['dokumentasi_nama']; ?></td>
+                <td><a href="<?= base_url();?>uploads/dokumentasi_bendungan/<?= $j['file']; ?>" target="blank">
+                  <img border="0"  src="<?= base_url();?>uploads/dokumentasi_bendungan/<?= $j['file']; ?>" width="200px" height="150px">
                 </a></td>
                   <td><?= $j['dokumen_tanggal']; ?></td>
               </tr>

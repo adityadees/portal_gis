@@ -80,9 +80,10 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Bandara Id</th>
+                           <th>Nama Bandara</th>
                            <th>File</th>
-                           <th>Dokumen Tanggal</th>
+                           <th>Tanggal Dokumen</th>
+                           <th>Keterangan</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -93,7 +94,8 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $dokumentasi_bandara->dokumentasi_bandara_id; ?>">
                            </td>
                            
-                           <td><?= _ent($dokumentasi_bandara->bandara_id); ?></td> 
+                           <td><?= _ent($dokumentasi_bandara->nama_termi); ?></td>
+                             
                            <td>
                               <?php if (!empty($dokumentasi_bandara->file)): ?>
                                 <?php if (is_image($dokumentasi_bandara->file)): ?>
@@ -109,6 +111,7 @@ jQuery(document).ready(domo);
                            </td>
                             
                            <td><?= _ent($dokumentasi_bandara->dokumen_tanggal); ?></td> 
+                           <td><?= _ent($dokumentasi_bandara->dokumentasi_nama); ?></td> 
                            <td width="200">
                               <?php is_allowed('dokumentasi_bandara_view', function() use ($dokumentasi_bandara){?>
                               <a href="<?= site_url('administrator/dokumentasi_bandara/view/' . $dokumentasi_bandara->dokumentasi_bandara_id); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -155,6 +158,7 @@ jQuery(document).ready(domo);
                             <option <?= $this->input->get('f') == 'bandara_id' ? 'selected' :''; ?> value="bandara_id">Bandara Id</option>
                            <option <?= $this->input->get('f') == 'file' ? 'selected' :''; ?> value="file">File</option>
                            <option <?= $this->input->get('f') == 'dokumen_tanggal' ? 'selected' :''; ?> value="dokumen_tanggal">Dokumen Tanggal</option>
+                           <option <?= $this->input->get('f') == 'dokumentasi_nama' ? 'selected' :''; ?> value="dokumentasi_nama">Dokumentasi Nama</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

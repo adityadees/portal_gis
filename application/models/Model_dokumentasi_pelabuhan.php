@@ -5,7 +5,7 @@ class Model_dokumentasi_pelabuhan extends MY_Model {
 
 	private $primary_key 	= 'dokumentasi_pelabuhan_id';
 	private $table_name 	= 'dokumentasi_pelabuhan';
-	private $field_search 	= ['pelabuhan_id', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['pelabuhan_id', 'file', 'dokumen_tanggal', 'dokumentasi_nama'];
 
 	public function __construct()
 	{
@@ -85,6 +85,7 @@ class Model_dokumentasi_pelabuhan extends MY_Model {
 	}
 
     public function join_avaiable() {
+        $this->db->join('pelabuhan', 'pelabuhan.pelabuhan_id = dokumentasi_pelabuhan.pelabuhan_id', 'LEFT');
         
         return $this;
     }

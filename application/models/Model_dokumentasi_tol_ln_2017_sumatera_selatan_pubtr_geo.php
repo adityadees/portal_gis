@@ -5,7 +5,7 @@ class Model_dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo extends MY_Model 
 
 	private $primary_key 	= 'kode_dtl';
 	private $table_name 	= 'dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo';
-	private $field_search 	= ['kode_dtl', 'tol_ln_2017_sumatera_selatan_pubtr_geoid', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['tol_ln_2017_sumatera_selatan_pubtr_geoid', 'file', 'dokumen_tanggal'];
 
 	public function __construct()
 	{

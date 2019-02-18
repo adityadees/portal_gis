@@ -68,15 +68,21 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="bandara_id" class="col-sm-2 control-label">Bandara Id 
+                            <label for="bandara_id" class="col-sm-2 control-label">Nama Bandara 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="bandara_id" id="bandara_id" placeholder="Bandara Id" value="<?= set_value('bandara_id'); ?>">
+                                <select  class="form-control chosen chosen-select-deselect" name="bandara_id" id="bandara_id" data-placeholder="Select Bandara Id" >
+                                    <option value=""></option>
+                                    <?php foreach (db_get_all_data('bandara') as $row): ?>
+                                    <option value="<?= $row->bandara_id ?>"><?= $row->nama_termi; ?></option>
+                                    <?php endforeach; ?>  
+                                </select>
                                 <small class="info help-block">
                                 <b>Input Bandara Id</b> Max Length : 11.</small>
                             </div>
                         </div>
+
                                                  
                                                 <div class="form-group ">
                             <label for="file" class="col-sm-2 control-label">File 
@@ -92,15 +98,25 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Dokumen Tanggal 
+                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Tanggal Dokumen 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-6">
                             <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Dokumen Tanggal" id="dokumen_tanggal">
+                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Tanggal Dokumen" id="dokumen_tanggal">
                             </div>
                             <small class="info help-block">
                             </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="dokumentasi_nama" class="col-sm-2 control-label">Keterangan 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="dokumentasi_nama" id="dokumentasi_nama" placeholder="Keterangan" value="<?= set_value('dokumentasi_nama'); ?>">
+                                <small class="info help-block">
+                                </small>
                             </div>
                         </div>
                                                 

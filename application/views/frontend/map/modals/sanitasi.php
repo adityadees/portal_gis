@@ -29,7 +29,7 @@
               </tr>
               <tr>
                 <th>Kecamatan</th>
-                <td><?= number_format($i['kecamatan']);?></td>
+                <td><?= $i['kecamatan'];?></td>
               </tr>
               <tr>
                 <th>Kode Wilayah</th>
@@ -40,24 +40,20 @@
                 <td><?= $i['kode_kecamatan'];?></td>
               </tr>
               <tr>
-                <th>Text Kecamatan</th>
-                <td><?= $i['text_kecamatan'];?></td>
-              </tr>
-              <tr>
                 <th>Luas</th>
-                <td><?= number_format($i['luas']);?></td>
+                <td><?= $i['luas']." ha";?></td>
               </tr>
               <tr>
                 <th>Sanitasi</th>
                 <td><?= $i['sanitasi'];?></td>
               </tr>
               <tr>
-                <th>Air Bersih</th>
-                <td><?= $i['air_bersih'];?></td>
+                <th>Persentase Air Bersih</th>
+                <td><?= $i['air_bersih']." %";?></td>
               </tr>
               <tr>
                 <th>KK MBR</th>
-                <td><?= number_format($i['kk_mbr']);?></td>
+                <td><?= $i['kk_mbr'];?></td>
               </tr>
               <tr>
                 <th>KK nonMBR</th>
@@ -96,7 +92,7 @@
                     <td><?= $j['historis_namakeg']; ?></td>
                     <td><?= $j['historis_vefektif']; ?></td>
                     <td><?= $j['historis_vpenanganan']; ?></td>
-                    <td><?= number_format($j['historis_sdana']); ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
                     <td><?= $j['historis_ket']; ?></td>
                   </tr>
                 <?php endforeach; ?>
@@ -109,15 +105,15 @@
            <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Tahun</th>
-                <th>Volume</th>
+             <th class="col-md-1">No.</th>
+                <th class="col-md-5">Tahun</th>
+                <th  class="col-md-6">Volume</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $kode=$i['air_bersih_id'];
-              $gtarget=$this->modelgeojson->get_target($kode,'5');
+              $gtarget=$this->modelgeojson->get_target('target_sanitasi',$kode);
               $no=0;
               foreach ($gtarget->result_array() as $j) :
                 $no++;
@@ -125,7 +121,7 @@
                 <tr>
                   <td><?= $no; ?></td>
                   <td><?= $j['target_tahun'];?></td>
-                  <td><?= number_format($j['target_volume']); ?></td>
+                  <td><?= $j['target_volume']; ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
@@ -137,9 +133,10 @@
          <table class="table table-striped">
           <thead>
             <tr>
-              <th>No.</th>
-              <th>Dokumen</th>
-                <th>Tanggal Dokumentasi</th>
+                      <th class="col-md-1">No.</th>
+                <th class="col-md-4">Keterangan</th>
+                <th class="col-md-4">File</th>
+                <th class="col-md-3">Tanggal</th>
             </tr>
           </thead>
           <tbody>
@@ -152,8 +149,9 @@
               ?>
               <tr>
                 <td><?= $no; ?></td>
-                <td><a href="<?= base_url();?>uploads/dokumentasi_sanitasi_sumsel/<?= $j['file']; ?>" target="blank">
-                  <img border="0"  src="<?= base_url();?>uploads/dokumentasi_sanitasi_sumsel/<?= $j['file']; ?>" width="200px" height="150px">
+                  <td><?= $j['dokumentasi_nama']; ?></td>
+                <td><a href="<?= base_url();?>uploads/dokumentasi_sanitasi/<?= $j['file']; ?>" target="blank">
+                  <img border="0"  src="<?= base_url();?>uploads/dokumentasi_sanitasi/<?= $j['file']; ?>" width="200px" height="150px">
                 </a></td>
                   <td><?= $j['dokumen_tanggal']; ?></td>
               </tr>

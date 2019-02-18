@@ -86,7 +86,7 @@ jQuery(document).ready(domo);
                            <th>Jalan Sumber</th>
                            <th>Jalan No Ruas</th>
                            <th>Jalan Nama Ruas</th>
-                           <th>Jalan Panjang</th>
+                           <th>Jalan Panjang (KM)</th>
                            <th>Jalan Layer</th>
                            <th>Jalan Kegiatan</th>
                            <th>Action</th>

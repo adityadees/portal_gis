@@ -5,7 +5,7 @@ class Model_dokumentasi_jalan_nasional extends MY_Model {
 
 	private $primary_key 	= 'kode_dj';
 	private $table_name 	= 'dokumentasi_jalan_nasional';
-	private $field_search 	= ['dokumentasi_jalan_id', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['dokumentasi_jalan_id', 'file', 'dokumen_tanggal', 'dokumentasi_nama'];
 
 	public function __construct()
 	{

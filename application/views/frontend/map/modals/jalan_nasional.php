@@ -46,7 +46,7 @@
               </tr>
               <tr>
                 <th>Panjang</th>
-                <td><?= number_format($i['jalan_panjang']);?></td>
+                <td><?= $i['jalan_panjang']." KM";?></td>
               </tr>
               <tr>
                 <th>Layer</th>
@@ -61,8 +61,9 @@
                   <th>No.</th>
                   <th>Tahun</th>
                   <th>Nama Kegiatan</th>
-                  <th>Volume Efektif</th>
-                  <th>Volume Penanganan</th>
+                  <th>STA</th>
+                  <th>Volume Efektif (KM)</th>
+                  <th>Volume Penanganan (KM)</th>
                   <th>Sumber Dana</th>
                   <th>Ket</th>
                 </tr>
@@ -79,9 +80,10 @@
                     <td><?= $no; ?></td>
                     <td><?= $j['historis_tahun']; ?></td>
                     <td><?= $j['historis_namakeg']; ?></td>
-                    <td><?= $j['historis_vefektif']; ?></td>
-                    <td><?= $j['historis_vpenanganan']; ?></td>
-                    <td><?= number_format($j['historis_sdana']); ?></td>
+                    <td><?= $j['historis_sta']; ?></td>
+                    <td><?= $j['historis_vefektif']." KM"; ?></td>
+                    <td><?= $j['historis_vpenanganan']." KM"; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
                     <td><?= $j['historis_ket']; ?></td>
                   </tr>
                 <?php endforeach; ?>
@@ -95,15 +97,15 @@
            <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Tahun</th>
-                <th>Volume</th>
+               <th class="col-md-1">No.</th>
+                <th class="col-md-5">Tahun</th>
+                <th  class="col-md-6">Volume (KM)</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $kode=$i['jalan_id'];
-              $gtarget=$this->modelgeojson->get_target($kode,'1');
+              $gtarget=$this->modelgeojson->get_target('target_jalan_nasional',$kode);
               $no=0;
               foreach ($gtarget->result_array() as $j) :
                 $no++;
@@ -111,7 +113,7 @@
                 <tr>
                   <td><?= $no; ?></td>
                   <td><?= $j['target_tahun'];?></td>
-                  <td><?= number_format($j['target_volume']); ?></td>
+                  <td><?= $j['target_volume']." KM"; ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
@@ -123,9 +125,10 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Dokumen</th>
-                <th>Tanggal Dokumentasi</th>
+                <th class="col-md-1">No.</th>
+                <th class="col-md-4">Keterangan</th>
+                <th class="col-md-4">File</th>
+                <th class="col-md-3">Tanggal</th>
               </tr>
             </thead>
             <tbody>
@@ -138,6 +141,7 @@
                 ?>
                 <tr>
                   <td><?= $no; ?></td>
+                  <td><?= $j['dokumentasi_nama']; ?></td>
                   <td><a href="<?= base_url();?>uploads/dokumentasi_jalan_nasional/<?= $j['file']; ?>" target="blank">
                     <img border="0"  src="<?= base_url();?>uploads/dokumentasi_jalan_nasional/<?= $j['file']; ?>" width="200px" height="150px">
                   </a></td>

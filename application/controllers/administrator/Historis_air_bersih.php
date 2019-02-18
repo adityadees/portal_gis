@@ -74,15 +74,13 @@ class Historis_air_bersih extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
-				'kode_historis_ab' => $this->input->post('kode_historis_ab'),
 				'air_bersih_id' => $this->input->post('air_bersih_id'),
-				'historis_vefektif' => $this->input->post('historis_vefektif'),
 				'historis_tahun' => $this->input->post('historis_tahun'),
 				'historis_vpenanganan' => $this->input->post('historis_vpenanganan'),
 				'historis_sdana' => $this->input->post('historis_sdana'),
@@ -159,14 +157,12 @@ class Historis_air_bersih extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		
 			$save_data = [
-				'kode_historis_ab' => $this->input->post('kode_historis_ab'),
 				'air_bersih_id' => $this->input->post('air_bersih_id'),
-				'historis_vefektif' => $this->input->post('historis_vefektif'),
 				'historis_tahun' => $this->input->post('historis_tahun'),
 				'historis_vpenanganan' => $this->input->post('historis_vpenanganan'),
 				'historis_sdana' => $this->input->post('historis_sdana'),

@@ -5,7 +5,7 @@ class Model_historis_air_bersih extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_ab';
 	private $table_name 	= 'historis_air_bersih';
-	private $field_search 	= ['kode_historis_ab', 'air_bersih_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['air_bersih_id', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
 
 	public function __construct()
 	{

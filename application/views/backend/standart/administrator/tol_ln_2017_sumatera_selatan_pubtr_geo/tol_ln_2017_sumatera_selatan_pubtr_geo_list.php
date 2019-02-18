@@ -33,11 +33,11 @@ jQuery(document).ready(domo);
 <!-- Content Header (Page header) -->
 <section class="content-header">
    <h1>
-      Tol Ln 2017 Sumatera Selatan Pubtr Geo<small><?= cclang('list_all'); ?></small>
+      Tol<small><?= cclang('list_all'); ?></small>
    </h1>
    <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Tol Ln 2017 Sumatera Selatan Pubtr Geo</li>
+      <li class="active">Tol</li>
    </ol>
 </section>
 <!-- Main content -->
@@ -66,8 +66,8 @@ jQuery(document).ready(domo);
                         <img class="img-circle" src="<?= BASE_ASSET; ?>/img/list.png" alt="User Avatar">
                      </div>
                      <!-- /.widget-user-image -->
-                     <h3 class="widget-user-username">Tol Ln 2017 Sumatera Selatan Pubtr Geo</h3>
-                     <h5 class="widget-user-desc"><?= cclang('list_all', ['Tol Ln 2017 Sumatera Selatan Pubtr Geo']); ?>  <i class="label bg-yellow"><?= $tol_ln_2017_sumatera_selatan_pubtr_geo_counts; ?>  <?= cclang('items'); ?></i></h5>
+                     <h3 class="widget-user-username">Tol</h3>
+                     <h5 class="widget-user-desc"><?= cclang('list_all', ['Tol']); ?>  <i class="label bg-yellow"><?= $tol_ln_2017_sumatera_selatan_pubtr_geo_counts; ?>  <?= cclang('items'); ?></i></h5>
                   </div>
 
                   <form name="form_tol_ln_2017_sumatera_selatan_pubtr_geo" id="form_tol_ln_2017_sumatera_selatan_pubtr_geo" action="<?= base_url('administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/index'); ?>">
@@ -80,7 +80,7 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Tol Ln 2017 Sumatera Selatan Pubtr Geo Id</th>
+                           <th>Nama Tol</th>
                            <th>Jalanrencana</th>
                            <th>Ruas</th>
                            <th>Status Tol</th>
@@ -116,7 +116,7 @@ jQuery(document).ready(domo);
                       <?php if ($tol_ln_2017_sumatera_selatan_pubtr_geo_counts == 0) :?>
                          <tr>
                            <td colspan="100">
-                           Tol Ln 2017 Sumatera Selatan Pubtr Geo data is not available
+                           Tol data is not available
                            </td>
                          </tr>
                       <?php endif; ?>

@@ -126,11 +126,11 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="jalan_panjang" class="col-sm-2 control-label">Jalan Panjang 
+                            <label for="jalan_panjang" class="col-sm-2 control-label">Jalan Panjang (KM) 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="jalan_panjang" id="jalan_panjang" placeholder="Jalan Panjang" value="<?= set_value('jalan_panjang', $jalan_provinsi->jalan_panjang); ?>">
+                                <input type="number" class="form-control" name="jalan_panjang" id="jalan_panjang" placeholder="Jalan Panjang (KM)" value="<?= set_value('jalan_panjang', $jalan_provinsi->jalan_panjang); ?>">
                                 <small class="info help-block">
                                 <b>Input Jalan Panjang</b> Max Length : 11.</small>
                             </div>

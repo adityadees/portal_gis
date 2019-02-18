@@ -95,6 +95,22 @@ jQuery(document).ready(domo);
                            <?= _ent($bandara->bandara_dtampung); ?>
                         </div>
                     </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Status </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($bandara->status); ?>
+                        </div>
+                    </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Runway </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($bandara->runway); ?>
+                        </div>
+                    </div>
                                         
                     <br>
                     <br>

@@ -74,12 +74,12 @@ class Historis_stasiun extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('stasiun_id', 'Stasiun Id', 'trim|required');
-		$this->form_validation->set_rules('historis_vefektif', 'Historis Vefektif', 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('stasiun_id', 'Nama Stasiun', 'trim|required');
+		$this->form_validation->set_rules('historis_vefektif', 'Volume Efektif', 'trim|required|max_length[50]');
 		$this->form_validation->set_rules('historis_tahun', 'Historis Tahun', 'trim|required');
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required|max_length[100]');
-		$this->form_validation->set_rules('historis_vpenanganan', 'Historis Vpenanganan', 'trim|required|max_length[50]');
-		$this->form_validation->set_rules('historis_sdana', 'Historis Sdana', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('historis_vpenanganan', 'Volume Penanganan', 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('historis_sdana', 'Sumber Dana', 'trim|required');
 		$this->form_validation->set_rules('historis_ket', 'Historis Ket', 'trim|required');
 		
 
@@ -164,12 +164,12 @@ class Historis_stasiun extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('stasiun_id', 'Stasiun Id', 'trim|required');
-		$this->form_validation->set_rules('historis_vefektif', 'Historis Vefektif', 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('stasiun_id', 'Nama Stasiun', 'trim|required');
+		$this->form_validation->set_rules('historis_vefektif', 'Volume Efektif', 'trim|required|max_length[50]');
 		$this->form_validation->set_rules('historis_tahun', 'Historis Tahun', 'trim|required');
-		$this->form_validation->set_rules('historis_namakeg', 'Historis Namakeg', 'trim|required|max_length[100]');
-		$this->form_validation->set_rules('historis_vpenanganan', 'Historis Vpenanganan', 'trim|required|max_length[50]');
-		$this->form_validation->set_rules('historis_sdana', 'Historis Sdana', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('historis_namakeg', 'Nama Kegiatan', 'trim|required|max_length[100]');
+		$this->form_validation->set_rules('historis_vpenanganan', 'Volume Penanganan', 'trim|required|max_length[50]');
+		$this->form_validation->set_rules('historis_sdana', 'Sumber Dana', 'trim|required');
 		$this->form_validation->set_rules('historis_ket', 'Historis Ket', 'trim|required');
 		
 		if ($this->form_validation->run()) {

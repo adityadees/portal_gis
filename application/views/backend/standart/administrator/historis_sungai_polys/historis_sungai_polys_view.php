@@ -65,15 +65,15 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Sungai Polys Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Sungai Poly </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($historis_sungai_polys->sungai_poly_id); ?>
+                           <?= _ent($historis_sungai_polys->namasungai); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vefektif </label>
+                        <label for="content" class="col-sm-2 control-label">Volume Efektif </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_sungai_polys->historis_vefektif); ?>
@@ -89,7 +89,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vpenanganan </label>
+                        <label for="content" class="col-sm-2 control-label">Volume Penanganan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_sungai_polys->historis_vpenanganan); ?>
@@ -97,7 +97,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Sdana </label>
+                        <label for="content" class="col-sm-2 control-label">Sumber Dana </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_sungai_polys->historis_sdana); ?>
@@ -113,7 +113,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Namakeg </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Kegiatan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_sungai_polys->historis_namakeg); ?>

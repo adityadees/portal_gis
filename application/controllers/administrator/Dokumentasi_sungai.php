@@ -74,7 +74,9 @@ class Dokumentasi_sungai extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumentasi_sungai_id', 'Nama Sungai', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('dokumentasi_sungai_file_name', 'File', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumentasi', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -82,9 +84,9 @@ class Dokumentasi_sungai extends Admin
 			$dokumentasi_sungai_file_name = $this->input->post('dokumentasi_sungai_file_name');
 		
 			$save_data = [
-				'kode_ds' => $this->input->post('kode_ds'),
 				'dokumentasi_sungai_id' => $this->input->post('dokumentasi_sungai_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_sungai/')) {
@@ -177,16 +179,18 @@ class Dokumentasi_sungai extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('dokumen_tanggal', 'Dokumen Tanggal', 'trim|required');
+		$this->form_validation->set_rules('dokumentasi_sungai_id', 'Nama Sungai', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('dokumentasi_sungai_file_name', 'File', 'trim|required');
+		$this->form_validation->set_rules('dokumen_tanggal', 'Tanggal Dokumentasi', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 			$dokumentasi_sungai_file_uuid = $this->input->post('dokumentasi_sungai_file_uuid');
 			$dokumentasi_sungai_file_name = $this->input->post('dokumentasi_sungai_file_name');
 		
 			$save_data = [
-				'kode_ds' => $this->input->post('kode_ds'),
 				'dokumentasi_sungai_id' => $this->input->post('dokumentasi_sungai_id'),
 				'dokumen_tanggal' => $this->input->post('dokumen_tanggal'),
+				'dokumentasi_nama' => $this->input->post('dokumentasi_nama'),
 			];
 
 			if (!is_dir(FCPATH . '/uploads/dokumentasi_sungai/')) {

@@ -77,6 +77,7 @@ class Pelabuhan extends Admin
 		$this->form_validation->set_rules('pelabuhan_id', 'Pelabuhan Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('pelabuhan_dtampung', 'Pelabuhan Dtampung', 'trim|required');
 		
 
 		if ($this->form_validation->run()) {
@@ -160,6 +161,7 @@ class Pelabuhan extends Admin
 		$this->form_validation->set_rules('pelabuhan_id', 'Pelabuhan Id', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('nama_termi', 'Nama Termi', 'trim|required');
 		$this->form_validation->set_rules('klasifikasi', 'Klasifikasi', 'trim|required');
+		$this->form_validation->set_rules('pelabuhan_dtampung', 'Pelabuhan Dtampung', 'trim|required');
 		
 		if ($this->form_validation->run()) {
 		

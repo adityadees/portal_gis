@@ -191,3 +191,73 @@ Stack trace:
 #1 [internal function]: _exception_handler(Object(Error))
 #2 {main}
   thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[07-Dec-2018 00:28:48 Asia/Bangkok] PHP Fatal error:  Uncaught Exception: Error: Cannot use object of type mysqli as array in /home/scag9676/public_html/gis/application/views/frontend/grafik/grafik.php:170
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Loader.php(968): include()
+#1 /home/scag9676/public_html/gis/system/core/Loader.php(495): CI_Loader->_ci_load(Array)
+#2 /home/scag9676/public_html/gis/application/core/My_Loader.php(184): CI_Loader->view('frontend/grafik...', Array, false)
+#3 /home/scag9676/public_html/gis/application/controllers/Web.php(113): My_Loader->view('frontend/grafik...', Array)
+#4 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->grafik()
+#5 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#6 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[07-Dec-2018 00:30:24 Asia/Bangkok] PHP Fatal error:  Uncaught Exception: Error: Cannot use object of type mysqli as array in /home/scag9676/public_html/gis/application/views/frontend/grafik/grafik.php:174
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Loader.php(968): include()
+#1 /home/scag9676/public_html/gis/system/core/Loader.php(495): CI_Loader->_ci_load(Array)
+#2 /home/scag9676/public_html/gis/application/core/My_Loader.php(184): CI_Loader->view('frontend/grafik...', Array, false)
+#3 /home/scag9676/public_html/gis/application/controllers/Web.php(113): My_Loader->view('frontend/grafik...', Array)
+#4 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->grafik()
+#5 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#6 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[07-Dec-2018 00:30:35 Asia/Bangkok] PHP Fatal error:  Uncaught Exception: Error: Cannot use object of type mysqli as array in /home/scag9676/public_html/gis/application/views/frontend/grafik/grafik.php:174
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Loader.php(968): include()
+#1 /home/scag9676/public_html/gis/system/core/Loader.php(495): CI_Loader->_ci_load(Array)
+#2 /home/scag9676/public_html/gis/application/core/My_Loader.php(184): CI_Loader->view('frontend/grafik...', Array, false)
+#3 /home/scag9676/public_html/gis/application/controllers/Web.php(113): My_Loader->view('frontend/grafik...', Array)
+#4 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->grafik()
+#5 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#6 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[07-Dec-2018 00:30:59 Asia/Bangkok] PHP Fatal error:  Uncaught Exception: Error: Cannot use object of type mysqli as array in /home/scag9676/public_html/gis/application/views/frontend/grafik/grafik.php:174
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Loader.php(968): include()
+#1 /home/scag9676/public_html/gis/system/core/Loader.php(495): CI_Loader->_ci_load(Array)
+#2 /home/scag9676/public_html/gis/application/core/My_Loader.php(184): CI_Loader->view('frontend/grafik...', Array, false)
+#3 /home/scag9676/public_html/gis/application/controllers/Web.php(113): My_Loader->view('frontend/grafik...', Array)
+#4 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->grafik()
+#5 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#6 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(Error))
+#1 [internal function]: _exception_handler(Object(Error))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[07-Dec-2018 01:01:54 Asia/Bangkok] PHP Fatal error:  Uncaught Exception: ParseError: syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting end of file in /home/scag9676/public_html/gis/application/views/frontend/grafik/grafik.php:185
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Loader.php(495): CI_Loader->_ci_load(Array)
+#1 /home/scag9676/public_html/gis/application/core/My_Loader.php(184): CI_Loader->view('frontend/grafik...', Array, false)
+#2 /home/scag9676/public_html/gis/application/controllers/Web.php(113): My_Loader->view('frontend/grafik...', Array)
+#3 /home/scag9676/public_html/gis/system/core/CodeIgniter.php(532): Web->grafik()
+#4 /home/scag9676/public_html/gis/index.php(335): require_once('/home/scag9676/...')
+#5 {main} in /home/scag9676/public_html/gis/application/core/My_Exceptions.php:18
+Stack trace:
+#0 /home/scag9676/public_html/gis/system/core/Common.php(659): My_Exceptions->show_exception(Object(ParseError))
+#1 [internal function]: _exception_handler(Object(ParseError))
+#2 {main}
+  thrown in /home/scag9676/public_html/gis/application/core/My_Exceptions.php on line 18
+[09-Dec-2018 14:26:24 Asia/Jakarta] PHP Fatal error:  Cannot redeclare Web::grafik() in /home/scag9676/public_html/gis/application/controllers/Web.php on line 131

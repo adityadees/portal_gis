@@ -5,7 +5,7 @@ class Model_dokumentasi_sungai_poly extends MY_Model {
 
 	private $primary_key 	= 'kode_dsp';
 	private $table_name 	= 'dokumentasi_sungai_poly';
-	private $field_search 	= ['sungai_poly_id', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['sungai_poly_id', 'file', 'dokumen_tanggal', 'dokumentasi_nama'];
 
 	public function __construct()
 	{

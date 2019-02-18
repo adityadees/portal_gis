@@ -5,7 +5,7 @@ class Model_dokumentasi_terminal extends MY_Model {
 
 	private $primary_key 	= 'dokumentasi_terminal_id';
 	private $table_name 	= 'dokumentasi_terminal';
-	private $field_search 	= ['terminal_id', 'file', 'dokumen_tanggal'];
+	private $field_search 	= ['terminal_id', 'file', 'dokumen_tanggal', 'dokumentasi_nama'];
 
 	public function __construct()
 	{

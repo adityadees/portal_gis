@@ -5,7 +5,7 @@ class Model_historis_tol_ln_2017_sumatera_selatan_pubtr_geo extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_tol_ln_2017_sumatera_selatan_pubtr_geo';
 	private $table_name 	= 'historis_tol_ln_2017_sumatera_selatan_pubtr_geo';
-	private $field_search 	= ['kode_historis_tol_ln_2017_sumatera_selatan_pubtr_geo', 'tol_ln_2017_sumatera_selatan_pubtr_geos_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['tol_ln_2017_sumatera_selatan_pubtr_geos_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
 
 	public function __construct()
 	{

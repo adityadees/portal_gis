@@ -65,15 +65,15 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Pelabuhan Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Pelabuhan </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($historis_pelabuhan->pelabuhan_id); ?>
+                           <?= _ent($historis_pelabuhan->nama_termi); ?>
                         </div>
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vefektif </label>
+                        <label for="content" class="col-sm-2 control-label">Volume Efektif </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_pelabuhan->historis_vefektif); ?>
@@ -89,7 +89,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Namakeg </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Kegiatan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_pelabuhan->historis_namakeg); ?>
@@ -97,7 +97,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Vpenanganan </label>
+                        <label for="content" class="col-sm-2 control-label">Volume Penanganan </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_pelabuhan->historis_vpenanganan); ?>
@@ -105,7 +105,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Historis Sdana </label>
+                        <label for="content" class="col-sm-2 control-label">Sumber Dana </label>
 
                         <div class="col-sm-8">
                            <?= _ent($historis_pelabuhan->historis_sdana); ?>

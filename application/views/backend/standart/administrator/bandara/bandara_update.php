@@ -94,9 +94,30 @@
                                                  
                                                 <div class="form-group ">
                             <label for="bandara_dtampung" class="col-sm-2 control-label">Bandara Dtampung 
+                            <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="bandara_dtampung" id="bandara_dtampung" placeholder="Bandara Dtampung" value="<?= set_value('bandara_dtampung', $bandara->bandara_dtampung); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="status" class="col-sm-2 control-label">Status 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="status" id="status" placeholder="Status" value="<?= set_value('status', $bandara->status); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
+                                                 
+                                                <div class="form-group ">
+                            <label for="runway" class="col-sm-2 control-label">Runway 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" name="runway" id="runway" placeholder="Runway" value="<?= set_value('runway', $bandara->runway); ?>">
                                 <small class="info help-block">
                                 </small>
                             </div>

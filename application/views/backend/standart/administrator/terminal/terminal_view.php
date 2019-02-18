@@ -95,6 +95,14 @@ jQuery(document).ready(domo);
                            <?= _ent($terminal->terminal_dtampung); ?>
                         </div>
                     </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Tipe </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($terminal->tipe); ?>
+                        </div>
+                    </div>
                                         
                     <br>
                     <br>

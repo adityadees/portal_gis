@@ -80,13 +80,14 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Jalan Id</th>
-                           <th>Historis Vefektif</th>
+                           <th>Nama Jalan</th>
+                           <th>Volume Efektif</th>
                            <th>Historis Tahun</th>
-                           <th>Historis Vpenanganan</th>
-                           <th>Historis Sdana</th>
+                           <th>Historis Penanganan</th>
+                           <th>Sumber Dana</th>
                            <th>Historis Ket</th>
-                           <th>Historis Namakeg</th>
+                           <th>Nama Kegiatan</th>
+                           <th>Historis Sta</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -97,7 +98,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $historis_jalan_provinsi->kode_historis_jl; ?>">
                            </td>
                            
-                           <td><?= _ent($historis_jalan_provinsi->jalan_id); ?></td>
+                           <td><?= _ent($historis_jalan_provinsi->jalan_nama_ruas); ?></td>
                              
                            <td><?= _ent($historis_jalan_provinsi->historis_vefektif); ?></td> 
                            <td><?= _ent($historis_jalan_provinsi->historis_tahun); ?></td> 
@@ -105,6 +106,7 @@ jQuery(document).ready(domo);
                            <td><?= _ent($historis_jalan_provinsi->historis_sdana); ?></td> 
                            <td><?= _ent($historis_jalan_provinsi->historis_ket); ?></td> 
                            <td><?= _ent($historis_jalan_provinsi->historis_namakeg); ?></td> 
+                           <td><?= _ent($historis_jalan_provinsi->historis_sta); ?></td> 
                            <td width="200">
                               <?php is_allowed('historis_jalan_provinsi_view', function() use ($historis_jalan_provinsi){?>
                               <a href="<?= site_url('administrator/historis_jalan_provinsi/view/' . $historis_jalan_provinsi->kode_historis_jl); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -155,6 +157,7 @@ jQuery(document).ready(domo);
                            <option <?= $this->input->get('f') == 'historis_sdana' ? 'selected' :''; ?> value="historis_sdana">Historis Sdana</option>
                            <option <?= $this->input->get('f') == 'historis_ket' ? 'selected' :''; ?> value="historis_ket">Historis Ket</option>
                            <option <?= $this->input->get('f') == 'historis_namakeg' ? 'selected' :''; ?> value="historis_namakeg">Historis Namakeg</option>
+                           <option <?= $this->input->get('f') == 'historis_sta' ? 'selected' :''; ?> value="historis_sta">Historis Sta</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

@@ -80,10 +80,10 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Kode Ds</th>
-                           <th>Dokumentasi Sungai Id</th>
+                           <th>Nama Sungai</th>
                            <th>File</th>
-                           <th>Dokumen Tanggal</th>
+                           <th>Tanggal Dokumentasi</th>
+                           <th>Keterangan</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -94,8 +94,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $dokumentasi_sungai->kode_ds; ?>">
                            </td>
                            
-                           <td><?= _ent($dokumentasi_sungai->kode_ds); ?></td> 
-                           <td><?= _ent($dokumentasi_sungai->sungai_id); ?></td>
+                           <td><?= _ent($dokumentasi_sungai->text_sungai); ?></td>
                              
                            <td>
                               <?php if (!empty($dokumentasi_sungai->file)): ?>
@@ -112,6 +111,7 @@ jQuery(document).ready(domo);
                            </td>
                             
                            <td><?= _ent($dokumentasi_sungai->dokumen_tanggal); ?></td> 
+                           <td><?= _ent($dokumentasi_sungai->dokumentasi_nama); ?></td> 
                            <td width="200">
                               <?php is_allowed('dokumentasi_sungai_view', function() use ($dokumentasi_sungai){?>
                               <a href="<?= site_url('administrator/dokumentasi_sungai/view/' . $dokumentasi_sungai->kode_ds); ?>" class="label-default"><i class="fa fa-newspaper-o"></i> <?= cclang('view_button'); ?>
@@ -155,10 +155,10 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'kode_ds' ? 'selected' :''; ?> value="kode_ds">Kode Ds</option>
-                           <option <?= $this->input->get('f') == 'dokumentasi_sungai_id' ? 'selected' :''; ?> value="dokumentasi_sungai_id">Dokumentasi Sungai Id</option>
+                            <option <?= $this->input->get('f') == 'dokumentasi_sungai_id' ? 'selected' :''; ?> value="dokumentasi_sungai_id">Dokumentasi Sungai Id</option>
                            <option <?= $this->input->get('f') == 'file' ? 'selected' :''; ?> value="file">File</option>
                            <option <?= $this->input->get('f') == 'dokumen_tanggal' ? 'selected' :''; ?> value="dokumen_tanggal">Dokumen Tanggal</option>
+                           <option <?= $this->input->get('f') == 'dokumentasi_nama' ? 'selected' :''; ?> value="dokumentasi_nama">Dokumentasi Nama</option>
                           </select>
                      </div>
                      <div class="col-sm-1 padd-left-0 ">

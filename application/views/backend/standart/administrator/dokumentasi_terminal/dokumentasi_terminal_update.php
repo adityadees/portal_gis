@@ -67,14 +67,14 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="terminal_id" class="col-sm-2 control-label">Terminal Id 
+                            <label for="terminal_id" class="col-sm-2 control-label">Nama Terminal 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <select  class="form-control chosen chosen-select-deselect" name="terminal_id" id="terminal_id" data-placeholder="Select Terminal Id" >
                                     <option value=""></option>
                                     <?php foreach (db_get_all_data('terminal') as $row): ?>
-                                    <option <?=  $row->terminal_id ==  $dokumentasi_terminal->terminal_id ? 'selected' : ''; ?> value="<?= $row->terminal_id ?>"><?= $row->terminal_id; ?></option>
+                                    <option <?=  $row->terminal_id ==  $dokumentasi_terminal->terminal_id ? 'selected' : ''; ?> value="<?= $row->terminal_id ?>"><?= $row->nama_termi; ?></option>
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
@@ -97,18 +97,28 @@
                         </div>
                                                   
                                                 <div class="form-group ">
-                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Dokumen Tanggal 
+                            <label for="dokumen_tanggal" class="col-sm-2 control-label">Tanggal Dokumen 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-6">
                             <div class="input-group date col-sm-8">
-                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Dokumen Tanggal" id="dokumen_tanggal" value="<?= set_value('dokumentasi_terminal_dokumen_tanggal_name', $dokumentasi_terminal->dokumen_tanggal); ?>">
+                              <input type="text" class="form-control pull-right datepicker" name="dokumen_tanggal"  placeholder="Tanggal Dokumen" id="dokumen_tanggal" value="<?= set_value('dokumentasi_terminal_dokumen_tanggal_name', $dokumentasi_terminal->dokumen_tanggal); ?>">
                             </div>
                             <small class="info help-block">
                             </small>
                             </div>
                         </div>
                        
+                                                 
+                                                <div class="form-group ">
+                            <label for="dokumentasi_nama" class="col-sm-2 control-label">Keterangan 
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="dokumentasi_nama" id="dokumentasi_nama" placeholder="Keterangan" value="<?= set_value('dokumentasi_nama', $dokumentasi_terminal->dokumentasi_nama); ?>">
+                                <small class="info help-block">
+                                </small>
+                            </div>
+                        </div>
                                                 
                         <div class="message"></div>
                         <div class="row-fluid col-md-7">

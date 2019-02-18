@@ -5,7 +5,7 @@ class Model_historis_sanitasi_sumsel extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_sanitasi_sumsel';
 	private $table_name 	= 'historis_sanitasi_sumsel';
-	private $field_search 	= ['kode_historis_sanitasi_sumsel', 'sanitasi_sumsel_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['sanitasi_sumsel_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
 
 	public function __construct()
 	{
@@ -85,7 +85,7 @@ class Model_historis_sanitasi_sumsel extends MY_Model {
 	}
 
     public function join_avaiable() {
-        $this->db->join('sanitasi_sumsels', 'sanitasi_sumsels.sanitasi = historis_sanitasi_sumsel.sanitasi_sumsel_id', 'LEFT');
+        $this->db->join('sanitasi_sumsels', 'sanitasi_sumsels.air_bersih_id = historis_sanitasi_sumsel.sanitasi_sumsel_id', 'LEFT');
         
         return $this;
     }

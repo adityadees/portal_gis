@@ -80,12 +80,12 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Stasiun Id</th>
-                           <th>Historis Vefektif</th>
+                           <th>Nama Stasiun</th>
+                           <th>Volume Efektif</th>
                            <th>Historis Tahun</th>
-                           <th>Historis Namakeg</th>
-                           <th>Historis Vpenanganan</th>
-                           <th>Historis Sdana</th>
+                           <th>Nama Kegiatan</th>
+                           <th>Volume Penanganan</th>
+                           <th>Sumber Dana</th>
                            <th>Historis Ket</th>
                            <th>Action</th>
                         </tr>
@@ -97,7 +97,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $historis_stasiun->kode_historis_stasiun_sumsel; ?>">
                            </td>
                            
-                           <td><?= _ent($historis_stasiun->stasiun_id); ?></td>
+                           <td><?= _ent($historis_stasiun->nama_termi); ?></td>
                              
                            <td><?= _ent($historis_stasiun->historis_vefektif); ?></td> 
                            <td><?= _ent($historis_stasiun->historis_tahun); ?></td> 

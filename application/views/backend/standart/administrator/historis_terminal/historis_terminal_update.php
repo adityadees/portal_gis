@@ -60,14 +60,14 @@
                             ]); ?>
                          
                                                 <div class="form-group ">
-                            <label for="terminal_id" class="col-sm-2 control-label">Terminal Id 
+                            <label for="terminal_id" class="col-sm-2 control-label">Nama Terminal 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
                                 <select  class="form-control chosen chosen-select-deselect" name="terminal_id" id="terminal_id" data-placeholder="Select Terminal Id" >
                                     <option value=""></option>
                                     <?php foreach (db_get_all_data('terminal') as $row): ?>
-                                    <option <?=  $row->terminal_id ==  $historis_terminal->terminal_id ? 'selected' : ''; ?> value="<?= $row->terminal_id ?>"><?= $row->terminal_id; ?></option>
+                                    <option <?=  $row->terminal_id ==  $historis_terminal->terminal_id ? 'selected' : ''; ?> value="<?= $row->terminal_id ?>"><?= $row->nama_termi; ?></option>
                                     <?php endforeach; ?>  
                                 </select>
                                 <small class="info help-block">
@@ -77,11 +77,11 @@
 
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_vefektif" class="col-sm-2 control-label">Historis Vefektif 
+                            <label for="historis_vefektif" class="col-sm-2 control-label">Volume Efektif 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_vefektif" id="historis_vefektif" placeholder="Historis Vefektif" value="<?= set_value('historis_vefektif', $historis_terminal->historis_vefektif); ?>">
+                                <input type="number" class="form-control" name="historis_vefektif" id="historis_vefektif" placeholder="Volume Efektif" value="<?= set_value('historis_vefektif', $historis_terminal->historis_vefektif); ?>">
                                 <small class="info help-block">
                                 <b>Input Historis Vefektif</b> Max Length : 50.</small>
                             </div>
@@ -104,33 +104,33 @@
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_namakeg" class="col-sm-2 control-label">Historis Namakeg 
+                            <label for="historis_namakeg" class="col-sm-2 control-label">Nama Kegiatan 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Historis Namakeg" value="<?= set_value('historis_namakeg', $historis_terminal->historis_namakeg); ?>">
+                                <input type="text" class="form-control" name="historis_namakeg" id="historis_namakeg" placeholder="Nama Kegiatan" value="<?= set_value('historis_namakeg', $historis_terminal->historis_namakeg); ?>">
                                 <small class="info help-block">
                                 <b>Input Historis Namakeg</b> Max Length : 100.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Historis Vpenanganan 
+                            <label for="historis_vpenanganan" class="col-sm-2 control-label">Volume Penanganan 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Historis Vpenanganan" value="<?= set_value('historis_vpenanganan', $historis_terminal->historis_vpenanganan); ?>">
+                                <input type="number" class="form-control" name="historis_vpenanganan" id="historis_vpenanganan" placeholder="Volume Penanganan" value="<?= set_value('historis_vpenanganan', $historis_terminal->historis_vpenanganan); ?>">
                                 <small class="info help-block">
                                 <b>Input Historis Vpenanganan</b> Max Length : 50.</small>
                             </div>
                         </div>
                                                  
                                                 <div class="form-group ">
-                            <label for="historis_sdana" class="col-sm-2 control-label">Historis Sdana 
+                            <label for="historis_sdana" class="col-sm-2 control-label">Sumber Dana 
                             <i class="required">*</i>
                             </label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Historis Sdana" value="<?= set_value('historis_sdana', $historis_terminal->historis_sdana); ?>">
+                                <input type="number" class="form-control" name="historis_sdana" id="historis_sdana" placeholder="Sumber Dana" value="<?= set_value('historis_sdana', $historis_terminal->historis_sdana); ?>">
                                 <small class="info help-block">
                                 <b>Input Historis Sdana</b> Max Length : 11.</small>
                             </div>

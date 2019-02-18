@@ -80,14 +80,13 @@ jQuery(document).ready(domo);
                            <th>
                             <input type="checkbox" class="flat-red toltip" id="check_all" name="check_all" title="check all">
                            </th>
-                           <th>Kode Historis Sungai Polys</th>
-                           <th>Sungai Polys Id</th>
-                           <th>Historis Vefektif</th>
+                           <th>Nama Sungai Poly</th>
+                           <th>Volume Efektif</th>
                            <th>Historis Tahun</th>
-                           <th>Historis Vpenanganan</th>
-                           <th>Historis Sdana</th>
+                           <th>Volume Penanganan</th>
+                           <th>Sumber Dana</th>
                            <th>Historis Ket</th>
-                           <th>Historis Namakeg</th>
+                           <th>Nama Kegiatan</th>
                            <th>Action</th>
                         </tr>
                      </thead>
@@ -98,8 +97,7 @@ jQuery(document).ready(domo);
                               <input type="checkbox" class="flat-red check" name="id[]" value="<?= $historis_sungai_polys->kode_historis_sungai_polys; ?>">
                            </td>
                            
-                           <td><?= _ent($historis_sungai_polys->kode_historis_sungai_polys); ?></td> 
-                           <td><?= _ent($historis_sungai_polys->sungai_poly_id); ?></td>
+                           <td><?= _ent($historis_sungai_polys->namasungai); ?></td>
                              
                            <td><?= _ent($historis_sungai_polys->historis_vefektif); ?></td> 
                            <td><?= _ent($historis_sungai_polys->historis_tahun); ?></td> 
@@ -150,8 +148,7 @@ jQuery(document).ready(domo);
                      <div class="col-sm-3 padd-left-0 " >
                         <select type="text" class="form-control chosen chosen-select" name="f" id="field" >
                            <option value=""><?= cclang('all'); ?></option>
-                            <option <?= $this->input->get('f') == 'kode_historis_sungai_polys' ? 'selected' :''; ?> value="kode_historis_sungai_polys">Kode Historis Sungai Polys</option>
-                           <option <?= $this->input->get('f') == 'sungai_polys_id' ? 'selected' :''; ?> value="sungai_polys_id">Sungai Polys Id</option>
+                            <option <?= $this->input->get('f') == 'sungai_polys_id' ? 'selected' :''; ?> value="sungai_polys_id">Sungai Polys Id</option>
                            <option <?= $this->input->get('f') == 'historis_vefektif' ? 'selected' :''; ?> value="historis_vefektif">Historis Vefektif</option>
                            <option <?= $this->input->get('f') == 'historis_tahun' ? 'selected' :''; ?> value="historis_tahun">Historis Tahun</option>
                            <option <?= $this->input->get('f') == 'historis_vpenanganan' ? 'selected' :''; ?> value="historis_vpenanganan">Historis Vpenanganan</option>

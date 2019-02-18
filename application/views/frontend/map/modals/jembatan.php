@@ -65,7 +65,7 @@
               </tr>
               <tr>
                 <th>filed11</th>
-                <td><?= number_format($i['field11']);?></td>
+                <td><?= $i['field11'];?></td>
               </tr>
               <tr>
                 <th>filed12</th>
@@ -107,8 +107,8 @@
                   <th>No.</th>
                   <th>Tahun</th>
                   <th>Nama Kegiatan</th>
-                  <th>Volume Efektif</th>
-                  <th>Volume Penanganan</th>
+                  <th>Volume Efektif (m)</th>
+                  <th>Volume Penanganan (m)</th>
                   <th>Sumber Dana</th>
                   <th>Ket</th>
                 </tr>
@@ -125,9 +125,9 @@
                     <td><?= $no; ?></td>
                     <td><?= $j['historis_tahun']; ?></td>
                     <td><?= $j['historis_namakeg']; ?></td>
-                    <td><?= $j['historis_vefektif']; ?></td>
-                    <td><?= $j['historis_vpenanganan']; ?></td>
-                    <td><?= number_format($j['historis_sdana']); ?></td>
+                    <td><?= $j['historis_vefektif']." m"; ?></td>
+                    <td><?= $j['historis_vpenanganan']." m"; ?></td>
+                    <td><?= $j['historis_sdana']; ?></td>
                     <td><?= $j['historis_ket']; ?></td>
                   </tr>
                 <?php endforeach; ?>
@@ -141,15 +141,15 @@
            <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Tahun</th>
-                <th>Volume</th>
+            <th class="col-md-1">No.</th>
+                <th class="col-md-5">Tahun</th>
+                <th  class="col-md-6">Volume (m)</th>
               </tr>
             </thead>
             <tbody>
               <?php
               $kode=$i['jembatan_id'];
-              $gtarget=$this->modelgeojson->get_target($kode,'4');
+              $gtarget=$this->modelgeojson->get_target('target_jembatan',$kode);
               $no=0;
               foreach ($gtarget->result_array() as $j) :
                 $no++;
@@ -157,7 +157,7 @@
                 <tr>
                   <td><?= $no; ?></td>
                   <td><?= $j['target_tahun'];?></td>
-                  <td><?= number_format($j['target_volume']); ?></td>
+                  <td><?= $j['target_volume']." m"; ?></td>
                 </tr>
               <?php endforeach; ?>
             </tbody>
@@ -170,9 +170,10 @@
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Dokumen</th>
-                <th>Tanggal Dokumentasi</th>
+                   <th class="col-md-1">No.</th>
+                <th class="col-md-4">Keterangan</th>
+                <th class="col-md-4">File</th>
+                <th class="col-md-3">Tanggal</th>
               </tr>
             </thead>
             <tbody>
@@ -185,8 +186,9 @@
                 ?>
                 <tr>
                   <td><?= $no; ?></td>
-                  <td><a href="<?= base_url();?>uploads/dokumentasi_jembatan_pt_250K/<?= $j['file']; ?>" target="blank">
-                    <img border="0"  src="<?= base_url();?>uploads/dokumentasi_jembatan_pt_250K/<?= $j['file']; ?>" width="200px" height="150px">
+                  <td><?= $j['dokumentasi_nama']; ?></td>
+                  <td><a href="<?= base_url();?>uploads/dokumentasi_jembatan/<?= $j['file']; ?>" target="blank">
+                    <img border="0"  src="<?= base_url();?>uploads/dokumentasi_jembatan/<?= $j['file']; ?>" width="200px" height="150px">
                   </a></td>
                   <td><?= $j['dokumen_tanggal']; ?></td>
                 </tr>

@@ -5,7 +5,7 @@ class Model_historis_sungais extends MY_Model {
 
 	private $primary_key 	= 'kode_historis_sungai';
 	private $table_name 	= 'historis_sungais';
-	private $field_search 	= ['kode_historis_sungai', 'sungais_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
+	private $field_search 	= ['sungais_id', 'historis_vefektif', 'historis_tahun', 'historis_vpenanganan', 'historis_sdana', 'historis_ket', 'historis_namakeg'];
 
 	public function __construct()
 	{

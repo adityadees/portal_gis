@@ -65,10 +65,10 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Sungai Poly Id </label>
+                        <label for="content" class="col-sm-2 control-label">Nama Sungai Poly </label>
 
                         <div class="col-sm-8">
-                           <?= _ent($dokumentasi_sungai_poly->sungai_poly_id); ?>
+                           <?= _ent($dokumentasi_sungai_poly->namasungai); ?>
                         </div>
                     </div>
                                          
@@ -91,10 +91,18 @@ jQuery(document).ready(domo);
                     </div>
                                        
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Dokumen Tanggal </label>
+                        <label for="content" class="col-sm-2 control-label">Tanggal Dokumen </label>
 
                         <div class="col-sm-8">
                            <?= _ent($dokumentasi_sungai_poly->dokumen_tanggal); ?>
+                        </div>
+                    </div>
+                                         
+                    <div class="form-group ">
+                        <label for="content" class="col-sm-2 control-label">Keterangan </label>
+
+                        <div class="col-sm-8">
+                           <?= _ent($dokumentasi_sungai_poly->dokumentasi_nama); ?>
                         </div>
                     </div>
                                         

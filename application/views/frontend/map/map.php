@@ -112,12 +112,6 @@
             <a class="page-scroll" href="<?= site_url($menu->link); ?>"><?= $menu->label; ?></a>
           </li>
         <?php endforeach; ?>
-        <li>
-          <a class="page-scroll" href="<?= site_url('grafik'); ?>">Grafik</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="<?= site_url('peta'); ?>">Map</a>
-        </li>
         <?php if (!app()->aauth->is_loggedin()): ?>
         <li>
           <a class="page-scroll" href="<?= site_url('administrator/login'); ?>"><i class="fa fa-sign-in"></i> <?= cclang('login'); ?></a>
@@ -153,10 +147,10 @@
 
  <body>
   <div class="content-wrapper">
-   <section class="content-header">
+   <section class="content-header" style="margin-top:-50px;">
     <ol class="breadcrumb">
       <li><a href="<?php echo base_url()?>"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Map</li>
+      <li class="active">Peta</li>
     </ol>
   </section>
 
@@ -193,6 +187,27 @@
                 </div>
               </li>
               <li class="list-group-item">
+                Jalan Provinsi 2018
+                <div class="material-switch pull-right">
+                  <input id="jalan_provinsi_2018" name="someSwitchOption001" type="checkbox" checked="checked"/>
+                  <label for="jalan_provinsi_2018" class="label-success"></label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                Jalan Provinsi 2019
+                <div class="material-switch pull-right">
+                  <input id="jalan_provinsi_2019" name="someSwitchOption001" type="checkbox" checked="checked"/>
+                  <label for="jalan_provinsi_2019" class="label-success"></label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                Jalan Permukiman
+                <div class="material-switch pull-right">
+                  <input id="jalan_permukiman" name="someSwitchOption001" type="checkbox" checked="checked"/>
+                  <label for="jalan_permukiman" class="label-success"></label>
+                </div>
+              </li>
+              <li class="list-group-item">
                 Air
                 <div class="material-switch pull-right">
                   <input id="air_bersih" name="someSwitchOption001" type="checkbox" checked="checked"/>
@@ -200,10 +215,10 @@
                 </div>
               </li>
               <li class="list-group-item">
-                Bendung
+                Irigasi
                 <div class="material-switch pull-right">
-                  <input id="bendung" name="someSwitchOption001" type="checkbox" checked="checked"/>
-                  <label for="bendung" class="label-success"></label>
+                  <input id="irigasi" name="someSwitchOption001" type="checkbox" checked="checked"/>
+                  <label for="irigasi" class="label-success"></label>
                 </div>
               </li>
               <li class="list-group-item">
@@ -235,7 +250,7 @@
                 </div>
               </li>
               <li class="list-group-item">
-                Statsiun
+                Stasiun
                 <div class="material-switch pull-right">
                   <input id="stasiun" name="someSwitchOption001" type="checkbox" checked="checked"/>
                   <label for="stasiun" class="label-success"></label>
@@ -288,6 +303,13 @@
                 <div class="material-switch pull-right">
                   <input id="greenhouse" name="someSwitchOption001" type="checkbox" checked="checked" />
                   <label for="greenhouse" class="label-success"></label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                Kawasan Kumuh
+                <div class="material-switch pull-right">
+                  <input id="kawasan_kumuh" name="someSwitchOption001" type="checkbox" checked="checked" />
+                  <label for="kawasan_kumuh" class="label-success"></label>
                 </div>
               </li>
 
@@ -349,7 +371,7 @@
       });
     <?php endforeach; ?>
 
-    $('#jalan_nasional,#jalan_provinsi,#air_bersih,#bendung,#jembatan,#sanitasi,#pelabuhan,#terminal,#stasiun,#bandara,#sungai,#sungaipol,#tol').removeAttr('disabled');
+    $('#jalan_nasional,#jalan_provinsi,#air_bersih,#irigasi,#jembatan,#sanitasi,#pelabuhan,#terminal,#stasiun,#bandara,#sungai,#sungaipol,#tol,#kebencanaan,#jalan_provinsi_2018,#jalan_provinsi_2019','#kawasan_kumuh').removeAttr('disabled');
 
     $('#all').click(function(){
       <?php foreach ($map_link->result_array() as $i) : ?>
@@ -369,8 +391,13 @@
       google.maps.event.addListener(<?= $i['maplink_var']; ?>, 'click', function(event) {
         var aab=event.feature.l.ID;
         var idlink="<?php echo $i['maplink_var']; ?>";
-
-        infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Nama</th><td><?php if($i['maplink_var']=='jalan_nasional'){ ?>' +event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='jalan_provinsi') {?>'+event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='bendung') {?>'+event.feature.l.nama+'<?php } else if($i['maplink_var']=='jembatan') {?>'+event.feature.l.Field5+'<?php } else if($i['maplink_var']=='sanitasi') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='pelabuhan') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='terminal') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='stasiun') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='bandara') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='sungai') {?>'+event.feature.l.TEXT_SUNGA+'<?php } else if($i['maplink_var']=='sungaipol') {?>'+event.feature.l.NAMASUNGAI+'<?php } else if($i['maplink_var']=='tol') {?>'+event.feature.l.Ruas+'<?php } else if($i['maplink_var']=='air_bersih') {?>'+event.feature.l.TEXT_KEC+'<?php } else {}?></td></tr><tr><th>Latitude</th><td>'+ event.latLng.lat()+'</td></tr><tr><th>Longitude</th><td>'+ event.latLng.lng()+'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+idlink+'">Detail</button></div></div></div>');
+        
+    var numlat = event.latLng.lat();
+    var nlat = numlat.toFixed(3);
+     var numlng = event.latLng.lng();
+    var nlng = numlng.toFixed(3);
+    
+        infowindow.setContent('<div class="col-md-12"><div class="row"><div class="col-md-12"><table class="table table-striped"><tr><th>ID</th><td>'+aab+'</td></tr><tr><th>Nama</th><td><?php if($i['maplink_var']=='jalan_nasional'){ ?>' +event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='jalan_provinsi') {?>'+event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='jalan_provinsi_2018') {?>'+event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='jalan_provinsi_2019') {?>'+event.feature.l.Nama_Ruas+'<?php } else if($i['maplink_var']=='irigasi') {?>'+event.feature.l.nama+'<?php } else if($i['maplink_var']=='jembatan') {?>'+event.feature.l.Field5+'<?php } else if($i['maplink_var']=='sanitasi') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='pelabuhan') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='terminal') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='stasiun') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='bandara') {?>'+event.feature.l.NAMA_TERMI+'<?php } else if($i['maplink_var']=='sungai') {?>'+event.feature.l.TEXT_SUNGA+'<?php } else if($i['maplink_var']=='sungaipol') {?>'+event.feature.l.NAMASUNGAI+'<?php } else if($i['maplink_var']=='tol') {?>'+event.feature.l.Ruas+'<?php } else if($i['maplink_var']=='air_bersih') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='penataanruang') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='kebencanaan') {?>'+event.feature.l.TEXT_KEC+'<?php } else if($i['maplink_var']=='greenhouse') {?>'+event.feature.l.TEXT_KEC+'<?php }else if($i['maplink_var']=='kawasan_kumuh') {?>'+event.feature.l.Nama_Kawas+'<?php }  else if($i['maplink_var']=='jalan_permukiman') {?>'+event.feature.l.TEXT_KEC+'<?php } else {}?></td></tr><tr><th>Latitude</th><td>'+  nlat +'</td></tr><tr><th>Longitude</th><td>'+ nlng +'</td></tr></table></div></div><div class="row"><div class="col-md-12"><button type="button" class="btn btn-info col-md-12" data-toggle="modal" data-target="#myModal'+aab+idlink+'">Detail</button></div></div></div>');
         console.log(event.feature.l)
         infowindow.setPosition(event.latLng);
         infowindow.open(map);
@@ -403,8 +430,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84
 <?php
 $this->load->view('frontend/map/modals/jalan_nasional');
 $this->load->view('frontend/map/modals/jalan_provinsi');
+$this->load->view('frontend/map/modals/jalan_permukiman');
 $this->load->view('frontend/map/modals/air_bersih');
-$this->load->view('frontend/map/modals/bendung');
+$this->load->view('frontend/map/modals/irigasi');
 $this->load->view('frontend/map/modals/jembatan');
 $this->load->view('frontend/map/modals/sanitasi');
 $this->load->view('frontend/map/modals/pelabuhan');
@@ -414,4 +442,6 @@ $this->load->view('frontend/map/modals/bandara');
 $this->load->view('frontend/map/modals/sungai');
 $this->load->view('frontend/map/modals/sungaipol');
 $this->load->view('frontend/map/modals/tol');
+$this->load->view('frontend/map/modals/kebencanaan');
+$this->load->view('frontend/map/modals/kawasan_kumuh');
 ?>

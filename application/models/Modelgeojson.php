@@ -7,6 +7,11 @@ class Modelgeojson extends CI_Model{
 		$hasil=$this->db->get($table);
 		return $hasil;
 	}
+	
+	function get_where($table,$where){
+	    $hasil = $query = $this->db->get_where($table, $where);
+	    return $hasil;
+	}
 
 	function get_data_historis_jalan_nasional($kode){
 		$hasil=$this->db->query("SELECT * FROM historis_jalan_nasional where jalan_id='$kode'");
@@ -16,24 +21,28 @@ class Modelgeojson extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM historis_jalan_provinsi where jalan_id='$kode'");
 		return $hasil;
 	}
+	function get_data_historis_jalan_permukiman($kode){
+		$hasil=$this->db->query("SELECT * FROM historis_jalan_permukiman where jalan_id='$kode'");
+		return $hasil;
+	}
 	function get_data_historis_air_bersih($kode){
 		$hasil=$this->db->query("SELECT * FROM historis_air_bersih where air_bersih_id='$kode'");
 		return $hasil;
 	}
-	function get_data_historis_bendung($kode){
-		$hasil=$this->db->query("SELECT * FROM historis_bendungans where bendungan_id='$kode'");
+	function get_data_historis_irigasi($kode){
+		$hasil=$this->db->query("SELECT * FROM historis_irigasi where irigasi_id='$kode'");
 		return $hasil;
 	}
 	function get_data_historis_jembatan($kode){
-		$hasil=$this->db->query("SELECT * FROM historis_jembatan_pt_250k where jembatan_pt_250k_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM historis_jembatan where jembatan_pt_250k_id='$kode'");
 		return $hasil;
 	}
 	function get_data_historis_sanitasi($kode){
-		$hasil=$this->db->query("SELECT * FROM historis_sanitasi_sumsel where sanitasi_sumsel_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM historis_sanitasi where sanitasi_sumsel_id='$kode'");
 		return $hasil;
 	}
 	function get_data_historis_sungai($kode){
-		$hasil=$this->db->query("SELECT * FROM historis_sungais where sungais_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM historis_sungai where sungais_id='$kode'");
 		return $hasil;
 	}
 	function get_data_historis_sungaipol($kode){
@@ -41,7 +50,7 @@ class Modelgeojson extends CI_Model{
 		return $hasil;
 	}
 	function get_data_historis_tol($kode){
-		$hasil=$this->db->query("SELECT * FROM historis_tol_ln_2017_sumatera_selatan_pubtr_geo where tol_ln_2017_sumatera_selatan_pubtr_geos_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM historis_tol where tol_ln_2017_sumatera_selatan_pubtr_geos_id='$kode'");
 		return $hasil;
 	}
 
@@ -52,6 +61,10 @@ class Modelgeojson extends CI_Model{
 
 	function get_data_historis_stasiun($kode){
 		$hasil=$this->db->query("SELECT * FROM historis_stasiun where stasiun_id='$kode'");
+		return $hasil;
+	}
+	function get_data_historis_kawasan_kumuh($kode){
+		$hasil=$this->db->query("SELECT * FROM historis_kawasan_kumuh where kawasan_kumuh_id='$kode'");
 		return $hasil;
 	}
 
@@ -66,10 +79,11 @@ class Modelgeojson extends CI_Model{
 		return $hasil;
 	}
 
-	function get_target($kode,$maplink){
-		$hasil=$this->db->query("SELECT * FROM target where target_data_id='$kode' AND maplink_id='$maplink'");
+	function get_target($maplink,$kode){
+		$hasil=$this->db->query("SELECT * FROM $maplink where target_data_id='$kode'");
 		return $hasil;
 	}
+	
 	function get_dokumen_jalan_nasional($kode){
 		$hasil=$this->db->query("SELECT * FROM dokumentasi_jalan_nasional where dokumentasi_jalan_id='$kode'");
 		return $hasil;
@@ -78,20 +92,24 @@ class Modelgeojson extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM dokumentasi_jalan_provinsi where dokumentasi_jalan_id='$kode'");
 		return $hasil;
 	}
-	function  get_dokumen_air_bersih($kode){
-		$hasil=$this->db->query("SELECT * FROM dokumentasi_air_bersih_sumsel where air_bersih_sumsel_id='$kode'");
+	function get_dokumen_jalan_permukiman($kode){
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_jalan_permukiman where dokumentasi_jalan_id='$kode'");
 		return $hasil;
 	}
-	function  get_dokumen_bendung($kode){
-		$hasil=$this->db->query("SELECT * FROM dokumentasi_bendung_disumsel where bendung_disumsel_id='$kode'");
+	function  get_dokumen_air_bersih($kode){
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_air_bersih where air_bersih_sumsel_id='$kode'");
+		return $hasil;
+	}
+	function  get_dokumen_irigasi($kode){
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_irigasi where irigasi_id='$kode'");
 		return $hasil;
 	}
 	function  get_dokumen_jembatan($kode){
-		$hasil=$this->db->query("SELECT * FROM dokumentasi_jembatan_pt_250K where embatan_pt_250K_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_jembatan where embatan_pt_250K_id='$kode'");
 		return $hasil;
 	}
 	function  get_dokumen_sanitasi($kode){
-		$hasil=$this->db->query("SELECT * FROM dokumentasi_sanitasi_sumsel where dokumentasi_sanitasi_sumsel_id='$kode'");
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_sanitasi where dokumentasi_sanitasi_sumsel_id='$kode'");
 		return $hasil;
 	}
 	function  get_dokumen_sungai($kode){
@@ -103,7 +121,7 @@ class Modelgeojson extends CI_Model{
 		return $hasil;
 	}
 	function  get_dokumen_tol($kode){
-		$hasil=$this->db->query("SELECT * FROM dokumentasi_tol_ln_2017_sumatera_selatan_pubtr_geo where 	tol_ln_2017_sumatera_selatan_pubtr_geoid='$kode'");
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_tol where 	tol_ln_2017_sumatera_selatan_pubtr_geoid='$kode'");
 		return $hasil;
 	}
 	
@@ -126,5 +144,10 @@ class Modelgeojson extends CI_Model{
 		$hasil=$this->db->query("SELECT * FROM dokumentasi_bandara where dokumentasi_bandara_id='$kode'");
 		return $hasil;
 	}
+	function  get_dokumen_kawasan_kumuh($kode){
+		$hasil=$this->db->query("SELECT * FROM dokumentasi_kawasan_kumuh where dokumentasi_kawasan_kumuh_id='$kode'");
+		return $hasil;
+	}
+
 } 
 ?>

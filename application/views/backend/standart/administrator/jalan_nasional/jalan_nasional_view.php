@@ -113,7 +113,7 @@ jQuery(document).ready(domo);
                     </div>
                                          
                     <div class="form-group ">
-                        <label for="content" class="col-sm-2 control-label">Jalan Panjang </label>
+                        <label for="content" class="col-sm-2 control-label">Jalan Panjang (KM) </label>
 
                         <div class="col-sm-8">
                            <?= _ent($jalan_nasional->jalan_panjang); ?>

@@ -43,7 +43,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 
 		$this->data['pagination'] = $this->pagination($config);
 
-		$this->template->title('Tol Ln 2017 Sumatera Selatan Pubtr Geo List');
+		$this->template->title('Tol List');
 		$this->render('backend/standart/administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/tol_ln_2017_sumatera_selatan_pubtr_geo_list', $this->data);
 	}
 	
@@ -55,7 +55,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 	{
 		$this->is_allowed('tol_ln_2017_sumatera_selatan_pubtr_geo_add');
 
-		$this->template->title('Tol Ln 2017 Sumatera Selatan Pubtr Geo New');
+		$this->template->title('Tol New');
 		$this->render('backend/standart/administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/tol_ln_2017_sumatera_selatan_pubtr_geo_add', $this->data);
 	}
 
@@ -74,7 +74,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 			exit;
 		}
 
-		$this->form_validation->set_rules('tol_ln_2017_sumatera_selatan_pubtr_geo_id', 'Tol Ln 2017 Sumatera Selatan Pubtr Geo Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('tol_ln_2017_sumatera_selatan_pubtr_geo_id', 'Nama Tol', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('jalanrencana', 'Jalanrencana', 'trim|required');
 		$this->form_validation->set_rules('ruas', 'Ruas', 'trim|required');
 		$this->form_validation->set_rules('status_tol', 'Status Tol', 'trim|required');
@@ -141,7 +141,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 
 		$this->data['tol_ln_2017_sumatera_selatan_pubtr_geo'] = $this->model_tol_ln_2017_sumatera_selatan_pubtr_geo->find($id);
 
-		$this->template->title('Tol Ln 2017 Sumatera Selatan Pubtr Geo Update');
+		$this->template->title('Tol Update');
 		$this->render('backend/standart/administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/tol_ln_2017_sumatera_selatan_pubtr_geo_update', $this->data);
 	}
 
@@ -160,7 +160,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 			exit;
 		}
 		
-		$this->form_validation->set_rules('tol_ln_2017_sumatera_selatan_pubtr_geo_id', 'Tol Ln 2017 Sumatera Selatan Pubtr Geo Id', 'trim|required|max_length[11]');
+		$this->form_validation->set_rules('tol_ln_2017_sumatera_selatan_pubtr_geo_id', 'Nama Tol', 'trim|required|max_length[11]');
 		$this->form_validation->set_rules('jalanrencana', 'Jalanrencana', 'trim|required');
 		$this->form_validation->set_rules('ruas', 'Ruas', 'trim|required');
 		$this->form_validation->set_rules('status_tol', 'Status Tol', 'trim|required');
@@ -254,7 +254,7 @@ class Tol_ln_2017_sumatera_selatan_pubtr_geo extends Admin
 
 		$this->data['tol_ln_2017_sumatera_selatan_pubtr_geo'] = $this->model_tol_ln_2017_sumatera_selatan_pubtr_geo->join_avaiable()->filter_avaiable()->find($id);
 
-		$this->template->title('Tol Ln 2017 Sumatera Selatan Pubtr Geo Detail');
+		$this->template->title('Tol Detail');
 		$this->render('backend/standart/administrator/tol_ln_2017_sumatera_selatan_pubtr_geo/tol_ln_2017_sumatera_selatan_pubtr_geo_view', $this->data);
 	}
 	
