@@ -428,7 +428,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAogXD-AHrsmnWinZIyhRORJ84
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <?php
-$this->load->view('frontend/map/modals/jalan_nasional');
+/*$this->load->view('frontend/map/modals/jalan_nasional');
 $this->load->view('frontend/map/modals/jalan_provinsi');
 $this->load->view('frontend/map/modals/jalan_permukiman');
 $this->load->view('frontend/map/modals/air_bersih');
@@ -443,5 +443,5 @@ $this->load->view('frontend/map/modals/sungai');
 $this->load->view('frontend/map/modals/sungaipol');
 $this->load->view('frontend/map/modals/tol');
 $this->load->view('frontend/map/modals/kebencanaan');
-$this->load->view('frontend/map/modals/kawasan_kumuh');
+$this->load->view('frontend/map/modals/kawasan_kumuh');*/
 ?>
